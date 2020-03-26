@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29888838242D28D800D11427 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888837242D28D800D11427 /* Routine.swift */; };
 		29933D54241438400013EB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D53241438400013EB94 /* AppDelegate.swift */; };
 		29933D56241438400013EB94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D55241438400013EB94 /* SceneDelegate.swift */; };
 		29933D5B241438400013EB94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D59241438400013EB94 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29888837242D28D800D11427 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		29933D50241438400013EB94 /* PoolDrills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoolDrills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29933D53241438400013EB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29933D55241438400013EB94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				29933D85241438ED0013EB94 /* Drill.swift */,
+				29888837242D28D800D11427 /* Routine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29888838242D28D800D11427 /* Routine.swift in Sources */,
 				29933D86241438ED0013EB94 /* Drill.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
