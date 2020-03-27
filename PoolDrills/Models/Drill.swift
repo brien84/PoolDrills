@@ -6,8 +6,17 @@
 //  Copyright © 2020 Marius. All rights reserved.
 //
 
-import Foundation
+import CoreData
+import UIKit
 
-struct Drill {
-    let name: String
+final class Drill: NSManagedObject {
+
+    convenience init?(name: String) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        self.init(context: context)
+        self.name = name
+
+        guard (try? context.save()) != nil else { return nil }
+    }
+
 }
