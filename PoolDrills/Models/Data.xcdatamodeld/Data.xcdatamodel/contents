@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Drill" representedClassName=".Drill" syncable="YES" codeGenerationType="category">
-        <attribute name="name" attributeType="String"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
+        <attribute name="title" attributeType="String" defaultValueString=""/>
     </entity>
     <elements>
-        <element name="Drill" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Drill" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Routine" positionX="-54" positionY="-18" width="128" height="58"/>
     </elements>
 </model>
