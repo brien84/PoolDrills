@@ -53,5 +53,17 @@ class DrillsViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "DrillViewController" {
+
+            guard let vc = segue.destination as? DrillViewController else { return }
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            vc.drill = datasource[indexPath.row]
+        }
+    }
 
 }
