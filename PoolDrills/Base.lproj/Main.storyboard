@@ -35,7 +35,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GX7-Mt-NpE">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="38E-Q3-1KO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="38E-Q3-1KO">
                             <connections>
                                 <segue destination="cxg-Xw-Ofs" kind="show" identifier="DrillViewController" id="1V8-AP-M2U"/>
                             </connections>
@@ -69,7 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="l99-G1-slM"/>
                     </view>
                     <navigationItem key="navigationItem" id="yaA-nt-CPA">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="xdA-Vr-ZEu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xdA-Vr-ZEu">
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="cxg-Xw-Ofs" id="w8z-kM-peO"/>
                             </connections>
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTs-fu-5IL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="866"/>
+            <point key="canvasLocation" x="2330" y="866"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="59O-Vz-zLy">
@@ -94,6 +94,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZCM-Oh-f5G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="txV-cT-aSp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -115,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YNK-Ls-pqP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineCell" id="YNK-Ls-pqP">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YNK-Ls-pqP" id="o18-Tx-T8m">
@@ -129,11 +130,33 @@
                             <outlet property="delegate" destination="IWC-Pk-Akg" id="Ks1-dU-Ui0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oW5-sA-C9H"/>
+                    <navigationItem key="navigationItem" id="oW5-sA-C9H">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YwE-yK-oc3">
+                            <connections>
+                                <segue destination="rgY-KT-A8G" kind="show" identifier="RoutineViewController" id="Yhq-eP-NIg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvz-gc-hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="173"/>
+            <point key="canvasLocation" x="1445" y="173"/>
+        </scene>
+        <!--Routine View Controller-->
+        <scene sceneID="9XP-um-NHw">
+            <objects>
+                <viewController id="rgY-KT-A8G" customClass="RoutineViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zXt-am-tYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7Qy-nu-mdQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tGP-tQ-52o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhL-mn-OXw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2331" y="171"/>
         </scene>
         <!--Routines-->
         <scene sceneID="eRq-i4-eM4">
