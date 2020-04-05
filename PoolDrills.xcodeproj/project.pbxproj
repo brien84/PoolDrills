@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29888838242D28D800D11427 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888837242D28D800D11427 /* Routine.swift */; };
-		2988883E242D29A300D11427 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2988883C242D29A300D11427 /* Data.xcdatamodeld */; };
 		29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* DrillViewController.swift */; };
 		29888883242FF18700D11427 /* RoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888882242FF18700D11427 /* RoutinesViewController.swift */; };
 		298888852430DAB300D11427 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888842430DAB300D11427 /* RoutineViewController.swift */; };
+		298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888862431291F00D11427 /* DrillsSelectionViewController.swift */; };
+		298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888D12437D4A100D11427 /* CoreDataStack.swift */; };
+		298888D52438CD7B00D11427 /* PoolDrills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */; };
 		29933D54241438400013EB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D53241438400013EB94 /* AppDelegate.swift */; };
 		29933D56241438400013EB94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D55241438400013EB94 /* SceneDelegate.swift */; };
 		29933D5B241438400013EB94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D59241438400013EB94 /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5E241438420013EB94 /* LaunchScreen.storyboard */; };
 		29933D6B241438430013EB94 /* PoolDrillsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D6A241438430013EB94 /* PoolDrillsTests.swift */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
-		29933D86241438ED0013EB94 /* Drill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D85241438ED0013EB94 /* Drill.swift */; };
 		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29888837242D28D800D11427 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
-		2988883D242D29A300D11427 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		29888880242E9A8A00D11427 /* DrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillViewController.swift; sourceTree = "<group>"; };
 		29888882242FF18700D11427 /* RoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewController.swift; sourceTree = "<group>"; };
 		298888842430DAB300D11427 /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		298888862431291F00D11427 /* DrillsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsSelectionViewController.swift; sourceTree = "<group>"; };
+		298888D12437D4A100D11427 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		298888D42438CD7B00D11427 /* PoolDrills.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoolDrills.xcdatamodel; sourceTree = "<group>"; };
 		29933D50241438400013EB94 /* PoolDrills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoolDrills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29933D53241438400013EB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29933D55241438400013EB94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		29933D71241438430013EB94 /* PoolDrillsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDrillsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29933D85241438ED0013EB94 /* Drill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drill.swift; sourceTree = "<group>"; };
 		29933D87241439150013EB94 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,9 +144,8 @@
 		29933D83241438D40013EB94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2988883C242D29A300D11427 /* Data.xcdatamodeld */,
-				29933D85241438ED0013EB94 /* Drill.swift */,
-				29888837242D28D800D11427 /* Routine.swift */,
+				298888D12437D4A100D11427 /* CoreDataStack.swift */,
+				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +157,7 @@
 				29888880242E9A8A00D11427 /* DrillViewController.swift */,
 				29888882242FF18700D11427 /* RoutinesViewController.swift */,
 				298888842430DAB300D11427 /* RoutineViewController.swift */,
+				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,15 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29888838242D28D800D11427 /* Routine.swift in Sources */,
 				29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */,
-				2988883E242D29A300D11427 /* Data.xcdatamodeld in Sources */,
-				29933D86241438ED0013EB94 /* Drill.swift in Sources */,
+				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
+				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
 				29933D88241439150013EB94 /* DrillsViewController.swift in Sources */,
 				298888852430DAB300D11427 /* RoutineViewController.swift in Sources */,
 				29888883242FF18700D11427 /* RoutinesViewController.swift in Sources */,
+				298888D52438CD7B00D11427 /* PoolDrills.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,13 +632,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2988883C242D29A300D11427 /* Data.xcdatamodeld */ = {
+		298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2988883D242D29A300D11427 /* Data.xcdatamodel */,
+				298888D42438CD7B00D11427 /* PoolDrills.xcdatamodel */,
 			);
-			currentVersion = 2988883D242D29A300D11427 /* Data.xcdatamodel */;
-			path = Data.xcdatamodeld;
+			currentVersion = 298888D42438CD7B00D11427 /* PoolDrills.xcdatamodel */;
+			path = PoolDrills.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
