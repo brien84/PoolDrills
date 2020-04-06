@@ -11,18 +11,24 @@ import Foundation
 
 class CoreDataStack {
 
-    private let modelName = "PoolDrills"
+    private let storeContainer: NSPersistentContainer
 
     lazy var managedContext: NSManagedObjectContext = {
         return storeContainer.viewContext
     }()
 
-//    init(modelName: String) {
-//        self.modelName = modelName
-//    }
+    init(persistentStoreType: String = NSSQLiteStoreType) {
+        let persistentStoreDescription = NSPersistentStoreDescription()
 
-    private lazy var storeContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: modelName)
+        if persistentStoreType == NSSQLiteStoreType {
+            let url = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("PoolDrills.sqlite")
+            persistentStoreDescription.url = url
+        }
+
+        persistentStoreDescription.type = persistentStoreType
+
+        let container = NSPersistentContainer(name: "PoolDrills")
+        container.persistentStoreDescriptions = [persistentStoreDescription]
 
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
@@ -30,8 +36,8 @@ class CoreDataStack {
             }
         }
 
-        return container
-    }()
+        self.storeContainer = container
+    }
 
     func saveContext () {
         guard managedContext.hasChanges else { return }
