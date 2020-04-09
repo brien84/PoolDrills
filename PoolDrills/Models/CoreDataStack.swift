@@ -11,6 +11,15 @@ import Foundation
 
 class CoreDataStack {
 
+    private static let modelName = "PoolDrills"
+
+    private static let model: NSManagedObjectModel = {
+        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else { fatalError() }
+        guard let model = NSManagedObjectModel(contentsOf: modelURL) else { fatalError() }
+
+        return model
+    }()
+
     private let storeContainer: NSPersistentContainer
 
     lazy var managedContext: NSManagedObjectContext = {
@@ -21,13 +30,13 @@ class CoreDataStack {
         let persistentStoreDescription = NSPersistentStoreDescription()
 
         if persistentStoreType == NSSQLiteStoreType {
-            let url = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("PoolDrills.sqlite")
+            let url = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("\(CoreDataStack.modelName).sqlite")
             persistentStoreDescription.url = url
         }
 
         persistentStoreDescription.type = persistentStoreType
 
-        let container = NSPersistentContainer(name: "PoolDrills")
+        let container = NSPersistentContainer(name: CoreDataStack.modelName, managedObjectModel: CoreDataStack.model)
         container.persistentStoreDescriptions = [persistentStoreDescription]
 
         container.loadPersistentStores { storeDescription, error in
@@ -35,7 +44,7 @@ class CoreDataStack {
                 print("Unresolved error \(error), \(error.userInfo)")
             }
         }
-
+   
         self.storeContainer = container
     }
 
