@@ -30,7 +30,6 @@ final class DrillsViewController: UITableViewController {
         return controller
     }()
 
-
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
 
@@ -46,6 +45,9 @@ final class DrillsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -69,6 +71,19 @@ final class DrillsViewController: UITableViewController {
         cell.textLabel?.text = drill.title
 
         return cell
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DrillViewController" {
+
+            guard let vc = segue.destination as? DrillViewController else { return }
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+            vc.drill = fetchedResultsController.object(at: indexPath)
+        }
     }
 }
 
