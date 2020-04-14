@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Drill" representedClassName=".Drill" syncable="YES" codeGenerationType="class">
-        <attribute name="title" attributeType="String" minValueString="1" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <relationship name="routines" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" inverseName="drills" inverseEntity="Routine"/>
     </entity>
     <entity name="Routine" representedClassName=".Routine" syncable="YES" codeGenerationType="class">
-        <attribute name="title" attributeType="String" minValueString="1" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <relationship name="drills" toMany="YES" deletionRule="Nullify" destinationEntity="Drill" inverseName="routines" inverseEntity="Drill"/>
     </entity>
     <elements>
-        <element name="Drill" positionX="-45" positionY="0" width="128" height="58"/>
-        <element name="Routine" positionX="-18" positionY="27" width="128" height="58"/>
+        <element name="Drill" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="Routine" positionX="137.01171875" positionY="0.07421875" width="128" height="73"/>
     </elements>
 </model>
