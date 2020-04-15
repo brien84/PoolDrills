@@ -8,8 +8,31 @@
 
 import UIKit
 
-class DrillViewController: UIViewController {
+final class DrillViewController: UITableViewController {
 
+    lazy var drill: Drill = {
+        return Drill(context: coredata.managedContext)
+    }()
 
+    private let coredata = CoreDataStack()
 
+    @IBOutlet private weak var titleField: UITextField!
+
+    @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
+
+        navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func saveButtonTapped(_ sender: UIBarButtonItem) {
+        drill.title = titleField.text
+        coredata.saveContext()
+
+        navigationController?.popViewController(animated: true)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        titleField.text = drill.title
+    }
 }
