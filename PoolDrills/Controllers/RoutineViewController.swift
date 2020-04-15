@@ -44,4 +44,14 @@ final class RoutineViewController: UITableViewController {
         guard let drills = routine.drills else { return }
         selectedDrillsCount.text = String(drills.count)
     }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DrillsSelection" {
+
+            guard let vc = segue.destination as? DrillsSelectionViewController else { return }
+            vc.routine = routine
+        }
+    }
 }

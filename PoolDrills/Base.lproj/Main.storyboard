@@ -219,6 +219,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oGg-NX-SC6" kind="show" identifier="DrillsSelection" id="5hI-Da-tij"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -272,10 +275,11 @@
                             <outlet property="delegate" destination="oGg-NX-SC6" id="DHv-AH-Bfa"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="iYd-Cu-B8x"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNL-NB-tNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5855" y="171"/>
+            <point key="canvasLocation" x="5857" y="173"/>
         </scene>
         <!--Item-->
         <scene sceneID="SXD-TK-Xc2">
