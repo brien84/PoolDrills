@@ -64,6 +64,20 @@ final class RoutinesViewController: UITableViewController {
             coreDataStack.saveContext()
         }
     }
+
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoutineViewController" {
+    
+            guard let vc = segue.destination as? RoutineViewController else { return }
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            vc.routine = fetchedResultsController.object(at: indexPath)
+    
+            vc.hidesBottomBarWhenPushed = true
+        }
+    }
 }
 
 extension RoutinesViewController: NSFetchedResultsControllerDelegate {

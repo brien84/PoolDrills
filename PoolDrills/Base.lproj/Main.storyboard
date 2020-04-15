@@ -137,6 +137,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rxp-qN-yog" kind="show" identifier="RoutineViewController" id="B1S-jC-JOL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -146,12 +149,45 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="oW5-sA-C9H">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YwE-yK-oc3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YwE-yK-oc3">
+                            <connections>
+                                <segue destination="Rxp-qN-yog" kind="show" identifier="RoutineViewController" id="5ig-Fr-J46"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvz-gc-hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4175.36231884058" y="172.76785714285714"/>
+        </scene>
+        <!--Routine View Controller-->
+        <scene sceneID="DEf-zg-AN5">
+            <objects>
+                <tableViewController id="Rxp-qN-yog" customClass="RoutineViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Saa-Ve-nLE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YEk-cV-B7a">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YEk-cV-B7a" id="4ga-K8-m3v">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rxp-qN-yog" id="ztk-GD-CLD"/>
+                            <outlet property="delegate" destination="Rxp-qN-yog" id="P0S-dO-eC2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="INk-TD-iub"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slc-qp-pbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5014" y="171"/>
         </scene>
         <!--Item-->
         <scene sceneID="SXD-TK-Xc2">
@@ -211,6 +247,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="B1S-jC-JOL"/>
         <segue reference="C8I-PK-Hzc"/>
     </inferredMetricsTieBreakers>
 </document>
