@@ -21,6 +21,7 @@
 		29933D6B241438430013EB94 /* PoolDrillsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D6A241438430013EB94 /* PoolDrillsTests.swift */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
 		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
+		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D87241439150013EB94 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
+		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		298888D9243A540B00D11427 /* ControllersTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControllersTests;
+			sourceTree = "<group>";
+		};
 		29933D47241438400013EB94 = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +120,10 @@
 		29933D52241438400013EB94 /* PoolDrills */ = {
 			isa = PBXGroup;
 			children = (
-				29933D84241438DB0013EB94 /* Controllers */,
-				29933D83241438D40013EB94 /* Models */,
 				29933D53241438400013EB94 /* AppDelegate.swift */,
 				29933D55241438400013EB94 /* SceneDelegate.swift */,
+				29933D84241438DB0013EB94 /* Controllers */,
+				29933D83241438D40013EB94 /* Models */,
 				29933D59241438400013EB94 /* Main.storyboard */,
 				29933D5C241438420013EB94 /* Assets.xcassets */,
 				29933D5E241438420013EB94 /* LaunchScreen.storyboard */,
@@ -126,6 +135,7 @@
 		29933D69241438430013EB94 /* PoolDrillsTests */ = {
 			isa = PBXGroup;
 			children = (
+				298888D9243A540B00D11427 /* ControllersTests */,
 				29933D6A241438430013EB94 /* PoolDrillsTests.swift */,
 				29933D6C241438430013EB94 /* Info.plist */,
 			);
@@ -153,11 +163,12 @@
 		29933D84241438DB0013EB94 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
 				29933D87241439150013EB94 /* DrillsViewController.swift */,
 				29888880242E9A8A00D11427 /* DrillViewController.swift */,
 				29888882242FF18700D11427 /* RoutinesViewController.swift */,
 				298888842430DAB300D11427 /* RoutineViewController.swift */,
-				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
+				29D660C42447861C00339A03 /* RunnerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
+				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
 				29933D88241439150013EB94 /* DrillsViewController.swift in Sources */,
 				298888852430DAB300D11427 /* RoutineViewController.swift in Sources */,
