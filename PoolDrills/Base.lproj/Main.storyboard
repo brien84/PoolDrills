@@ -138,7 +138,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rxp-qN-yog" kind="show" identifier="RoutineViewController" id="B1S-jC-JOL"/>
+                                    <segue destination="t6m-P0-p3g" kind="show" identifier="RoutineViewController" id="fS0-RY-Y93"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,7 +151,7 @@
                     <navigationItem key="navigationItem" id="oW5-sA-C9H">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YwE-yK-oc3">
                             <connections>
-                                <segue destination="Rxp-qN-yog" kind="show" identifier="RoutineViewController" id="5ig-Fr-J46"/>
+                                <segue destination="t6m-P0-p3g" kind="show" identifier="RoutineViewController" id="cmE-ff-j3w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -161,33 +161,93 @@
             <point key="canvasLocation" x="4175.36231884058" y="172.76785714285714"/>
         </scene>
         <!--Routine View Controller-->
-        <scene sceneID="DEf-zg-AN5">
+        <scene sceneID="WWW-OO-fog">
             <objects>
-                <tableViewController id="Rxp-qN-yog" customClass="RoutineViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Saa-Ve-nLE">
+                <tableViewController id="t6m-P0-p3g" customClass="RoutineViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="p1V-fa-2Fy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YEk-cV-B7a">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YEk-cV-B7a" id="4ga-K8-m3v">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="aoL-AT-hFe">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IFG-sm-jXg">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFG-sm-jXg" id="9Jc-lo-J7L">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niP-he-ieW">
+                                                    <rect key="frame" x="8" y="4" width="398" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="niP-he-ieW" secondAttribute="bottom" constant="4" id="Vnm-uw-uHS"/>
+                                                <constraint firstItem="niP-he-ieW" firstAttribute="top" secondItem="9Jc-lo-J7L" secondAttribute="top" constant="4" id="dMu-O2-YPu"/>
+                                                <constraint firstAttribute="trailing" secondItem="niP-he-ieW" secondAttribute="trailing" constant="8" id="vEi-ct-uSy"/>
+                                                <constraint firstItem="niP-he-ieW" firstAttribute="leading" secondItem="9Jc-lo-J7L" secondAttribute="leading" constant="8" id="zhs-FN-pGf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Q6G-tJ-iXk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6ef-ex-BNI" detailTextLabel="zcz-h1-Gte" style="IBUITableViewCellStyleValue1" id="bXD-cW-8hA">
+                                        <rect key="frame" x="0.0" y="127.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bXD-cW-8hA" id="hzn-uh-oYs">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Drills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ef-ex-BNI">
+                                                    <rect key="frame" x="20" y="12" width="38.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zcz-h1-Gte">
+                                                    <rect key="frame" x="331" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
-                            <outlet property="dataSource" destination="Rxp-qN-yog" id="ztk-GD-CLD"/>
-                            <outlet property="delegate" destination="Rxp-qN-yog" id="P0S-dO-eC2"/>
+                            <outlet property="dataSource" destination="t6m-P0-p3g" id="pHE-iR-zhP"/>
+                            <outlet property="delegate" destination="t6m-P0-p3g" id="fjw-tv-vRb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="INk-TD-iub"/>
+                    <navigationItem key="navigationItem" id="FCD-iB-Qoz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sAZ-TK-W34">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="t6m-P0-p3g" id="Bvl-Wz-Bn7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xXN-Xk-PHw">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="t6m-P0-p3g" id="JGg-aO-Kdl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="selectedDrillsCount" destination="zcz-h1-Gte" id="n4D-or-O79"/>
+                        <outlet property="titleField" destination="niP-he-ieW" id="SUg-Dg-U5M"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Slc-qp-pbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3do-9V-SzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5014" y="171"/>
+            <point key="canvasLocation" x="5022" y="173"/>
         </scene>
         <!--Item-->
         <scene sceneID="SXD-TK-Xc2">
@@ -247,7 +307,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B1S-jC-JOL"/>
+        <segue reference="cmE-ff-j3w"/>
         <segue reference="C8I-PK-Hzc"/>
     </inferredMetricsTieBreakers>
 </document>

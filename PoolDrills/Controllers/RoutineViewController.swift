@@ -8,23 +8,40 @@
 
 import UIKit
 
-class RoutineViewController: UIViewController {
+final class RoutineViewController: UITableViewController {
+
+    lazy var routine: Routine = {
+        return Routine(context: coredata.managedContext)
+    }()
+
+    private let coredata = CoreDataStack()
+
+    @IBOutlet private weak var titleField: UITextField!
+    @IBOutlet private weak var selectedDrillsCount: UILabel!
+
+    @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        coredata.managedContext.rollback()
+        
+        navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func saveButtonTapped(_ sender: UIBarButtonItem) {
+        routine.title = titleField.text
+        coredata.saveContext()
+
+        navigationController?.popViewController(animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleField.text = routine.title
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let drills = routine.drills else { return }
+        selectedDrillsCount.text = String(drills.count)
     }
-    */
-
 }
