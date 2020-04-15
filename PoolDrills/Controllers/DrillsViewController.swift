@@ -11,7 +11,7 @@ import UIKit
 
 final class DrillsViewController: UITableViewController {
 
-    private var coreDataStack: CoreDataStack
+    private let coreDataStack = CoreDataStack()
 
     private lazy var fetchedResultsController: NSFetchedResultsController<Drill> = {
         let fetchRequest: NSFetchRequest<Drill> = Drill.fetchRequest()
@@ -30,24 +30,9 @@ final class DrillsViewController: UITableViewController {
         return controller
     }()
 
-    init(coreDataStack: CoreDataStack) {
-        self.coreDataStack = coreDataStack
-
-        super.init(style: .plain)
-    }
-
-    required init?(coder: NSCoder) {
-        self.coreDataStack = CoreDataStack()
-
-        super.init(coder: coder)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -67,10 +52,17 @@ final class DrillsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrillsCell", for: indexPath)
 
         let drill = fetchedResultsController.object(at: indexPath)
-
         cell.textLabel?.text = drill.title
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let drill = fetchedResultsController.object(at: indexPath)
+            coreDataStack.managedContext.delete(drill)
+            coreDataStack.saveContext()
+        }
     }
 
     // MARK: - Navigation
@@ -81,14 +73,35 @@ final class DrillsViewController: UITableViewController {
             guard let vc = segue.destination as? DrillViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
-
             vc.drill = fetchedResultsController.object(at: indexPath)
+
+            vc.hidesBottomBarWhenPushed = true
         }
     }
 }
 
 extension DrillsViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .fade)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        default:
+            return
+        }
+    }
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.reloadData()
+        tableView.endUpdates()
     }
 }
