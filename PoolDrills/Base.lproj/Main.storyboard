@@ -83,6 +83,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ih4-hq-PpC" id="tH2-ko-MtV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="WKF-d4-hSa">
+                                                    <rect key="frame" x="6" y="8" width="402" height="29"/>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WKF-d4-hSa" firstAttribute="top" secondItem="tH2-ko-MtV" secondAttribute="top" constant="8" id="7ST-7A-LWK"/>
+                                                <constraint firstAttribute="trailing" secondItem="WKF-d4-hSa" secondAttribute="trailing" constant="8" id="VAs-lD-yUD"/>
+                                                <constraint firstAttribute="bottom" secondItem="WKF-d4-hSa" secondAttribute="bottom" constant="8" id="kWb-Af-CaF"/>
+                                                <constraint firstItem="WKF-d4-hSa" firstAttribute="leading" secondItem="tH2-ko-MtV" secondAttribute="leading" constant="8" id="tyD-3e-s97"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zr3-7V-UMZ">
@@ -91,6 +102,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zr3-7V-UMZ" id="Rd2-uj-O5F">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="WA1-pu-jLv">
+                                                    <rect key="frame" x="6" y="8" width="402" height="29"/>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="WA1-pu-jLv" secondAttribute="bottom" constant="8" id="52h-Ww-JCq"/>
+                                                <constraint firstAttribute="trailing" secondItem="WA1-pu-jLv" secondAttribute="trailing" constant="8" id="J5I-K9-miT"/>
+                                                <constraint firstItem="WA1-pu-jLv" firstAttribute="top" secondItem="Rd2-uj-O5F" secondAttribute="top" constant="8" id="JZn-by-eLw"/>
+                                                <constraint firstItem="WA1-pu-jLv" firstAttribute="leading" secondItem="Rd2-uj-O5F" secondAttribute="leading" constant="8" id="SKb-ba-lMC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -114,6 +136,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="attemptsSlider" destination="WKF-d4-hSa" id="xeh-xB-eXD"/>
+                        <outlet property="durationSlider" destination="WA1-pu-jLv" id="2uK-Jq-BFb"/>
                         <outlet property="titleField" destination="wpp-x2-nmO" id="tsH-EP-KbE"/>
                     </connections>
                 </tableViewController>

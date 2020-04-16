@@ -17,6 +17,8 @@ final class DrillViewController: UITableViewController {
     private let coredata = CoreDataStack()
 
     @IBOutlet private weak var titleField: UITextField!
+    @IBOutlet private weak var attemptsSlider: UISlider!
+    @IBOutlet private weak var durationSlider: UISlider!
 
     @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
 
@@ -25,6 +27,9 @@ final class DrillViewController: UITableViewController {
 
     @IBAction private func saveButtonTapped(_ sender: UIBarButtonItem) {
         drill.title = titleField.text
+        drill.attempts = Int32(attemptsSlider.value)
+        drill.duration = Int32(durationSlider.value)
+
         coredata.saveContext()
 
         navigationController?.popViewController(animated: true)
@@ -34,5 +39,7 @@ final class DrillViewController: UITableViewController {
         super.viewDidLoad()
 
         titleField.text = drill.title
+        attemptsSlider.value = Float(drill.attempts)
+        durationSlider.value = Float(drill.duration)
     }
 }
