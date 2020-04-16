@@ -154,12 +154,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineCell" id="GN1-PU-BU4">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineCell" id="GN1-PU-BU4" customClass="RoutinesViewCell" customModule="PoolDrills" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="46.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GN1-PU-BU4" id="QkL-ML-Ke9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-T4-LYW">
+                                            <rect key="frame" x="376" y="8" width="30" height="30.5"/>
+                                            <state key="normal" title="Run"/>
+                                            <connections>
+                                                <action selector="runButtonTapped:" destination="GN1-PU-BU4" eventType="touchUpInside" id="mEu-ts-f7N"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="top" secondItem="QkL-ML-Ke9" secondAttribute="top" constant="8" id="Da8-CP-8BM"/>
+                                        <constraint firstAttribute="bottom" secondItem="bU3-T4-LYW" secondAttribute="bottom" constant="8" id="HGY-RU-azc"/>
+                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QkL-ML-Ke9" secondAttribute="leading" constant="8" id="ecO-YG-YqB"/>
+                                        <constraint firstAttribute="trailing" secondItem="bU3-T4-LYW" secondAttribute="trailing" constant="8" id="owt-8M-vuw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="t6m-P0-p3g" kind="show" identifier="RoutineViewController" id="fS0-RY-Y93"/>
