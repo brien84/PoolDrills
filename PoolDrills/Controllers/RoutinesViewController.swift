@@ -49,7 +49,8 @@ final class RoutinesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath) as! RoutinesViewCell
+        cell.delegate = self
 
         let routine = fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = routine.title
@@ -108,5 +109,11 @@ extension RoutinesViewController: NSFetchedResultsControllerDelegate {
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+}
+
+extension RoutinesViewController: RoutineRunButtonDelegate {
+    func routineRunButtonDidTap(inside cell: UITableViewCell) {
+        
     }
 }
