@@ -70,12 +70,20 @@ final class RoutinesViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RoutineViewController" {
-    
             guard let vc = segue.destination as? RoutineViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
     
+            vc.hidesBottomBarWhenPushed = true
+        }
+
+        if segue.identifier == "RunnerViewController" {
+            guard let vc = segue.destination as? RunnerViewController else { return }
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            vc.routine = fetchedResultsController.object(at: indexPath)
+
             vc.hidesBottomBarWhenPushed = true
         }
     }
@@ -114,6 +122,6 @@ extension RoutinesViewController: NSFetchedResultsControllerDelegate {
 
 extension RoutinesViewController: RoutineRunButtonDelegate {
     func routineRunButtonDidTap(inside cell: UITableViewCell) {
-        
+        performSegue(withIdentifier: "RunnerViewController", sender: cell)
     }
 }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -194,10 +195,29 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="23f-Mw-JpI" kind="show" identifier="RunnerViewController" id="RYZ-a7-3C1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvz-gc-hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4175.36231884058" y="172.76785714285714"/>
+        </scene>
+        <!--Runner View Controller-->
+        <scene sceneID="ZKU-uC-CrE">
+            <objects>
+                <viewController id="23f-Mw-JpI" customClass="RunnerViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpm-zU-mOU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r1q-jG-nBd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="daV-9B-7uo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVZ-Dm-8lK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5022" y="-510"/>
         </scene>
         <!--Routine View Controller-->
         <scene sceneID="WWW-OO-fog">
