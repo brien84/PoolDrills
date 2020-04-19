@@ -229,29 +229,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCk-7f-qC7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="060-br-vVo">
+                                <rect key="frame" x="30" y="380" width="30" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="missButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="RpK-RF-oi6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCk-7f-qC7">
                                 <rect key="frame" x="333" y="380" width="31" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.026915667809999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="hitButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="7XW-OC-xyT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-Kh-zEW">
                                 <rect key="frame" x="10" y="258" width="394" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="run"/>
+                                <connections>
+                                    <action selector="actionButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="8be-sa-s4c"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="060-br-vVo">
-                                <rect key="frame" x="30" y="380" width="30" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" red="0.026915667809999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6/250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFV-UX-zs3">
+                                <rect key="frame" x="20" y="548.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11G-WV-3eg">
+                                <rect key="frame" x="20" y="472" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mvp-lr-nCr" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="20" id="06d-0K-aWF"/>
+                            <constraint firstItem="r1q-jG-nBd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rFV-UX-zs3" secondAttribute="bottom" constant="20" id="3nZ-or-BJ9"/>
                             <constraint firstItem="xtV-Kh-zEW" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="10" id="4Rf-ZP-CV1"/>
                             <constraint firstItem="zaR-nr-6cQ" firstAttribute="top" secondItem="r1q-jG-nBd" secondAttribute="top" constant="20" id="51D-cV-7Xc"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="xtV-Kh-zEW" secondAttribute="trailing" constant="10" id="8IM-kd-mXi"/>
@@ -260,22 +278,28 @@
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="mvp-lr-nCr" secondAttribute="trailing" constant="20" id="NV4-Mn-XeZ"/>
                             <constraint firstItem="060-br-vVo" firstAttribute="top" secondItem="xtV-Kh-zEW" secondAttribute="bottom" constant="50" id="NV9-uy-NKQ"/>
                             <constraint firstItem="zaR-nr-6cQ" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="20" id="RCO-D9-o5L"/>
-                            <constraint firstItem="r1q-jG-nBd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="060-br-vVo" secondAttribute="bottom" constant="50" id="RNX-qQ-MpA"/>
                             <constraint firstItem="FCk-7f-qC7" firstAttribute="top" secondItem="xtV-Kh-zEW" secondAttribute="bottom" constant="50" id="TXO-oe-c7d"/>
+                            <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="11G-WV-3eg" secondAttribute="trailing" constant="20" id="XtL-2b-GxK"/>
+                            <constraint firstItem="11G-WV-3eg" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="20" id="Xvx-kR-va5"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="FCk-7f-qC7" secondAttribute="trailing" constant="50" id="Z4X-um-rTx"/>
                             <constraint firstItem="mvp-lr-nCr" firstAttribute="top" secondItem="zaR-nr-6cQ" secondAttribute="bottom" constant="20" id="drL-4F-dfI"/>
-                            <constraint firstItem="r1q-jG-nBd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FCk-7f-qC7" secondAttribute="bottom" constant="50" id="pys-d5-awr"/>
+                            <constraint firstItem="11G-WV-3eg" firstAttribute="top" secondItem="060-br-vVo" secondAttribute="bottom" constant="20" id="l4T-CI-drh"/>
+                            <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="rFV-UX-zs3" secondAttribute="trailing" constant="20" id="lau-kF-Mug"/>
                             <constraint firstItem="060-br-vVo" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="30" id="rfn-Rq-4fz"/>
+                            <constraint firstItem="rFV-UX-zs3" firstAttribute="top" secondItem="11G-WV-3eg" secondAttribute="bottom" constant="50" id="uSj-nG-5kP"/>
+                            <constraint firstItem="rFV-UX-zs3" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="20" id="z2d-EZ-GOQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r1q-jG-nBd"/>
                     </view>
                     <navigationItem key="navigationItem" id="daV-9B-7uo"/>
                     <connections>
-                        <outlet property="activityButton" destination="xtV-Kh-zEW" id="mSm-0d-ua7"/>
-                        <outlet property="missButton" destination="060-br-vVo" id="YGz-Zn-wC2"/>
-                        <outlet property="potButton" destination="FCk-7f-qC7" id="4RH-CR-5iX"/>
-                        <outlet property="routineTitle" destination="zaR-nr-6cQ" id="CbN-Ui-9Hz"/>
-                        <outlet property="time" destination="mvp-lr-nCr" id="b0y-86-Fev"/>
+                        <outlet property="actionButton" destination="xtV-Kh-zEW" id="PD5-DN-Xva"/>
+                        <outlet property="attemptsCount" destination="rFV-UX-zs3" id="oSt-IH-gM6"/>
+                        <outlet property="drillTime" destination="11G-WV-3eg" id="yGT-0Z-7Eo"/>
+                        <outlet property="drillTitle" destination="zaR-nr-6cQ" id="6Vs-0G-Y6d"/>
+                        <outlet property="hitButton" destination="FCk-7f-qC7" id="o3G-47-LxI"/>
+                        <outlet property="missButton" destination="060-br-vVo" id="pYv-q0-v1w"/>
+                        <outlet property="totalTime" destination="mvp-lr-nCr" id="SpF-7v-4es"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVZ-Dm-8lK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
