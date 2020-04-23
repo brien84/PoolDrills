@@ -12,6 +12,8 @@ final class RunnerViewController: UIViewController {
 
     var routine: Routine?
 
+    private var runner: DrillRunnable = DrillRunner()
+
     @IBOutlet private weak var drillTitle: UILabel!
     @IBOutlet private weak var totalTime: UILabel!
     @IBOutlet private weak var drillTime: UILabel!
@@ -19,6 +21,13 @@ final class RunnerViewController: UIViewController {
     @IBOutlet private weak var missButton: UIButton!
     @IBOutlet private weak var hitButton: UIButton!
     @IBOutlet private weak var attemptsCount: UILabel!
+
+    convenience init(routine: Routine, runner: DrillRunnable) {
+        self.init()
+
+        self.routine = routine
+        self.runner = runner
+    }
 
     @IBAction private func actionButtonDidTap(_ sender: UIButton) {
 
@@ -34,11 +43,13 @@ final class RunnerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = routine?.title
 
-
-
-
+        if let drills = routine?.drills?.allObjects as? [Drill] {
+            runner.add(drills)
+        } else {
+            // TODO: Display Error
+        }
     }
-
-
 }
