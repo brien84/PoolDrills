@@ -22,6 +22,11 @@
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
 		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
 		29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */; };
+		29B38E43244B83AF005EEB1B /* DrillRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillRunner.swift */; };
+		29B38E45244B8509005EEB1B /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E44244B8509005EEB1B /* TimeTracker.swift */; };
+		29B38E4F244F05FD005EEB1B /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E4E244F05FD005EEB1B /* TimeTrackerTests.swift */; };
+		29B38E512450D6D5005EEB1B /* DrillRunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */; };
+		29B38E5324518895005EEB1B /* RunnerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */; };
 		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +69,11 @@
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D87241439150013EB94 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
 		29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewCell.swift; sourceTree = "<group>"; };
+		29B38E42244B83AF005EEB1B /* DrillRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRunner.swift; sourceTree = "<group>"; };
+		29B38E44244B8509005EEB1B /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
+		29B38E4E244F05FD005EEB1B /* TimeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerTests.swift; sourceTree = "<group>"; };
+		29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRunnerTests.swift; sourceTree = "<group>"; };
+		29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewControllerTests.swift; sourceTree = "<group>"; };
 		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,13 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		298888D9243A540B00D11427 /* ControllersTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ControllersTests;
-			sourceTree = "<group>";
-		};
 		29933D47241438400013EB94 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +141,8 @@
 		29933D69241438430013EB94 /* PoolDrillsTests */ = {
 			isa = PBXGroup;
 			children = (
-				298888D9243A540B00D11427 /* ControllersTests */,
+				29B38E49244E3106005EEB1B /* ControllerTests */,
+				29B38E48244E30F4005EEB1B /* ModelTests */,
 				29933D6A241438430013EB94 /* PoolDrillsTests.swift */,
 				29933D6C241438430013EB94 /* Info.plist */,
 			);
@@ -159,6 +163,8 @@
 			children = (
 				298888D12437D4A100D11427 /* CoreDataStack.swift */,
 				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
+				29B38E42244B83AF005EEB1B /* DrillRunner.swift */,
+				29B38E44244B8509005EEB1B /* TimeTracker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +188,23 @@
 				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		29B38E48244E30F4005EEB1B /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */,
+				29B38E4E244F05FD005EEB1B /* TimeTrackerTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		29B38E49244E3106005EEB1B /* ControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */,
+			);
+			path = ControllerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,11 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */,
+				29B38E45244B8509005EEB1B /* TimeTracker.swift in Sources */,
 				29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
 				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
+				29B38E43244B83AF005EEB1B /* DrillRunner.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
 				29933D88241439150013EB94 /* DrillsViewController.swift in Sources */,
 				298888852430DAB300D11427 /* RoutineViewController.swift in Sources */,
@@ -334,6 +359,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				29933D6B241438430013EB94 /* PoolDrillsTests.swift in Sources */,
+				29B38E512450D6D5005EEB1B /* DrillRunnerTests.swift in Sources */,
+				29B38E5324518895005EEB1B /* RunnerViewControllerTests.swift in Sources */,
+				29B38E4F244F05FD005EEB1B /* TimeTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
