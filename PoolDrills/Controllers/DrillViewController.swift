@@ -28,7 +28,7 @@ final class DrillViewController: UITableViewController {
     @IBAction private func saveButtonTapped(_ sender: UIBarButtonItem) {
         drill.title = titleField.text
         drill.attempts = Int32(attemptsSlider.value)
-        drill.duration = Int32(durationSlider.value)
+        drill.duration = Double(durationSlider.value)
 
         coredata.saveContext()
 
