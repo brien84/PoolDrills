@@ -23,8 +23,11 @@ final class RunnerViewController: UIViewController {
     @IBOutlet private weak var drillTime: UILabel!
     @IBOutlet private weak var actionButton: UIButton!
     @IBOutlet private weak var missButton: UIButton!
+    @IBOutlet private weak var missCount: UILabel!
     @IBOutlet private weak var hitButton: UIButton!
+    @IBOutlet private weak var hitCount: UILabel!
     @IBOutlet private weak var attemptsCount: UILabel!
+    @IBOutlet private weak var completionButton: UIButton!
 
     convenience init(routine: Routine, runner: DrillRunnable) {
         self.init()
@@ -42,6 +45,10 @@ final class RunnerViewController: UIViewController {
     }
 
     @IBAction private func hitButtonDidTap(_ sender: UIButton) {
+
+    }
+
+    @IBAction private func completionButtonDidTap(_ sender: UIButton) {
 
     }
 
