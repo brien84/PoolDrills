@@ -18,7 +18,6 @@
 		29933D5B241438400013EB94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D59241438400013EB94 /* Main.storyboard */; };
 		29933D5D241438420013EB94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5C241438420013EB94 /* Assets.xcassets */; };
 		29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5E241438420013EB94 /* LaunchScreen.storyboard */; };
-		29933D6B241438430013EB94 /* PoolDrillsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D6A241438430013EB94 /* PoolDrillsTests.swift */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
 		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
 		29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */; };
@@ -62,7 +61,6 @@
 		29933D5F241438420013EB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29933D61241438420013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D66241438420013EB94 /* PoolDrillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDrillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29933D6A241438430013EB94 /* PoolDrillsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsTests.swift; sourceTree = "<group>"; };
 		29933D6C241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D71241438430013EB94 /* PoolDrillsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDrillsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			children = (
 				29B38E49244E3106005EEB1B /* ControllerTests */,
 				29B38E48244E30F4005EEB1B /* ModelTests */,
-				29933D6A241438430013EB94 /* PoolDrillsTests.swift */,
 				29933D6C241438430013EB94 /* Info.plist */,
 			);
 			path = PoolDrillsTests;
@@ -162,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				298888D12437D4A100D11427 /* CoreDataStack.swift */,
-				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
 				29B38E42244B83AF005EEB1B /* DrillRunner.swift */,
+				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
 				29B38E44244B8509005EEB1B /* TimeTracker.swift */,
 			);
 			path = Models;
@@ -358,7 +355,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29933D6B241438430013EB94 /* PoolDrillsTests.swift in Sources */,
 				29B38E512450D6D5005EEB1B /* DrillRunnerTests.swift in Sources */,
 				29B38E5324518895005EEB1B /* RunnerViewControllerTests.swift in Sources */,
 				29B38E4F244F05FD005EEB1B /* TimeTrackerTests.swift in Sources */,
