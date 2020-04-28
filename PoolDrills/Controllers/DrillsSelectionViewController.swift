@@ -13,64 +13,86 @@ final class DrillsSelectionViewController: UITableViewController {
 
     var routine: Routine?
 
-    private var coreDataStack = CoreDataStack()
-
-    private lazy var fetchedResultsController: NSFetchedResultsController<Drill> = {
-        let fetchRequest: NSFetchRequest<Drill> = Drill.fetchRequest()
-
-        let titleSort = NSSortDescriptor(key: #keyPath(Drill.title), ascending: true)
-        fetchRequest.sortDescriptors = [titleSort]
-
-        let controller = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: coreDataStack.managedContext,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-
-        return controller
-    }()
+    private var datasource = [Drill]()
+    private var selectedDrills = [Drill]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            print(error)
+        tableView.allowsMultipleSelectionDuringEditing = true
+        isEditing = true
+
+        setupDatasource()
+
+        if datasource.count < 0 {
+            // TODO: Display Error
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        let drills = datasource.filter { selectedDrills.contains($0) }
+        routine?.drills = NSOrderedSet(array: drills)
+    }
+
+    private func setupDatasource() {
+        if let routineDrills = routine?.drills?.array as? [Drill] {
+            datasource.append(contentsOf: routineDrills)
+            selectedDrills.append(contentsOf: routineDrills)
+        }
+
+        let coreDataStack = CoreDataStack()
+        let fetchRequest: NSFetchRequest<Drill> = Drill.fetchRequest()
+
+        if let drills = try? coreDataStack.managedContext.fetch(fetchRequest) {
+            let filteredDrills = drills.filter { !datasource.contains($0) }
+            datasource.append(contentsOf: filteredDrills)
         }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = fetchedResultsController.sections?[section] else { return 0 }
-
-        return section.numberOfObjects
+        datasource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrillsSelectionCell", for: indexPath)
 
-        let drill = fetchedResultsController.object(at: indexPath)
-
+        let drill = datasource[indexPath.row]
         cell.textLabel?.text = drill.title
-
-        guard let drills = routine?.drills else { return cell }
-        cell.accessoryType = drills.contains(drill) ? .checkmark : .none
 
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let drill = fetchedResultsController.object(at: indexPath)
-        guard let drills = routine?.drills else { return }
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
-        if drills.contains(drill) {
-            routine?.removeFromDrills(drill)
-        } else {
-            routine?.addToDrills(drill)
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let drill = datasource[sourceIndexPath.row]
+        datasource.remove(at: sourceIndexPath.row)
+        datasource.insert(drill, at: destinationIndexPath.row)
+    }
+
+    // MARK: - Table view delegate
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let drill = datasource[indexPath.row]
+
+        if selectedDrills.contains(drill) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
+    }
 
-        tableView.reloadData()
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let drill = datasource[indexPath.row]
+        selectedDrills.append(drill)
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let drill = datasource[indexPath.row]
+        selectedDrills.removeAll { $0 == drill }
     }
 }
