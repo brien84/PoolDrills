@@ -57,7 +57,7 @@ final class RunnerViewController: UIViewController {
 
         navigationItem.title = routine?.title
 
-        if let drills = routine?.drills?.allObjects as? [Drill] {
+        if let drills = routine?.drills?.array as? [Drill]  {
             runner.add(drills)
 
             totalTime.text = "00:00"

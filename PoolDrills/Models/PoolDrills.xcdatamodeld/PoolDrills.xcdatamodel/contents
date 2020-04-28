@@ -8,7 +8,7 @@
     </entity>
     <entity name="Routine" representedClassName=".Routine" syncable="YES" codeGenerationType="class">
         <attribute name="title" attributeType="String" defaultValueString=""/>
-        <relationship name="drills" toMany="YES" deletionRule="Nullify" destinationEntity="Drill" inverseName="routines" inverseEntity="Drill"/>
+        <relationship name="drills" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Drill" inverseName="routines" inverseEntity="Drill"/>
     </entity>
     <elements>
         <element name="Drill" positionX="-45" positionY="0" width="128" height="103"/>
