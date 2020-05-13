@@ -111,12 +111,12 @@ class DurationTrackerTests: XCTestCase {
 
     func testDrillDurationIsCountedUpwardsWhenEqualsToZero() {
         // given
-        let duration = 0
+        let duration = 0.0
         let drill = createDrill(duration)
         sut?.load(drill)
 
         expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
-            return self.getDrillDuration(from: notification.userInfo) > 0
+            return self.getDrillDuration(from: notification.userInfo) > duration
         }
 
         // when
@@ -128,12 +128,12 @@ class DurationTrackerTests: XCTestCase {
 
     func testDrillDurationIsCountedDownWhenIsGreaterThanZero() {
         // given
-        let duration = 10
+        let duration = 1.0
         let drill = createDrill(duration)
         sut?.load(drill)
 
         expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
-            return self.getDrillDuration(from: notification.userInfo) < 10
+            return self.getDrillDuration(from: notification.userInfo) < duration
         }
 
         // when
@@ -145,7 +145,7 @@ class DurationTrackerTests: XCTestCase {
 }
 
 extension DurationTrackerTests {
-    private func createDrill(_ duration: Int) -> Drill {
+    private func createDrill(_ duration: Double) -> Drill {
         return TestCoreDataHelper.createDrill("", 0, duration)
     }
 
