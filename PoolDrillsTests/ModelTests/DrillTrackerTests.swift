@@ -16,7 +16,7 @@ class DrillTrackerTests: XCTestCase {
 
     override func setUp() {
         delegate = TestDelegate()
-        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker())
+        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker(), MockDrillRecorder())
         sut?.delegate = delegate
     }
 
@@ -50,12 +50,54 @@ class DrillTrackerTests: XCTestCase {
         XCTAssertFalse(delegate.didLoadDrill)
     }
 
+    func testLoadingDrillsLoadsDrillInAttemptsTracker() {
+        // given
+        let attemptsTracker = MockAttemptsTracker()
+        sut = DrillTracker(attemptsTracker, MockDurationTracker(), MockDrillRecorder())
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+
+        // then
+        XCTAssertTrue(attemptsTracker.didLoadDrill)
+    }
+
+    func testLoadingDrillsLoadsDrillInDurationTracker() {
+        // given
+        let durationTracker = MockDurationTracker()
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+
+        // then
+        XCTAssertTrue(durationTracker.didLoadDrill)
+    }
+
+    func testLoadingDrillsCreatesRecordInDrillRecorder() {
+        // given
+        let drillRecorder = MockDrillRecorder()
+        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker(), drillRecorder)
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+
+        // then
+        XCTAssertTrue(drillRecorder.didCreateRecord)
+    }
+
     func testLoadingNextDrill() {
         // given
         guard let delegate = delegate else { XCTFail(); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
-        sut = DrillTracker(MockAttemptsTracker(), durationTracker)
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
         sut?.delegate = delegate
 
         let drill0 = createDrill()
@@ -70,34 +112,6 @@ class DrillTrackerTests: XCTestCase {
 
         // then
         XCTAssertEqual(drill1, delegate.loadedDrill)
-    }
-
-    func testLoadingDrillsLoadsDrillInAttemptsTracker() {
-        // given
-        let attemptsTracker = MockAttemptsTracker()
-        sut = DrillTracker(attemptsTracker, MockDurationTracker())
-
-        let drill = createDrill()
-
-        // when
-        sut?.load([drill])
-
-        // then
-        XCTAssertTrue(attemptsTracker.didLoadDrill)
-    }
-
-    func testLoadingDrillsLoadsDrillInDurationTracker() {
-        // given
-        let durationTracker = MockDurationTracker()
-        sut = DrillTracker(MockAttemptsTracker(), durationTracker)
-
-        let drill = createDrill()
-
-        // when
-        sut?.load([drill])
-
-        // then
-        XCTAssertTrue(durationTracker.didLoadDrill)
     }
 
     func testStartingDrillTracking() {
@@ -135,7 +149,7 @@ class DrillTrackerTests: XCTestCase {
         guard let delegate = delegate else { XCTFail(); return }
 
         let durationTracker = MockDurationTracker()
-        sut = DrillTracker(MockAttemptsTracker(), durationTracker)
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
         sut?.delegate = delegate
 
         let drill = createDrill()
@@ -156,7 +170,7 @@ class DrillTrackerTests: XCTestCase {
         guard let delegate = delegate else { XCTFail(); return }
 
         let attemptsTracker = MockAttemptsTracker(isDrillCompleted: true)
-        sut = DrillTracker(attemptsTracker, MockDurationTracker())
+        sut = DrillTracker(attemptsTracker, MockDurationTracker(), MockDrillRecorder())
         sut?.delegate = delegate
 
         let drill = createDrill()
@@ -174,7 +188,7 @@ class DrillTrackerTests: XCTestCase {
         guard let delegate = delegate else { XCTFail(); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
-        sut = DrillTracker(MockAttemptsTracker(), durationTracker)
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
         sut?.delegate = delegate
 
         let drill = createDrill()
@@ -187,12 +201,57 @@ class DrillTrackerTests: XCTestCase {
         XCTAssertTrue(delegate.didCompleteDrill)
     }
 
+    func testRecordingHitCount() {
+        // given
+        let drillRecorder = MockDrillRecorder()
+        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker(), drillRecorder)
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+        sut?.registerAttempt(as: true)
+
+        // then
+        XCTAssertTrue(drillRecorder.didRecordHitCount)
+    }
+
+    func testRecordingMissCount() {
+        // given
+        let drillRecorder = MockDrillRecorder()
+        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker(), drillRecorder)
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+        sut?.registerAttempt(as: false)
+
+        // then
+        XCTAssertTrue(drillRecorder.didRecordMissCount)
+    }
+
+    func testRecordingDuration() {
+        // given
+        let drillRecorder = MockDrillRecorder()
+        sut = DrillTracker(MockAttemptsTracker(), MockDurationTracker(), drillRecorder)
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+        sut?.toggle()
+
+        // then
+        XCTAssertTrue(drillRecorder.didRecordDuration)
+    }
+
     func testDelegateMethodIsCalledAfterAllDrillsAreFinished() {
         // given
         guard let delegate = delegate else { XCTFail(); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
-        sut = DrillTracker(MockAttemptsTracker(), durationTracker)
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
         sut?.delegate = delegate
 
         let drill = createDrill()
@@ -205,6 +264,26 @@ class DrillTrackerTests: XCTestCase {
 
         // then
         XCTAssertTrue(delegate.didFinishDrills)
+    }
+
+    func testRecordedDrillsArePassedToDelegate() {
+        // given
+        guard let delegate = delegate else { XCTFail(); return }
+
+        let durationTracker = MockDurationTracker(isDrillCompleted: true)
+        sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
+        sut?.delegate = delegate
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+        sut?.toggle()
+        XCTAssertTrue(delegate.didCompleteDrill)
+        sut?.toggle()
+
+        // then
+        XCTAssertNotNil(delegate.records)
     }
 
 }
@@ -266,6 +345,35 @@ extension DrillTrackerTests {
 
     }
 
+    final class MockDrillRecorder: DrillRecording {
+
+        var didCreateRecord = false
+        var didRecordDuration = false
+        var didRecordHitCount = false
+        var didRecordMissCount = false
+
+        func getRecords() -> [DrillRecord] {
+            return []
+        }
+
+        func createRecord(with drill: Drill) {
+            didCreateRecord = true
+        }
+
+        func recordDuration(_ duration: TimeInterval) {
+            didRecordDuration = true
+        }
+
+        func recordHitCount(_ count: Int) {
+            didRecordHitCount = true
+        }
+
+        func recordMissCount(_ count: Int) {
+            didRecordMissCount = true
+        }
+
+    }
+
     final class TestDelegate: DrillTrackingDelegate {
 
         var didLoadDrill = false
@@ -274,6 +382,7 @@ extension DrillTrackerTests {
         var didPauseDrill = false
         var didCompleteDrill = false
         var didFinishDrills = false
+        var records: [DrillRecord]? = nil
 
         func drillTracking(_ tracker: DrillTracking, didLoad drill: Drill) {
             didLoadDrill = true
@@ -292,8 +401,9 @@ extension DrillTrackerTests {
             didCompleteDrill = true
         }
 
-        func drillTrackingDidFinishDrills(_ tracker: DrillTracking) {
+        func drillTrackingDidFinish(_ tracker: DrillTracking, with records: [DrillRecord]) {
             didFinishDrills = true
+            self.records = records
         }
 
     }

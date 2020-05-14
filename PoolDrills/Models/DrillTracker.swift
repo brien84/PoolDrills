@@ -21,7 +21,7 @@ protocol DrillTrackingDelegate: AnyObject {
     func drillTrackingDidStart(_ tracker: DrillTracking)
     func drillTrackingDidPause(_ tracker: DrillTracking)
     func drillTrackingDidCompleteDrill(_ tracker: DrillTracking)
-    func drillTrackingDidFinishDrills(_ tracker: DrillTracking)
+    func drillTrackingDidFinish(_ tracker: DrillTracking, with records: [DrillRecord])
 }
 
 final class DrillTracker: DrillTracking {
@@ -38,6 +38,7 @@ final class DrillTracker: DrillTracking {
 
     private lazy var attemptsTracker: AttemptsTracking = AttemptsTracker()
     private lazy var durationTracker: DurationTracking = DurationTracker()
+    private lazy var drillRecorder: DrillRecording = DrillRecorder()
 
     private var state: State? {
         didSet {
@@ -55,7 +56,7 @@ final class DrillTracker: DrillTracking {
                 delegate?.drillTrackingDidCompleteDrill(self)
             case .finished:
                 durationTracker.pause()
-                delegate?.drillTrackingDidFinishDrills(self)
+                delegate?.drillTrackingDidFinish(self, with: drillRecorder.getRecords())
             default:
                 break
             }
@@ -66,11 +67,12 @@ final class DrillTracker: DrillTracking {
         setupNotifications()
     }
 
-    convenience init(_ attemptsTracker: AttemptsTracking, _ durationTracker: DurationTracking) {
+    convenience init(_ attemptsTracker: AttemptsTracking, _ durationTracker: DurationTracking, _ drillRecorder: DrillRecording) {
         self.init()
 
         self.attemptsTracker = attemptsTracker
         self.durationTracker = durationTracker
+        self.drillRecorder = drillRecorder
     }
 
     func toggle() {
@@ -99,6 +101,7 @@ final class DrillTracker: DrillTracking {
     private func load(_ drill: Drill) {
         durationTracker.load(drill)
         attemptsTracker.load(drill)
+        drillRecorder.createRecord(with: drill)
 
         state = .ready
     }
@@ -133,7 +136,11 @@ final class DrillTracker: DrillTracking {
     @objc private func handleDurationNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [DurationTrackingKeys : TimeInterval] else { return }
 
-        if info[.drillDuration] == 0 {
+        guard let drillDuration = info[.drillDuration] else { return }
+
+        drillRecorder.recordDuration(drillDuration)
+
+        if drillDuration == 0 {
             state = .idle
         }
     }
@@ -144,6 +151,9 @@ final class DrillTracker: DrillTracking {
         guard let attemptsLimit = info[.attemptsLimit] else { return }
         guard let hitCount = info[.hitCount] else { return }
         guard let missCount = info[.missCount] else { return }
+
+        drillRecorder.recordHitCount(hitCount)
+        drillRecorder.recordMissCount(missCount)
 
         if hitCount + missCount == attemptsLimit {
             state = .idle
