@@ -26,8 +26,6 @@
 		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
 		29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */; };
 		29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillTracker.swift */; };
-		29B38E512450D6D5005EEB1B /* DrillRunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */; };
-		29B38E5324518895005EEB1B /* RunnerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */; };
 		29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E542465D4EF005EEB1B /* DurationTracker.swift */; };
 		29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */; };
 		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
@@ -76,8 +74,6 @@
 		29933D87241439150013EB94 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
 		29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewCell.swift; sourceTree = "<group>"; };
 		29B38E42244B83AF005EEB1B /* DrillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTracker.swift; sourceTree = "<group>"; };
-		29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRunnerTests.swift; sourceTree = "<group>"; };
-		29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewControllerTests.swift; sourceTree = "<group>"; };
 		29B38E542465D4EF005EEB1B /* DurationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTracker.swift; sourceTree = "<group>"; };
 		29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsTracker.swift; sourceTree = "<group>"; };
 		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				295AC810246B2E5B00A1805D /* AttemptsTrackerTests.swift */,
-				29B38E502450D6D5005EEB1B /* DrillRunnerTests.swift */,
 				295AC814246B2E7A00A1805D /* DrillTrackerTests.swift */,
 				295AC812246B2E6B00A1805D /* DurationTrackerTests.swift */,
 			);
@@ -211,7 +206,6 @@
 		29B38E49244E3106005EEB1B /* ControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				29B38E5224518895005EEB1B /* RunnerViewControllerTests.swift */,
 			);
 			path = ControllerTests;
 			sourceTree = "<group>";
@@ -368,8 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29B38E512450D6D5005EEB1B /* DrillRunnerTests.swift in Sources */,
-				29B38E5324518895005EEB1B /* RunnerViewControllerTests.swift in Sources */,
 				295AC813246B2E6B00A1805D /* DurationTrackerTests.swift in Sources */,
 				295AC80F246B132E00A1805D /* TestCoreDataHelper.swift in Sources */,
 				295AC811246B2E5B00A1805D /* AttemptsTrackerTests.swift in Sources */,
