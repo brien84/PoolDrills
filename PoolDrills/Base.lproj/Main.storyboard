@@ -275,28 +275,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFV-UX-zs3">
-                                        <rect key="frame" x="128.5" y="45" width="77" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-ZB-0j5">
+                                        <rect key="frame" x="10" y="10" width="314" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="j2S-5f-mpe"/>
+                                        </constraints>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="r3d-ZB-0j5" firstAttribute="leading" secondItem="mnr-sR-Gdy" secondAttribute="leading" constant="10" id="0t9-r4-V9R"/>
                                     <constraint firstAttribute="trailing" secondItem="Va4-6E-5vl" secondAttribute="trailing" constant="8" id="3fW-LI-e58"/>
                                     <constraint firstItem="FCk-7f-qC7" firstAttribute="top" secondItem="mnr-sR-Gdy" secondAttribute="top" constant="8" id="ClG-Xb-JXH"/>
                                     <constraint firstItem="060-br-vVo" firstAttribute="top" secondItem="mnr-sR-Gdy" secondAttribute="top" constant="8" id="MAj-n4-et6"/>
-                                    <constraint firstItem="rFV-UX-zs3" firstAttribute="centerX" secondItem="mnr-sR-Gdy" secondAttribute="centerX" id="PcM-u1-bFz"/>
                                     <constraint firstAttribute="trailing" secondItem="FCk-7f-qC7" secondAttribute="trailing" constant="8" id="ROJ-me-P75"/>
                                     <constraint firstAttribute="bottom" secondItem="sJL-lO-auJ" secondAttribute="bottom" constant="8" id="Wec-Qk-C7R"/>
                                     <constraint firstItem="Va4-6E-5vl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sJL-lO-auJ" secondAttribute="trailing" constant="8" id="X0G-bb-izf"/>
+                                    <constraint firstItem="r3d-ZB-0j5" firstAttribute="top" secondItem="mnr-sR-Gdy" secondAttribute="top" constant="10" id="XVO-a1-KS8"/>
                                     <constraint firstItem="Va4-6E-5vl" firstAttribute="top" secondItem="FCk-7f-qC7" secondAttribute="bottom" constant="8" id="ZQJ-JE-gdu"/>
                                     <constraint firstItem="sJL-lO-auJ" firstAttribute="leading" secondItem="mnr-sR-Gdy" secondAttribute="leading" constant="8" id="gTk-gG-J8i"/>
+                                    <constraint firstAttribute="trailing" secondItem="r3d-ZB-0j5" secondAttribute="trailing" constant="10" id="oOV-gK-rqo"/>
                                     <constraint firstItem="sJL-lO-auJ" firstAttribute="top" secondItem="060-br-vVo" secondAttribute="bottom" constant="8" id="qTa-Kh-Em2"/>
                                     <constraint firstItem="060-br-vVo" firstAttribute="leading" secondItem="mnr-sR-Gdy" secondAttribute="leading" constant="8" id="sER-ec-OAt"/>
                                     <constraint firstAttribute="bottom" secondItem="Va4-6E-5vl" secondAttribute="bottom" constant="8" id="tge-c9-hdk"/>
-                                    <constraint firstItem="rFV-UX-zs3" firstAttribute="centerY" secondItem="mnr-sR-Gdy" secondAttribute="centerY" id="u9h-74-9nf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -327,7 +328,7 @@
                     <navigationItem key="navigationItem" id="daV-9B-7uo"/>
                     <connections>
                         <outlet property="actionButton" destination="xtV-Kh-zEW" id="PD5-DN-Xva"/>
-                        <outlet property="attemptsCount" destination="rFV-UX-zs3" id="oSt-IH-gM6"/>
+                        <outlet property="attemptsProgress" destination="r3d-ZB-0j5" id="vkK-cw-UGN"/>
                         <outlet property="completionButton" destination="mKR-lx-jVj" id="HSj-vc-1Xg"/>
                         <outlet property="drillTime" destination="11G-WV-3eg" id="yGT-0Z-7Eo"/>
                         <outlet property="drillTitle" destination="zaR-nr-6cQ" id="6Vs-0G-Y6d"/>
