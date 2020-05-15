@@ -337,11 +337,41 @@
                         <outlet property="missButton" destination="060-br-vVo" id="pYv-q0-v1w"/>
                         <outlet property="missCount" destination="sJL-lO-auJ" id="whj-Eq-69p"/>
                         <outlet property="totalTime" destination="mvp-lr-nCr" id="SpF-7v-4es"/>
+                        <segue destination="0Lg-fP-SGU" kind="show" identifier="ResultsVC" id="x7x-XL-WK0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVZ-Dm-8lK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5021.739130434783" y="-510.26785714285711"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="4cZ-EB-Dff">
+            <objects>
+                <tableViewController id="0Lg-fP-SGU" customClass="ResultsViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dn2-Gc-d3h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultsCell" id="XRK-1u-hCc">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XRK-1u-hCc" id="V8v-ag-G6C">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Lg-fP-SGU" id="bZ1-Dq-FV4"/>
+                            <outlet property="delegate" destination="0Lg-fP-SGU" id="9ny-a8-b9r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="VVx-Ym-SAN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p87-TV-Kqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5857" y="-510"/>
         </scene>
         <!--Routine View Controller-->
         <scene sceneID="WWW-OO-fog">

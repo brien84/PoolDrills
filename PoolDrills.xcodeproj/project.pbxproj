@@ -14,6 +14,7 @@
 		295AC817246DACF600A1805D /* DrillRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC816246DACF600A1805D /* DrillRecord.swift */; };
 		295AC819246DCC2000A1805D /* DrillRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC818246DCC2000A1805D /* DrillRecorder.swift */; };
 		295AC81B246DCE9300A1805D /* DrillRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */; };
+		295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81C246DE37900A1805D /* ResultsViewController.swift */; };
 		29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* DrillViewController.swift */; };
 		29888883242FF18700D11427 /* RoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888882242FF18700D11427 /* RoutinesViewController.swift */; };
 		298888852430DAB300D11427 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888842430DAB300D11427 /* RoutineViewController.swift */; };
@@ -59,6 +60,7 @@
 		295AC816246DACF600A1805D /* DrillRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRecord.swift; sourceTree = "<group>"; };
 		295AC818246DCC2000A1805D /* DrillRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRecorder.swift; sourceTree = "<group>"; };
 		295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRecorderTests.swift; sourceTree = "<group>"; };
+		295AC81C246DE37900A1805D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		29888880242E9A8A00D11427 /* DrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillViewController.swift; sourceTree = "<group>"; };
 		29888882242FF18700D11427 /* RoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewController.swift; sourceTree = "<group>"; };
 		298888842430DAB300D11427 /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				29888882242FF18700D11427 /* RoutinesViewController.swift */,
 				298888842430DAB300D11427 /* RoutineViewController.swift */,
 				29D660C42447861C00339A03 /* RunnerViewController.swift */,
+				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
+				295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
 				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
 				29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */,
