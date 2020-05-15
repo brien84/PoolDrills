@@ -47,7 +47,7 @@ final class RunnerViewController: UIViewController {
     }
 
     @IBAction private func completionButtonDidTap(_ sender: UIButton) {
-
+        drillTracker.endDrill()
     }
 
     override func viewDidLoad() {
