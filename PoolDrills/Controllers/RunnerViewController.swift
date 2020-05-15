@@ -18,6 +18,9 @@ final class RunnerViewController: UIViewController {
         return tracker
     }()
 
+    private var records = [DrillRecord]()
+
+    // TODO: RENAME TIME LABELS
     @IBOutlet private weak var drillTitle: UILabel!
     @IBOutlet private weak var totalTime: UILabel!
     @IBOutlet private weak var drillTime: UILabel!
@@ -58,6 +61,12 @@ final class RunnerViewController: UIViewController {
         } else {
             // TODO: Display Error
         }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        navigationController?.viewControllers.removeAll(where: { $0.isKind(of: RunnerViewController.self) })
     }
 
     private func toggleButtons(enabled isEnabled: Bool) {
@@ -101,6 +110,17 @@ final class RunnerViewController: UIViewController {
             attemptsProgress.progress = Float(hitCount + missCount) / Float(attemptsLimit)
         }
     }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultsVC" {
+
+            guard let vc = segue.destination as? ResultsViewController else { return }
+            vc.datasource = records
+
+        }
+    }
 }
 
 extension RunnerViewController: DrillTrackingDelegate {
@@ -133,9 +153,12 @@ extension RunnerViewController: DrillTrackingDelegate {
         actionButton.setTitle("Next", for: .normal)
     }
 
-    func drillTrackingDidFinishDrills(_ tracker: DrillTracking) {
+    func drillTrackingDidFinish(_ tracker: DrillTracking, with records: [DrillRecord]) {
         toggleButtons(enabled: false)
         actionButton.setTitle("Finished", for: .normal)
+
+        self.records = records
+        performSegue(withIdentifier: "ResultsVC", sender: nil)
     }
 }
 
