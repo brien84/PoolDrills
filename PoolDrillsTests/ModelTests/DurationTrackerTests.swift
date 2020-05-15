@@ -142,25 +142,28 @@ class DurationTrackerTests: XCTestCase {
         // then
         waitForExpectations(timeout: 3)
     }
+
 }
 
 extension DurationTrackerTests {
+
     private func createDrill(_ duration: Double) -> Drill {
         return TestCoreDataHelper.createDrill("", 0, duration)
     }
 
-    private func getTotalDuration(from userInfo: [AnyHashable : Any]?) -> TimeInterval {
-        guard let totalDuration = cast(userInfo)[.totalDuration] else { XCTFail(); return 0 }
+    private func getTotalDuration(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
+        guard let totalDuration = cast(userInfo)[.totalDuration] else { XCTFail("'totalDuration' is nil."); return 0 }
         return totalDuration
     }
 
-    private func getDrillDuration(from userInfo: [AnyHashable : Any]?) -> TimeInterval {
-        guard let drillDuration = cast(userInfo)[.drillDuration] else { XCTFail(); return 0 }
+    private func getDrillDuration(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
+        guard let drillDuration = cast(userInfo)[.drillDuration] else { XCTFail("'drillDuration' is nil."); return 0 }
         return drillDuration
     }
 
-    private func cast(_ userInfo: [AnyHashable : Any]?) -> [DurationTrackingKeys : TimeInterval] {
-        guard let info = userInfo as? [DurationTrackingKeys : TimeInterval] else { XCTFail(); return [:] }
+    private func cast(_ userInfo: [AnyHashable: Any]?) -> [DurationTrackingKeys: TimeInterval] {
+        guard let info = userInfo as? [DurationTrackingKeys: TimeInterval] else { XCTFail("'userInfo' is nil."); return [:] }
         return info
     }
+
 }

@@ -62,8 +62,8 @@ final class DurationTracker: DurationTracking {
     }
 
     private func postNotification() {
-        let userInfo: [DurationTrackingKeys : TimeInterval] =
-            [.totalDuration : totalDuration, .drillDuration : drillDuration]
+        let userInfo: [DurationTrackingKeys: TimeInterval] =
+            [.totalDuration: totalDuration, .drillDuration: drillDuration]
 
         NotificationCenter.default.post(name: .DurationTrackingDidUpdate, object: nil, userInfo: userInfo)
     }

@@ -134,7 +134,7 @@ final class DrillTracker: DrillTracking {
     }
 
     @objc private func handleDurationNotification(_ notification: NSNotification) {
-        guard let info = notification.userInfo as? [DurationTrackingKeys : TimeInterval] else { return }
+        guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
         guard let drillDuration = info[.drillDuration] else { return }
 
@@ -146,7 +146,7 @@ final class DrillTracker: DrillTracking {
     }
 
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
-        guard let info = notification.userInfo as? [AttemptsTrackingKeys : Int] else { return }
+        guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
 
         guard let attemptsLimit = info[.attemptsLimit] else { return }
         guard let hitCount = info[.hitCount] else { return }

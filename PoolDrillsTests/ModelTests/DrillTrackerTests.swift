@@ -12,6 +12,7 @@ import XCTest
 class DrillTrackerTests: XCTestCase {
 
     var sut: DrillTracker?
+    // swiftlint:disable weak_delegate
     var delegate: TestDelegate?
 
     override func setUp() {
@@ -28,7 +29,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testLoadingDrillsCallsDelegate() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let drill = createDrill()
 
@@ -41,7 +42,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testLoadingEmptyDrillArrayDoesNotCallDelegate() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         // when
         sut?.load([])
@@ -94,7 +95,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testLoadingNextDrill() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
         sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
@@ -116,7 +117,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testStartingDrillTracking() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let drill = createDrill()
 
@@ -130,7 +131,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testPausingDrillTracking() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let drill = createDrill()
 
@@ -146,7 +147,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testPausingDrillTrackingPausesDurationTracker() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let durationTracker = MockDurationTracker()
         sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
@@ -167,7 +168,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testAttemptsTrackerCompletingDrill() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let attemptsTracker = MockAttemptsTracker(isDrillCompleted: true)
         sut = DrillTracker(attemptsTracker, MockDurationTracker(), MockDrillRecorder())
@@ -185,7 +186,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testDurationTrackerCompletingDrill() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
         sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
@@ -248,7 +249,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testDelegateMethodIsCalledAfterAllDrillsAreFinished() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
         sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
@@ -268,7 +269,7 @@ class DrillTrackerTests: XCTestCase {
 
     func testRecordedDrillsArePassedToDelegate() {
         // given
-        guard let delegate = delegate else { XCTFail(); return }
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
 
         let durationTracker = MockDurationTracker(isDrillCompleted: true)
         sut = DrillTracker(MockAttemptsTracker(), durationTracker, MockDrillRecorder())
@@ -309,8 +310,8 @@ extension DrillTrackerTests {
         }
 
         func registerAttempt(as successful: Bool) {
-            let userInfo: [AttemptsTrackingKeys : Int] =
-                [.attemptsLimit : isDrillCompleted ? 0 : 5, .hitCount : 0, .missCount : 0]
+            let userInfo: [AttemptsTrackingKeys: Int] =
+                [.attemptsLimit: isDrillCompleted ? 0 : 5, .hitCount: 0, .missCount: 0]
 
             NotificationCenter.default.post(name: .AttemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
@@ -333,8 +334,8 @@ extension DrillTrackerTests {
         }
 
         func start() {
-            let userInfo: [DurationTrackingKeys : TimeInterval] =
-                [.totalDuration : 0, .drillDuration : isDrillCompleted ? 0 : 1]
+            let userInfo: [DurationTrackingKeys: TimeInterval] =
+                [.totalDuration: 0, .drillDuration: isDrillCompleted ? 0 : 1]
 
             NotificationCenter.default.post(name: .DurationTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
@@ -382,7 +383,7 @@ extension DrillTrackerTests {
         var didPauseDrill = false
         var didCompleteDrill = false
         var didFinishDrills = false
-        var records: [DrillRecord]? = nil
+        var records: [DrillRecord]?
 
         func drillTracking(_ tracker: DrillTracking, didLoad drill: Drill) {
             didLoadDrill = true
@@ -407,4 +408,5 @@ extension DrillTrackerTests {
         }
 
     }
+
 }

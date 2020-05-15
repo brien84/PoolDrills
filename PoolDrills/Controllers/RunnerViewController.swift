@@ -54,8 +54,8 @@ final class RunnerViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = routine?.title
-        
-        if let drills = routine?.drills?.array as? [Drill], !drills.isEmpty  {
+
+        if let drills = routine?.drills?.array as? [Drill], !drills.isEmpty {
             drillTracker.load(drills)
             setupNotifications()
         } else {
@@ -90,14 +90,14 @@ final class RunnerViewController: UIViewController {
     }
 
     @objc private func handleDurationNotification(_ notification: NSNotification) {
-        guard let info = notification.userInfo as? [DurationTrackingKeys : TimeInterval] else { return }
+        guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
         totalTime.text = info[.totalDuration]?.toString()
         drillTime.text = info[.drillDuration]?.toString()
     }
 
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
-        guard let info = notification.userInfo as? [AttemptsTrackingKeys : Int] else { return }
+        guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
 
         guard let attemptsLimit = info[.attemptsLimit] else { return }
         guard let hitCount = info[.hitCount] else { return }

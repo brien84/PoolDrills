@@ -21,7 +21,7 @@ final class RoutineViewController: UITableViewController {
 
     @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
         coredata.managedContext.rollback()
-        
+
         navigationController?.popViewController(animated: true)
     }
 

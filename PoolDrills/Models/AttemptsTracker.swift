@@ -37,12 +37,12 @@ final class AttemptsTracker: AttemptsTracking {
     }
 
     private func postNotification() {
-        let userInfo: [AttemptsTrackingKeys : Int] =
-            [.attemptsLimit : attemptsLimit, .hitCount : hitCount, .missCount : missCount]
+        let userInfo: [AttemptsTrackingKeys: Int] =
+            [.attemptsLimit: attemptsLimit, .hitCount: hitCount, .missCount: missCount]
 
         NotificationCenter.default.post(name: .AttemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
     }
-    
+
 }
 
 enum AttemptsTrackingKeys: String {

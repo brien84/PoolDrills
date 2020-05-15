@@ -32,7 +32,7 @@ final class RoutinesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -49,6 +49,7 @@ final class RoutinesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath) as! RoutinesViewCell
         cell.delegate = self
 
@@ -67,14 +68,14 @@ final class RoutinesViewController: UITableViewController {
     }
 
     // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RoutineViewController" {
             guard let vc = segue.destination as? RoutineViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
-    
+
             vc.hidesBottomBarWhenPushed = true
         }
 
@@ -94,7 +95,8 @@ extension RoutinesViewController: NSFetchedResultsControllerDelegate {
         tableView.beginUpdates()
     }
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any,
+                    at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             guard let newIndexPath = newIndexPath else { return }

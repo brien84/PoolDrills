@@ -22,7 +22,7 @@ final class CoreDataStack {
             container.persistentStoreDescriptions = [persistentStoreDescription]
         }
 
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 print("Unresolved error \(error), \(error.userInfo)")
             }

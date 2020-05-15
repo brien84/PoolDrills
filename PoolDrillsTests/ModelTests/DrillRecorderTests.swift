@@ -30,7 +30,7 @@ class DrillRecorderTests: XCTestCase {
         sut?.createRecord(with: drill)
 
         // then
-        guard let record = sut?.getRecords().first else { XCTFail(); return }
+        guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(record.title, drill.title)
         XCTAssertEqual(record.attempts, Int(drill.attempts))
         XCTAssertEqual(record.duration, drill.duration)
@@ -47,7 +47,7 @@ class DrillRecorderTests: XCTestCase {
         }
 
         // then
-        guard let records = sut?.getRecords() else { XCTFail(); return }
+        guard let records = sut?.getRecords() else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(records.count, recordCount)
     }
 
@@ -61,7 +61,7 @@ class DrillRecorderTests: XCTestCase {
         sut?.recordDuration(duration)
 
         // then
-        guard let record = sut?.getRecords().first else { XCTFail(); return }
+        guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(record.recordedDuration, duration)
     }
 
@@ -75,7 +75,7 @@ class DrillRecorderTests: XCTestCase {
         sut?.recordHitCount(hitCount)
 
         // then
-        guard let record = sut?.getRecords().first else { XCTFail(); return }
+        guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(record.hitCount, hitCount)
     }
 
@@ -89,14 +89,16 @@ class DrillRecorderTests: XCTestCase {
         sut?.recordMissCount(missCount)
 
         // then
-        guard let record = sut?.getRecords().first else { XCTFail(); return }
+        guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(record.missCount, missCount)
     }
 
 }
 
 extension DrillRecorderTests {
+
     private func createDrill(_ title: String = "", _ attempts: Int = 0, _ duration: TimeInterval = 0) -> Drill {
         return TestCoreDataHelper.createDrill(title, attempts, duration)
     }
+
 }
