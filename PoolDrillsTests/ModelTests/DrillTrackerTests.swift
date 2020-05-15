@@ -166,6 +166,20 @@ class DrillTrackerTests: XCTestCase {
         XCTAssertTrue(durationTracker.didPause)
     }
 
+    func testEndingDrill() {
+        // given
+        guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }
+
+        let drill = createDrill()
+
+        // when
+        sut?.load([drill])
+        sut?.endDrill()
+
+        // then
+        XCTAssertTrue(delegate.didCompleteDrill)
+    }
+
     func testAttemptsTrackerCompletingDrill() {
         // given
         guard let delegate = delegate else { XCTFail("'delegate' is nil."); return }

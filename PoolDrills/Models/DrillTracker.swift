@@ -12,6 +12,7 @@ protocol DrillTracking {
     var delegate: DrillTrackingDelegate? { get }
 
     func load(_ drills: [Drill])
+    func endDrill()
     func registerAttempt(as successful: Bool)
     func toggle()
 }
@@ -113,6 +114,10 @@ final class DrillTracker: DrillTracking {
         } else {
             state = .finished
         }
+    }
+
+    func endDrill() {
+        state = .idle
     }
 
     func registerAttempt(as successful: Bool) {
