@@ -6,6 +6,7 @@
 //  Copyright © 2020 Marius. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
 final class RunnerViewController: UIViewController {
@@ -169,6 +170,8 @@ extension RunnerViewController: DrillTrackingDelegate {
     func drillTrackingDidStart(_ tracker: DrillTracking) {
         toggleButtons(enabled: true)
         actionButton.setTitle("Pause", for: .normal)
+
+        UIDevice.vibrate()
     }
 
     func drillTrackingDidPause(_ tracker: DrillTracking) {
@@ -179,6 +182,8 @@ extension RunnerViewController: DrillTrackingDelegate {
     func drillTrackingDidCompleteDrill(_ tracker: DrillTracking) {
         toggleButtons(enabled: false)
         actionButton.setTitle("Next", for: .normal)
+
+        UIDevice.vibrate()
     }
 
     func drillTrackingDidFinish(_ tracker: DrillTracking, with records: [DrillRecord]) {
@@ -201,5 +206,11 @@ extension TimeInterval {
         } else {
             return String(format: "%02d:%02d", arguments: [minutes, seconds])
         }
+    }
+}
+
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }
