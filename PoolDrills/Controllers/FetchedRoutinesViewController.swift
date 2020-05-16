@@ -1,5 +1,5 @@
 //
-//  RoutinesViewController.swift
+//  FetchedRoutinesViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-03-28.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RoutinesViewController: FetchedTableViewController<Routine> {
+final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 
     override var sortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "title", ascending: true)]
@@ -57,7 +57,7 @@ final class RoutinesViewController: FetchedTableViewController<Routine> {
 
 }
 
-extension RoutinesViewController: RoutineRunButtonDelegate {
+extension FetchedRoutinesViewController: RoutineRunButtonDelegate {
     func routineRunButtonDidTap(inside cell: UITableViewCell) {
         performSegue(withIdentifier: "RunnerViewController", sender: cell)
     }
