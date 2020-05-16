@@ -373,7 +373,13 @@
                             <outlet property="delegate" destination="0Lg-fP-SGU" id="9ny-a8-b9r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VVx-Ym-SAN"/>
+                    <navigationItem key="navigationItem" id="VVx-Ym-SAN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FXA-tJ-8xq">
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="0Lg-fP-SGU" id="1a3-Sc-qPB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p87-TV-Kqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
