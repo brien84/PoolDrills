@@ -47,7 +47,19 @@ final class RunnerViewController: UIViewController {
     }
 
     @IBAction private func completionButtonDidTap(_ sender: UIButton) {
-        drillTracker.endDrill()
+        drillTracker.toggle()
+
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.drillTracker.endDrill()
+        }))
+
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            self.drillTracker.toggle()
+        }))
+
+        self.present(alert, animated: true)
     }
 
     override func viewDidLoad() {
