@@ -12,6 +12,18 @@ final class ResultsViewController: UITableViewController {
 
     var datasource = [DrillRecord]()
 
+    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
