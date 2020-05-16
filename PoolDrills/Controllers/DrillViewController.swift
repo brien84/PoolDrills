@@ -21,6 +21,7 @@ final class DrillViewController: UITableViewController {
     @IBOutlet private weak var durationSlider: UISlider!
 
     @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        coredata.managedContext.rollback()
 
         navigationController?.popViewController(animated: true)
     }
