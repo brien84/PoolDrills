@@ -1,5 +1,5 @@
 //
-//  DrillsViewController.swift
+//  FetchedDrillsViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-03-07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DrillsViewController: FetchedTableViewController<Drill> {
+final class FetchedDrillsViewController: FetchedTableViewController<Drill> {
 
     override var sortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "title", ascending: true)]

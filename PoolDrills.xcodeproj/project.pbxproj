@@ -28,7 +28,7 @@
 		29933D5D241438420013EB94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5C241438420013EB94 /* Assets.xcassets */; };
 		29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5E241438420013EB94 /* LaunchScreen.storyboard */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
-		29933D88241439150013EB94 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* DrillsViewController.swift */; };
+		29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* FetchedDrillsViewController.swift */; };
 		29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */; };
 		29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillTracker.swift */; };
 		29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E542465D4EF005EEB1B /* DurationTracker.swift */; };
@@ -81,7 +81,7 @@
 		29933D71241438430013EB94 /* PoolDrillsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDrillsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29933D87241439150013EB94 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
+		29933D87241439150013EB94 /* FetchedDrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDrillsViewController.swift; sourceTree = "<group>"; };
 		29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewCell.swift; sourceTree = "<group>"; };
 		29B38E42244B83AF005EEB1B /* DrillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTracker.swift; sourceTree = "<group>"; };
 		29B38E542465D4EF005EEB1B /* DurationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTracker.swift; sourceTree = "<group>"; };
@@ -188,13 +188,13 @@
 			isa = PBXGroup;
 			children = (
 				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
-				29933D87241439150013EB94 /* DrillsViewController.swift */,
+				29933D87241439150013EB94 /* FetchedDrillsViewController.swift */,
 				29888880242E9A8A00D11427 /* DrillViewController.swift */,
+				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
+				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
 				29888882242FF18700D11427 /* RoutinesViewController.swift */,
 				298888842430DAB300D11427 /* RoutineViewController.swift */,
 				29D660C42447861C00339A03 /* RunnerViewController.swift */,
-				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
-				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
 				295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */,
 				295AC819246DCC2000A1805D /* DrillRecorder.swift in Sources */,
-				29933D88241439150013EB94 /* DrillsViewController.swift in Sources */,
+				29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */,
 				298888852430DAB300D11427 /* RoutineViewController.swift in Sources */,
 				29888883242FF18700D11427 /* RoutinesViewController.swift in Sources */,
 				298888D52438CD7B00D11427 /* PoolDrills.xcdatamodeld in Sources */,
