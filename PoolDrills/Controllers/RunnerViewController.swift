@@ -46,6 +46,22 @@ final class RunnerViewController: UIViewController {
         drillTracker.registerAttempt(as: true)
     }
 
+    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
+        drillTracker.toggle()
+
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            self.drillTracker.toggle()
+        }))
+
+        self.present(alert, animated: true)
+    }
+
     @IBAction private func completionButtonDidTap(_ sender: UIButton) {
         drillTracker.toggle()
 
