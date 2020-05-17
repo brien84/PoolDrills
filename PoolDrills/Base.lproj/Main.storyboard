@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -300,18 +301,39 @@
                                     <constraint firstAttribute="bottom" secondItem="Va4-6E-5vl" secondAttribute="bottom" constant="8" id="tge-c9-hdk"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eIl-H1-1nN">
+                                <rect key="frame" x="10" y="523.5" width="394" height="279.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="18U-3J-geb">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0EO-dU-YXF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0lc-4N-KKe">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xtV-Kh-zEW" firstAttribute="top" secondItem="mvp-lr-nCr" secondAttribute="bottom" constant="10" id="0C0-Gv-YyX"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="mKR-lx-jVj" secondAttribute="trailing" constant="40" id="4HU-mF-CJC"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="xtV-Kh-zEW" secondAttribute="trailing" constant="40" id="6Ah-Th-dkC"/>
+                            <constraint firstItem="r1q-jG-nBd" firstAttribute="bottom" secondItem="eIl-H1-1nN" secondAttribute="bottom" constant="10" id="7gG-Nh-Woe"/>
                             <constraint firstItem="11G-WV-3eg" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="40" id="CEh-9Y-d2j"/>
                             <constraint firstItem="xtV-Kh-zEW" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="40" id="LEc-l1-vtp"/>
                             <constraint firstItem="mvp-lr-nCr" firstAttribute="top" secondItem="zaR-nr-6cQ" secondAttribute="bottom" constant="10" id="LNH-PW-K7g"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="mnr-sR-Gdy" secondAttribute="trailing" constant="40" id="Lhg-ie-mNA"/>
                             <constraint firstItem="mvp-lr-nCr" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="40" id="OR9-mB-G95"/>
-                            <constraint firstItem="r1q-jG-nBd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mKR-lx-jVj" secondAttribute="bottom" constant="10" id="PTf-r4-gzg"/>
                             <constraint firstItem="zaR-nr-6cQ" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="40" id="Q2y-Jp-joT"/>
                             <constraint firstItem="mnr-sR-Gdy" firstAttribute="top" secondItem="11G-WV-3eg" secondAttribute="bottom" constant="10" id="SUb-Zm-nL2"/>
                             <constraint firstItem="mnr-sR-Gdy" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="40" id="SZg-Zv-fY5"/>
@@ -320,8 +342,11 @@
                             <constraint firstItem="zaR-nr-6cQ" firstAttribute="top" secondItem="r1q-jG-nBd" secondAttribute="top" constant="40" id="VV2-jK-VdG"/>
                             <constraint firstItem="11G-WV-3eg" firstAttribute="top" secondItem="xtV-Kh-zEW" secondAttribute="bottom" constant="10" id="eHu-Pa-jAN"/>
                             <constraint firstItem="mKR-lx-jVj" firstAttribute="top" secondItem="mnr-sR-Gdy" secondAttribute="bottom" constant="10" id="gkw-g8-NRh"/>
+                            <constraint firstItem="eIl-H1-1nN" firstAttribute="leading" secondItem="r1q-jG-nBd" secondAttribute="leading" constant="10" id="hjo-4l-5ZA"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="zaR-nr-6cQ" secondAttribute="trailing" constant="40" id="kAx-wg-m6K"/>
+                            <constraint firstItem="eIl-H1-1nN" firstAttribute="top" secondItem="mKR-lx-jVj" secondAttribute="bottom" constant="10" id="n0d-rY-v9c"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="mvp-lr-nCr" secondAttribute="trailing" constant="40" id="sXT-rN-Xch"/>
+                            <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="eIl-H1-1nN" secondAttribute="trailing" constant="10" id="usm-0F-PtD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r1q-jG-nBd"/>
                     </view>
@@ -342,6 +367,7 @@
                         <outlet property="hitCount" destination="Va4-6E-5vl" id="Aig-H5-doS"/>
                         <outlet property="missButton" destination="060-br-vVo" id="pYv-q0-v1w"/>
                         <outlet property="missCount" destination="sJL-lO-auJ" id="whj-Eq-69p"/>
+                        <outlet property="queueView" destination="eIl-H1-1nN" id="Vc7-0r-cde"/>
                         <outlet property="totalTime" destination="mvp-lr-nCr" id="SpF-7v-4es"/>
                         <segue destination="0Lg-fP-SGU" kind="show" identifier="ResultsVC" id="x7x-XL-WK0"/>
                     </connections>
