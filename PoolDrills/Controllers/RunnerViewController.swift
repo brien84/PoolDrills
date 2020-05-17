@@ -21,6 +21,8 @@ final class RunnerViewController: UIViewController {
 
     private var records = [DrillRecord]()
 
+    private var shouldStartCountdown = false
+
     // TODO: RENAME TIME LABELS
     @IBOutlet private weak var drillTitle: UILabel!
     @IBOutlet private weak var totalTime: UILabel!
@@ -36,7 +38,14 @@ final class RunnerViewController: UIViewController {
     @IBOutlet private weak var attemptsProgress: UIProgressView!
 
     @IBAction private func actionButtonDidTap(_ sender: UIButton) {
-        drillTracker.toggle()
+        if shouldStartCountdown {
+            startCountdown { [weak self] in
+                self?.drillTracker.toggle()
+                self?.shouldStartCountdown = false
+            }
+        } else {
+            drillTracker.toggle()
+        }
     }
 
     @IBAction private func missButtonDidTap(_ sender: UIButton) {
@@ -104,6 +113,25 @@ final class RunnerViewController: UIViewController {
         completionButton.isEnabled = isEnabled
     }
 
+    private func startCountdown(completion: @escaping () -> Void) {
+        actionButton.isUserInteractionEnabled = false
+
+        actionButton.setTitle("3", for: .normal)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.actionButton.setTitle("2", for: .normal)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            self?.actionButton.setTitle("1", for: .normal)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            completion()
+            self?.actionButton.isUserInteractionEnabled = true
+        }
+    }
+
     // MARK: - Notifications
 
     private func setupNotifications() {
@@ -165,6 +193,8 @@ extension RunnerViewController: DrillTrackingDelegate {
 
         toggleButtons(enabled: false)
         actionButton.setTitle("Start", for: .normal)
+
+        shouldStartCountdown = true
     }
 
     func drillTrackingDidStart(_ tracker: DrillTracking) {
@@ -177,6 +207,8 @@ extension RunnerViewController: DrillTrackingDelegate {
     func drillTrackingDidPause(_ tracker: DrillTracking) {
         toggleButtons(enabled: false)
         actionButton.setTitle("Resume", for: .normal)
+
+        shouldStartCountdown = true
     }
 
     func drillTrackingDidCompleteDrill(_ tracker: DrillTracking) {
