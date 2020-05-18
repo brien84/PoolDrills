@@ -19,9 +19,17 @@ final class RunnerViewController: UIViewController {
         return tracker
     }()
 
+    private lazy var drillQueueController: DrillQueueController = {
+        let controller = DrillQueueController(view: queueView)
+
+        return controller
+    }()
+
     private var records = [DrillRecord]()
 
     private var shouldStartCountdown = false
+
+    @IBOutlet private weak var queueView: UICollectionView!
 
     // TODO: RENAME TIME LABELS
     @IBOutlet private weak var drillTitle: UILabel!
@@ -94,8 +102,9 @@ final class RunnerViewController: UIViewController {
         navigationItem.title = routine?.title
 
         if let drills = routine?.drills?.array as? [Drill], !drills.isEmpty {
-            drillTracker.load(drills)
             setupNotifications()
+            drillQueueController.datasource = drills
+            drillTracker.load(drills)
         } else {
             // TODO: Display Error
         }
@@ -195,6 +204,8 @@ extension RunnerViewController: DrillTrackingDelegate {
         actionButton.setTitle("Start", for: .normal)
 
         shouldStartCountdown = true
+
+        drillQueueController.next()
     }
 
     func drillTrackingDidStart(_ tracker: DrillTracking) {
