@@ -123,6 +123,7 @@ final class RunnerViewController: UIViewController {
     }
 
     private func startCountdown(completion: @escaping () -> Void) {
+        shouldStartCountdown = false
         actionButton.isUserInteractionEnabled = false
 
         actionButton.setTitle("3", for: .normal)
