@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29456BDE24718A4800E8E7D9 /* DrillQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDD24718A4800E8E7D9 /* DrillQueueController.swift */; };
+		29456BE024731E5900E8E7D9 /* DrillQueueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */; };
 		295AC80F246B132E00A1805D /* TestCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC80E246B132E00A1805D /* TestCoreDataHelper.swift */; };
 		295AC811246B2E5B00A1805D /* AttemptsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC810246B2E5B00A1805D /* AttemptsTrackerTests.swift */; };
 		295AC813246B2E6B00A1805D /* DurationTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC812246B2E6B00A1805D /* DurationTrackerTests.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		29456BDD24718A4800E8E7D9 /* DrillQueueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillQueueController.swift; sourceTree = "<group>"; };
+		29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillQueueViewCell.swift; sourceTree = "<group>"; };
 		295AC80E246B132E00A1805D /* TestCoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataHelper.swift; sourceTree = "<group>"; };
 		295AC810246B2E5B00A1805D /* AttemptsTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsTrackerTests.swift; sourceTree = "<group>"; };
 		295AC812246B2E6B00A1805D /* DurationTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTrackerTests.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
+				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */,
 				29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */,
+				29456BE024731E5900E8E7D9 /* DrillQueueViewCell.swift in Sources */,
 				29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */,
 				29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */,
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,

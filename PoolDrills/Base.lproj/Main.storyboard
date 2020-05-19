@@ -305,20 +305,54 @@
                                 <rect key="frame" x="10" y="523.5" width="394" height="279.5"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="18U-3J-geb">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="207" height="196"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0EO-dU-YXF">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0EO-dU-YXF" customClass="DrillQueueViewCell" customModule="PoolDrills" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="42" width="207" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0lc-4N-KKe">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFD-SW-grV">
+                                                    <rect key="frame" x="82.5" y="87.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPj-Jh-1GH">
+                                                    <rect key="frame" x="82.5" y="116.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guO-qS-Kjv">
+                                                    <rect key="frame" x="82.5" y="58.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="aFD-SW-grV" firstAttribute="centerX" secondItem="0lc-4N-KKe" secondAttribute="centerX" id="HWW-IF-Dbe"/>
+                                                <constraint firstItem="aFD-SW-grV" firstAttribute="top" secondItem="guO-qS-Kjv" secondAttribute="bottom" constant="8" symbolic="YES" id="Lhl-wB-2vh"/>
+                                                <constraint firstItem="fPj-Jh-1GH" firstAttribute="top" secondItem="aFD-SW-grV" secondAttribute="bottom" constant="8" symbolic="YES" id="gxI-Vo-a2U"/>
+                                                <constraint firstItem="guO-qS-Kjv" firstAttribute="centerX" secondItem="0lc-4N-KKe" secondAttribute="centerX" id="nlU-I0-JMI"/>
+                                                <constraint firstItem="fPj-Jh-1GH" firstAttribute="centerX" secondItem="0lc-4N-KKe" secondAttribute="centerX" id="v8n-df-F4l"/>
+                                                <constraint firstItem="aFD-SW-grV" firstAttribute="centerY" secondItem="0lc-4N-KKe" secondAttribute="centerY" id="zLE-C4-rYO"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="207" height="196"/>
+                                        <connections>
+                                            <outlet property="attempts" destination="fPj-Jh-1GH" id="pHn-cC-Wyv"/>
+                                            <outlet property="duration" destination="aFD-SW-grV" id="w64-91-B5K"/>
+                                            <outlet property="title" destination="guO-qS-Kjv" id="P4V-TZ-cxi"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
