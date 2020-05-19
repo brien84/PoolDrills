@@ -21,7 +21,13 @@ final class DrillQueueController: NSObject {
         }
     }
 
-    private var currentIndex = -1
+    private var currentIndex = -1 {
+        didSet {
+            currentCell = view.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillQueueViewCell
+        }
+    }
+
+    private var currentCell: DrillQueueViewCell?
 
     init(view: UICollectionView) {
         self.view = view
@@ -30,6 +36,8 @@ final class DrillQueueController: NSObject {
         self.view.delegate = self
         self.view.dataSource = self
         self.view.isUserInteractionEnabled = false
+
+        setupNotifications()
     }
 
     func next() {
@@ -37,6 +45,38 @@ final class DrillQueueController: NSObject {
             currentIndex += 1
             view.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
         }
+    }
+
+    // MARK: - Notifications
+
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleDurationNotification(_:)),
+                                               name: .DurationTrackingDidUpdate,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleAttemptsNotification(_:)),
+                                               name: .AttemptsTrackingDidUpdate,
+                                               object: nil)
+    }
+
+    @objc private func handleDurationNotification(_ notification: NSNotification) {
+        guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
+
+        currentCell?.duration.text = info[.drillDuration]?.toString()
+    }
+
+    @objc private func handleAttemptsNotification(_ notification: NSNotification) {
+        guard datasource[currentIndex].attempts > 0 else { return }
+        guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
+
+        guard let attemptsLimit = info[.attemptsLimit] else { return }
+        guard let hitCount = info[.hitCount] else { return }
+        guard let missCount = info[.missCount] else { return }
+
+        let attemptsLeft = attemptsLimit - hitCount - missCount
+        currentCell?.attempts.text = String(attemptsLeft)
     }
 
 }
@@ -53,7 +93,14 @@ extension DrillQueueController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        // swiftlint:disable:next force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DrillQueueViewCell
+
+        let drill = datasource[indexPath.row]
+
+        cell.title.text = drill.title
+        cell.duration.text = drill.duration.toString()
+        cell.attempts.text = String(drill.attempts)
 
         return cell
     }
