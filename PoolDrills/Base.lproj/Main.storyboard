@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -208,7 +209,7 @@
         <scene sceneID="ZKU-uC-CrE">
             <objects>
                 <viewController id="23f-Mw-JpI" customClass="RunnerViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fpm-zU-mOU">
+                    <view key="view" contentMode="scaleToFill" id="fpm-zU-mOU" customClass="GradientBackgroundView" customModule="PoolDrills" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -303,7 +304,6 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eIl-H1-1nN">
                                 <rect key="frame" x="10" y="523.5" width="394" height="279.5"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="18U-3J-geb">
                                     <size key="itemSize" width="207" height="196"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -337,7 +337,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="aFD-SW-grV" firstAttribute="centerX" secondItem="0lc-4N-KKe" secondAttribute="centerX" id="HWW-IF-Dbe"/>
                                                 <constraint firstItem="aFD-SW-grV" firstAttribute="top" secondItem="guO-qS-Kjv" secondAttribute="bottom" constant="8" symbolic="YES" id="Lhl-wB-2vh"/>
@@ -347,6 +346,7 @@
                                                 <constraint firstItem="aFD-SW-grV" firstAttribute="centerY" secondItem="0lc-4N-KKe" secondAttribute="centerY" id="zLE-C4-rYO"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="207" height="196"/>
                                         <connections>
                                             <outlet property="attempts" destination="fPj-Jh-1GH" id="pHn-cC-Wyv"/>
@@ -357,7 +357,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xtV-Kh-zEW" firstAttribute="top" secondItem="mvp-lr-nCr" secondAttribute="bottom" constant="10" id="0C0-Gv-YyX"/>
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="mKR-lx-jVj" secondAttribute="trailing" constant="40" id="4HU-mF-CJC"/>
@@ -383,6 +382,14 @@
                             <constraint firstItem="r1q-jG-nBd" firstAttribute="trailing" secondItem="eIl-H1-1nN" secondAttribute="trailing" constant="10" id="usm-0F-PtD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r1q-jG-nBd"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" name="primaryBackground"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" name="secondaryBackground"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="daV-9B-7uo">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="onl-WH-5yA">
@@ -624,6 +631,14 @@
             <point key="canvasLocation" x="2355.072463768116" y="518.97321428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="primaryBackground">
+            <color red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryBackground">
+            <color red="0.086274509803921567" green="0.62745098039215685" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cmE-ff-j3w"/>
         <segue reference="C8I-PK-Hzc"/>
