@@ -1,5 +1,5 @@
 //
-//  DrillViewController.swift
+//  CreateDrillViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-03-27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DrillViewController: UITableViewController {
+final class CreateDrillViewController: UITableViewController {
 
     lazy var drill: Drill = {
         return Drill(context: coredata.managedContext)

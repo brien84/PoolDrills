@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="4175.36231884058" y="865.84821428571422"/>
         </scene>
-        <!--Drill View Controller-->
+        <!--Create Drill View Controller-->
         <scene sceneID="5py-zV-PpO">
             <objects>
-                <tableViewController id="34z-eE-IQd" customClass="DrillViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="34z-eE-IQd" customClass="CreateDrillViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="nfT-WO-DPC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

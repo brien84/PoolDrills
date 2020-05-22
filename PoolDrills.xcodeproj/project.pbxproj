@@ -20,7 +20,7 @@
 		295AC81B246DCE9300A1805D /* DrillRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */; };
 		295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81C246DE37900A1805D /* ResultsViewController.swift */; };
 		295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81F247034FC00A1805D /* FetchedTableViewController.swift */; };
-		29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* DrillViewController.swift */; };
+		29888881242E9A8A00D11427 /* CreateDrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* CreateDrillViewController.swift */; };
 		29888883242FF18700D11427 /* FetchedRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */; };
 		298888852430DAB300D11427 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888842430DAB300D11427 /* RoutineViewController.swift */; };
 		298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888862431291F00D11427 /* DrillsSelectionViewController.swift */; };
@@ -71,7 +71,7 @@
 		295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRecorderTests.swift; sourceTree = "<group>"; };
 		295AC81C246DE37900A1805D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		295AC81F247034FC00A1805D /* FetchedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTableViewController.swift; sourceTree = "<group>"; };
-		29888880242E9A8A00D11427 /* DrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillViewController.swift; sourceTree = "<group>"; };
+		29888880242E9A8A00D11427 /* CreateDrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDrillViewController.swift; sourceTree = "<group>"; };
 		29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRoutinesViewController.swift; sourceTree = "<group>"; };
 		298888842430DAB300D11427 /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		298888862431291F00D11427 /* DrillsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsSelectionViewController.swift; sourceTree = "<group>"; };
@@ -195,9 +195,9 @@
 		29933D84241438DB0013EB94 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29888880242E9A8A00D11427 /* CreateDrillViewController.swift */,
 				29456BDD24718A4800E8E7D9 /* DrillQueueController.swift */,
 				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
-				29888880242E9A8A00D11427 /* DrillViewController.swift */,
 				29933D87241439150013EB94 /* FetchedDrillsViewController.swift */,
 				29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */,
 				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
@@ -394,7 +394,7 @@
 				29456BE024731E5900E8E7D9 /* DrillQueueViewCell.swift in Sources */,
 				29456BE2247434DD00E8E7D9 /* GradientBackgroundView.swift in Sources */,
 				29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */,
-				29888881242E9A8A00D11427 /* DrillViewController.swift in Sources */,
+				29888881242E9A8A00D11427 /* CreateDrillViewController.swift in Sources */,
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,

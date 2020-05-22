@@ -35,7 +35,7 @@ final class FetchedDrillsViewController: FetchedTableViewController<Drill> {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DrillViewController" {
 
-            guard let vc = segue.destination as? DrillViewController else { return }
+            guard let vc = segue.destination as? CreateDrillViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.drill = fetchedResultsController.object(at: indexPath)
