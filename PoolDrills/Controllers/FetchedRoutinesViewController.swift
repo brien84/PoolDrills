@@ -37,7 +37,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "RoutineViewController" {
-            guard let vc = segue.destination as? RoutineViewController else { return }
+            guard let vc = segue.destination as? CreateRoutineViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)

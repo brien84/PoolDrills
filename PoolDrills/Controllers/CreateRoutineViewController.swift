@@ -1,5 +1,5 @@
 //
-//  RoutineViewController.swift
+//  CreateRoutineViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-03-29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RoutineViewController: UITableViewController {
+final class CreateRoutineViewController: UITableViewController {
 
     lazy var routine: Routine = {
         return Routine(context: coredata.managedContext)
@@ -19,13 +19,13 @@ final class RoutineViewController: UITableViewController {
     @IBOutlet private weak var titleField: UITextField!
     @IBOutlet private weak var selectedDrillsCount: UILabel!
 
-    @IBAction private func cancelButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func cancelButtonDidTap(_ sender: UIBarButtonItem) {
         coredata.managedContext.rollback()
 
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func saveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func saveButtonDidTap(_ sender: UIBarButtonItem) {
         routine.title = titleField.text
         coredata.saveContext()
 
@@ -48,8 +48,7 @@ final class RoutineViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DrillsSelection" {
-
+        if segue.identifier == "selectDrills" {
             guard let vc = segue.destination as? DrillsSelectionViewController else { return }
             vc.routine = routine
         }
