@@ -18,17 +18,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
+                        <color key="separatorColor" name="grayElement"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="1YW-zx-eqB" userLabel="Footer">
+                            <rect key="frame" x="0.0" y="157.5" width="414" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrillsCell" id="0xu-7N-LMV">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="0xu-7N-LMV" customClass="DrillCell" customModule="PoolDrills" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="101.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0xu-7N-LMV" id="6dV-Km-hkd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DrillName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl7-Ck-t05">
+                                            <rect key="frame" x="20" y="20" width="299" height="61.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                            <color key="textColor" name="lightElement"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attempts_16" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-qP-5yu">
+                                            <rect key="frame" x="327" y="20" width="30.5" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dZ3-qP-5yu" secondAttribute="height" multiplier="3:2" id="DIx-29-QGW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-7t-kKd" userLabel="AttemptsContainer">
+                                            <rect key="frame" x="365.5" y="20" width="28.5" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldw-8A-k4n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="20.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" name="lightElement"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1y-Kh-EhK" userLabel="placeholder">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="20.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="U1y-Kh-EhK" secondAttribute="bottom" id="6r8-9j-Mwl"/>
+                                                <constraint firstItem="U1y-Kh-EhK" firstAttribute="top" secondItem="eg0-7t-kKd" secondAttribute="top" id="9xw-I7-PrC"/>
+                                                <constraint firstAttribute="trailing" secondItem="ldw-8A-k4n" secondAttribute="trailing" id="Kws-9c-6va"/>
+                                                <constraint firstItem="ldw-8A-k4n" firstAttribute="leading" secondItem="eg0-7t-kKd" secondAttribute="leading" id="LMB-7q-3pF"/>
+                                                <constraint firstItem="ldw-8A-k4n" firstAttribute="top" secondItem="eg0-7t-kKd" secondAttribute="top" id="LQR-uC-dk5"/>
+                                                <constraint firstAttribute="trailing" secondItem="U1y-Kh-EhK" secondAttribute="trailing" id="YUs-wD-7BC"/>
+                                                <constraint firstItem="U1y-Kh-EhK" firstAttribute="leading" secondItem="eg0-7t-kKd" secondAttribute="leading" id="oEH-fd-fgN"/>
+                                                <constraint firstAttribute="bottom" secondItem="ldw-8A-k4n" secondAttribute="bottom" id="rQZ-XQ-Jda"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxF-se-tEY" userLabel="DurationContainer">
+                                            <rect key="frame" x="365.5" y="60.5" width="28.5" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yym-fB-8v8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="20.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" name="lightElement"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-T4-iL3" userLabel="placeholder">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oh9-T4-iL3" secondAttribute="trailing" id="0Mr-i2-4hH"/>
+                                                <constraint firstItem="Yym-fB-8v8" firstAttribute="leading" secondItem="uxF-se-tEY" secondAttribute="leading" id="1uj-H6-gRW"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yym-fB-8v8" secondAttribute="bottom" id="c7y-ds-4rR"/>
+                                                <constraint firstItem="oh9-T4-iL3" firstAttribute="top" secondItem="uxF-se-tEY" secondAttribute="top" id="dP3-mM-BS4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yym-fB-8v8" secondAttribute="trailing" id="iZp-cq-o3w"/>
+                                                <constraint firstItem="oh9-T4-iL3" firstAttribute="leading" secondItem="uxF-se-tEY" secondAttribute="leading" id="ouO-fw-txu"/>
+                                                <constraint firstItem="Yym-fB-8v8" firstAttribute="top" secondItem="uxF-se-tEY" secondAttribute="top" id="sWx-Zb-qJA"/>
+                                                <constraint firstAttribute="bottom" secondItem="oh9-T4-iL3" secondAttribute="bottom" id="waz-9H-AVs"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration_16" translatesAutoresizingMaskIntoConstraints="NO" id="qhc-EB-68E">
+                                            <rect key="frame" x="327" y="59.5" width="30.5" height="20.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="qhc-EB-68E" secondAttribute="height" multiplier="3:2" id="J5b-KK-fmY"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Fl7-Ck-t05" firstAttribute="top" secondItem="6dV-Km-hkd" secondAttribute="top" constant="20" symbolic="YES" id="D4t-Tl-FbW"/>
+                                        <constraint firstItem="eg0-7t-kKd" firstAttribute="leading" secondItem="dZ3-qP-5yu" secondAttribute="trailing" constant="8" symbolic="YES" id="DKD-ei-ahY"/>
+                                        <constraint firstItem="eg0-7t-kKd" firstAttribute="top" secondItem="6dV-Km-hkd" secondAttribute="top" constant="20" symbolic="YES" id="HvC-sw-B6c"/>
+                                        <constraint firstItem="qhc-EB-68E" firstAttribute="bottom" secondItem="uxF-se-tEY" secondAttribute="bottom" constant="-1" id="J0q-eR-L4i"/>
+                                        <constraint firstItem="uxF-se-tEY" firstAttribute="leading" secondItem="qhc-EB-68E" secondAttribute="trailing" constant="8" symbolic="YES" id="KYh-Ci-nzf"/>
+                                        <constraint firstItem="dZ3-qP-5yu" firstAttribute="leading" secondItem="Fl7-Ck-t05" secondAttribute="trailing" constant="8" symbolic="YES" id="LIE-bO-eN6"/>
+                                        <constraint firstItem="Fl7-Ck-t05" firstAttribute="leading" secondItem="6dV-Km-hkd" secondAttribute="leading" constant="20" symbolic="YES" id="QF2-sF-gpi"/>
+                                        <constraint firstItem="uxF-se-tEY" firstAttribute="width" secondItem="eg0-7t-kKd" secondAttribute="width" id="RZO-w6-eac"/>
+                                        <constraint firstItem="dZ3-qP-5yu" firstAttribute="top" secondItem="U1y-Kh-EhK" secondAttribute="top" id="i4l-Ic-Hbu"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fl7-Ck-t05" secondAttribute="bottom" constant="20" symbolic="YES" id="ipx-7r-Zzf"/>
+                                        <constraint firstAttribute="trailing" secondItem="eg0-7t-kKd" secondAttribute="trailing" constant="20" symbolic="YES" id="jNK-eI-G6i"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uxF-se-tEY" secondAttribute="bottom" constant="20" symbolic="YES" id="kvC-iz-ixN"/>
+                                        <constraint firstItem="dZ3-qP-5yu" firstAttribute="bottom" secondItem="U1y-Kh-EhK" secondAttribute="bottom" id="mQJ-Cr-ap6"/>
+                                        <constraint firstItem="uxF-se-tEY" firstAttribute="top" secondItem="eg0-7t-kKd" secondAttribute="bottom" constant="20" id="tkq-Xi-6RV"/>
+                                        <constraint firstAttribute="trailing" secondItem="uxF-se-tEY" secondAttribute="trailing" constant="20" symbolic="YES" id="wtT-Vi-2Ac"/>
+                                        <constraint firstItem="qhc-EB-68E" firstAttribute="top" secondItem="uxF-se-tEY" secondAttribute="top" constant="-1" id="yWB-iY-fut"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="34z-eE-IQd" kind="show" identifier="DrillViewController" id="C8I-PK-Hzc"/>
+                                    <outlet property="attempts" destination="ldw-8A-k4n" id="XR2-Ky-JSL"/>
+                                    <outlet property="duration" destination="Yym-fB-8v8" id="b9x-ZB-3Gq"/>
+                                    <outlet property="title" destination="Fl7-Ck-t05" id="d53-je-JWB"/>
+                                    <segue destination="34z-eE-IQd" kind="show" identifier="editDrill" id="C8I-PK-Hzc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -39,8 +148,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="GX7-Mt-NpE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="38E-Q3-1KO">
+                            <color key="tintColor" name="lightElement"/>
                             <connections>
-                                <segue destination="34z-eE-IQd" kind="show" identifier="DrillViewController" id="agN-MF-Dpg"/>
+                                <segue destination="34z-eE-IQd" kind="show" identifier="createDrill" id="agN-MF-Dpg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -100,10 +210,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attempts_32" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-yp-dhp">
-                                                    <rect key="frame" x="20" y="0.0" width="64" height="42"/>
+                                                    <rect key="frame" x="20" y="0.0" width="32" height="42"/>
                                                 </imageView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-PN-BAO" customClass="CustomUISlider" customModule="PoolDrills" customModuleProvider="target">
-                                                    <rect key="frame" x="90" y="20" width="306" height="5"/>
+                                                    <rect key="frame" x="58" y="20" width="338" height="5"/>
                                                     <color key="tintColor" name="lightElement"/>
                                                     <color key="minimumTrackTintColor" name="lightElement"/>
                                                     <color key="maximumTrackTintColor" name="grayElement"/>
@@ -138,10 +248,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration_32" translatesAutoresizingMaskIntoConstraints="NO" id="Yh1-S3-2Fj">
-                                                    <rect key="frame" x="20" y="0.0" width="64" height="40"/>
+                                                    <rect key="frame" x="20" y="0.0" width="32" height="40"/>
                                                 </imageView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-Md-rbg" customClass="CustomUISlider" customModule="PoolDrills" customModuleProvider="target">
-                                                    <rect key="frame" x="90" y="20" width="306" height="5"/>
+                                                    <rect key="frame" x="58" y="20" width="338" height="5"/>
                                                     <color key="tintColor" name="lightElement"/>
                                                     <color key="minimumTrackTintColor" name="lightElement"/>
                                                     <color key="maximumTrackTintColor" name="grayElement"/>
@@ -252,7 +362,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvz-gc-hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4175.36231884058" y="172.76785714285714"/>
+            <point key="canvasLocation" x="4175" y="173"/>
         </scene>
         <!--Runner View Controller-->
         <scene sceneID="ZKU-uC-CrE">
@@ -568,13 +678,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY6-rT-rZF">
-                                                    <rect key="frame" x="342" y="0.5" width="12" height="43"/>
+                                                    <rect key="frame" x="358" y="0.5" width="12" height="43"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" name="lightElement"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_16" translatesAutoresizingMaskIntoConstraints="NO" id="Vn0-dS-03v">
-                                                    <rect key="frame" x="362" y="0.0" width="32" height="43.5"/>
+                                                    <rect key="frame" x="378" y="0.0" width="16" height="43.5"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -632,7 +742,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3do-9V-SzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5021.739130434783" y="172.76785714285714"/>
+            <point key="canvasLocation" x="5022" y="173"/>
         </scene>
         <!--Drills Selection View Controller-->
         <scene sceneID="eSg-Ez-eA0">
@@ -726,8 +836,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attempts_16" width="16" height="16"/>
         <image name="attempts_32" width="32" height="32"/>
         <image name="disclosure_16" width="16" height="16"/>
+        <image name="duration_16" width="16" height="16"/>
         <image name="duration_32" width="32" height="32"/>
         <namedColor name="darkElement">
             <color red="0.13333333333333333" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -747,6 +859,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cmE-ff-j3w"/>
-        <segue reference="C8I-PK-Hzc"/>
+        <segue reference="agN-MF-Dpg"/>
     </inferredMetricsTieBreakers>
 </document>
