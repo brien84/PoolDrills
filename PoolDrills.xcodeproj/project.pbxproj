@@ -37,6 +37,9 @@
 		29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillTracker.swift */; };
 		29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E542465D4EF005EEB1B /* DurationTracker.swift */; };
 		29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */; };
+		29D0DDD7247955AD0012882D /* DrillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDD6247955AD0012882D /* DrillCell.swift */; };
+		29D0DDDA24798E3F0012882D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDD924798E3F0012882D /* Extensions.swift */; };
+		29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */; };
 		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,9 @@
 		29B38E42244B83AF005EEB1B /* DrillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTracker.swift; sourceTree = "<group>"; };
 		29B38E542465D4EF005EEB1B /* DurationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTracker.swift; sourceTree = "<group>"; };
 		29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsTracker.swift; sourceTree = "<group>"; };
+		29D0DDD6247955AD0012882D /* DrillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillCell.swift; sourceTree = "<group>"; };
+		29D0DDD924798E3F0012882D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectedBackgroundCell.swift; sourceTree = "<group>"; };
 		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +156,7 @@
 				29933D84241438DB0013EB94 /* Controllers */,
 				29933D83241438D40013EB94 /* Models */,
 				29B38E3F2448DFF9005EEB1B /* Views */,
+				29D0DDD824798E280012882D /* Support */,
 				29933D59241438400013EB94 /* Main.storyboard */,
 				29933D5C241438420013EB94 /* Assets.xcassets */,
 				29933D5E241438420013EB94 /* LaunchScreen.storyboard */,
@@ -211,10 +218,9 @@
 		29B38E3F2448DFF9005EEB1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29D0DDDB24798EE90012882D /* Cells */,
 				29456BEC24770DCB00E8E7D9 /* CustomUISlider.swift */,
-				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 				29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */,
-				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +241,25 @@
 			children = (
 			);
 			path = ControllerTests;
+			sourceTree = "<group>";
+		};
+		29D0DDD824798E280012882D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				29D0DDD924798E3F0012882D /* Extensions.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		29D0DDDB24798EE90012882D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */,
+				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
+				29D0DDD6247955AD0012882D /* DrillCell.swift */,
+				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +433,9 @@
 				295AC819246DCC2000A1805D /* DrillRecorder.swift in Sources */,
 				29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */,
 				29456BDE24718A4800E8E7D9 /* DrillQueueController.swift in Sources */,
+				29D0DDDA24798E3F0012882D /* Extensions.swift in Sources */,
+				29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */,
+				29D0DDD7247955AD0012882D /* DrillCell.swift in Sources */,
 				298888852430DAB300D11427 /* CreateRoutineViewController.swift in Sources */,
 				29888883242FF18700D11427 /* FetchedRoutinesViewController.swift in Sources */,
 				298888D52438CD7B00D11427 /* PoolDrills.xcdatamodeld in Sources */,
