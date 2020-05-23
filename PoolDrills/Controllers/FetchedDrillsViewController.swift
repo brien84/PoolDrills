@@ -14,18 +14,17 @@ final class FetchedDrillsViewController: FetchedTableViewController<Drill> {
         return [NSSortDescriptor(key: "title", ascending: true)]
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DrillsCell", for: indexPath)
+        // swiftlint:disable:next force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath) as! DrillCell
 
         let drill = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = drill.title
+
+        cell.title.text = drill.title
+        cell.attempts.text = String(drill.attempts)
+        cell.duration.text = String(Int(drill.duration) / 60)
 
         return cell
     }
@@ -33,14 +32,11 @@ final class FetchedDrillsViewController: FetchedTableViewController<Drill> {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DrillViewController" {
-
+        if segue.identifier == "createDrill" || segue.identifier == "editDrill" {
             guard let vc = segue.destination as? CreateDrillViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.drill = fetchedResultsController.object(at: indexPath)
-
-            vc.hidesBottomBarWhenPushed = true
         }
     }
 
