@@ -14,20 +14,16 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         return [NSSortDescriptor(key: "title", ascending: true)]
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath) as! RoutinesViewCell
-        cell.delegate = self
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutinesViewCell
 
         let routine = fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = routine.title
+
+        cell.delegate = self
 
         return cell
     }
@@ -35,23 +31,18 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "RoutineViewController" {
+        if segue.identifier == "createRoutine" || segue.identifier == "editRoutine" {
             guard let vc = segue.destination as? CreateRoutineViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
-
-            vc.hidesBottomBarWhenPushed = true
         }
 
-        if segue.identifier == "RunnerViewController" {
+        if segue.identifier == "runRoutine" {
             guard let vc = segue.destination as? RunnerViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
-
-            vc.hidesBottomBarWhenPushed = true
         }
     }
 
@@ -59,6 +50,6 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 
 extension FetchedRoutinesViewController: RoutineRunButtonDelegate {
     func routineRunButtonDidTap(inside cell: UITableViewCell) {
-        performSegue(withIdentifier: "RunnerViewController", sender: cell)
+        performSegue(withIdentifier: "runRoutine", sender: cell)
     }
 }
