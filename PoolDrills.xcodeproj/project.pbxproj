@@ -255,8 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */,
-				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 				29D0DDD6247955AD0012882D /* DrillCell.swift */,
+				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
 			);
 			path = Cells;
