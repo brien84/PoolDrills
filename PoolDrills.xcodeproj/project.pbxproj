@@ -33,7 +33,7 @@
 		29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5E241438420013EB94 /* LaunchScreen.storyboard */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
 		29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* FetchedDrillsViewController.swift */; };
-		29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */; };
+		29B38E412448E03C005EEB1B /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutineCell.swift */; };
 		29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillTracker.swift */; };
 		29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E542465D4EF005EEB1B /* DurationTracker.swift */; };
 		29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */; };
@@ -93,7 +93,7 @@
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D87241439150013EB94 /* FetchedDrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDrillsViewController.swift; sourceTree = "<group>"; };
-		29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesViewCell.swift; sourceTree = "<group>"; };
+		29B38E402448E03C005EEB1B /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 		29B38E42244B83AF005EEB1B /* DrillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTracker.swift; sourceTree = "<group>"; };
 		29B38E542465D4EF005EEB1B /* DurationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTracker.swift; sourceTree = "<group>"; };
 		29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsTracker.swift; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 				29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */,
 				29D0DDD6247955AD0012882D /* DrillCell.swift */,
 				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
-				29B38E402448E03C005EEB1B /* RoutinesViewCell.swift */,
+				29B38E402448E03C005EEB1B /* RoutineCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */,
-				29B38E412448E03C005EEB1B /* RoutinesViewCell.swift in Sources */,
+				29B38E412448E03C005EEB1B /* RoutineCell.swift in Sources */,
 				29456BE024731E5900E8E7D9 /* DrillQueueViewCell.swift in Sources */,
 				29456BE2247434DD00E8E7D9 /* GradientBackgroundView.swift in Sources */,
 				29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */,

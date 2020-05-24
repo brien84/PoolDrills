@@ -18,10 +18,10 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutinesViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineCell
 
         let routine = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = routine.title
+        cell.title.text = routine.title
 
         cell.delegate = self
 
@@ -49,7 +49,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 }
 
 extension FetchedRoutinesViewController: RoutineRunButtonDelegate {
-    func routineRunButtonDidTap(inside cell: UITableViewCell) {
+    func routineRunButtonDidTap(_ button: UIButton, inside cell: UITableViewCell) {
         performSegue(withIdentifier: "runRoutine", sender: cell)
     }
 }
