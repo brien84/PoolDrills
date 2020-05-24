@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DrillName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl7-Ck-t05">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DrillTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl7-Ck-t05">
                                             <rect key="frame" x="20" y="20" width="299" height="61.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <color key="textColor" name="lightElement"/>
@@ -314,32 +314,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primaryBackground"/>
+                        <color key="separatorColor" name="grayElement"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="qc7-bG-72O" userLabel="Footer">
+                            <rect key="frame" x="0.0" y="128.5" width="414" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineCell" id="GN1-PU-BU4" customClass="RoutinesViewCell" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="46.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routineCell" id="GN1-PU-BU4" customClass="RoutineCell" customModule="PoolDrills" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="72.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GN1-PU-BU4" id="QkL-ML-Ke9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-T4-LYW">
-                                            <rect key="frame" x="376" y="8" width="30" height="30.5"/>
-                                            <state key="normal" title="Run"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoutineTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-05-kJw">
+                                            <rect key="frame" x="20" y="20" width="111.5" height="32.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <color key="textColor" name="lightElement"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-T4-LYW">
+                                            <rect key="frame" x="362" y="20" width="32" height="32.5"/>
+                                            <color key="tintColor" name="grayElement"/>
+                                            <state key="normal" image="play_32"/>
                                             <connections>
-                                                <action selector="runButtonTapped:" destination="GN1-PU-BU4" eventType="touchUpInside" id="mEu-ts-f7N"/>
+                                                <action selector="runButtonTapped:" destination="GN1-PU-BU4" eventType="touchUpInside" id="cod-WB-ewZ"/>
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="top" secondItem="QkL-ML-Ke9" secondAttribute="top" constant="8" id="Da8-CP-8BM"/>
-                                        <constraint firstAttribute="bottom" secondItem="bU3-T4-LYW" secondAttribute="bottom" constant="8" id="HGY-RU-azc"/>
-                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QkL-ML-Ke9" secondAttribute="leading" constant="8" id="ecO-YG-YqB"/>
-                                        <constraint firstAttribute="trailing" secondItem="bU3-T4-LYW" secondAttribute="trailing" constant="8" id="owt-8M-vuw"/>
+                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Umv-05-kJw" secondAttribute="trailing" constant="8" symbolic="YES" id="5Fv-5z-ESi"/>
+                                        <constraint firstItem="Umv-05-kJw" firstAttribute="leading" secondItem="QkL-ML-Ke9" secondAttribute="leading" constant="20" symbolic="YES" id="Ife-fa-g0B"/>
+                                        <constraint firstAttribute="bottom" secondItem="Umv-05-kJw" secondAttribute="bottom" constant="20" symbolic="YES" id="LKJ-W5-JJb"/>
+                                        <constraint firstAttribute="bottom" secondItem="bU3-T4-LYW" secondAttribute="bottom" constant="20" symbolic="YES" id="Qip-kh-CbQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="bU3-T4-LYW" secondAttribute="trailing" constant="20" symbolic="YES" id="RSj-Ak-Zp4"/>
+                                        <constraint firstItem="Umv-05-kJw" firstAttribute="top" secondItem="QkL-ML-Ke9" secondAttribute="top" constant="20" symbolic="YES" id="nOV-zT-eo5"/>
+                                        <constraint firstItem="bU3-T4-LYW" firstAttribute="top" secondItem="QkL-ML-Ke9" secondAttribute="top" constant="20" symbolic="YES" id="vOK-Nj-NPr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="t6m-P0-p3g" kind="show" identifier="RoutineViewController" id="fS0-RY-Y93"/>
+                                    <outlet property="title" destination="Umv-05-kJw" id="CjJ-uo-Ibv"/>
+                                    <segue destination="t6m-P0-p3g" kind="show" identifier="editRoutine" id="fS0-RY-Y93"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -351,13 +369,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="oW5-sA-C9H">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YwE-yK-oc3">
+                            <color key="tintColor" name="lightElement"/>
                             <connections>
-                                <segue destination="t6m-P0-p3g" kind="show" identifier="RoutineViewController" id="cmE-ff-j3w"/>
+                                <segue destination="t6m-P0-p3g" kind="show" identifier="createRoutine" id="cmE-ff-j3w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="23f-Mw-JpI" kind="show" identifier="RunnerViewController" id="RYZ-a7-3C1"/>
+                        <segue destination="23f-Mw-JpI" kind="show" identifier="runRoutine" id="RYZ-a7-3C1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvz-gc-hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -841,6 +860,7 @@
         <image name="disclosure_16" width="16" height="16"/>
         <image name="duration_16" width="16" height="16"/>
         <image name="duration_32" width="32" height="32"/>
+        <image name="play_32" width="32" height="32"/>
         <namedColor name="darkElement">
             <color red="0.13333333333333333" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -858,7 +878,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cmE-ff-j3w"/>
+        <segue reference="fS0-RY-Y93"/>
         <segue reference="agN-MF-Dpg"/>
     </inferredMetricsTieBreakers>
 </document>
