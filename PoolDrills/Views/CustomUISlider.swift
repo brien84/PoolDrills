@@ -19,6 +19,7 @@ final class CustomUISlider: UISlider {
 
         label.textAlignment = .center
         label.textColor = minimumTrackTintColor
+        label.adjustsFontForContentSizeCategory = true
 
         addSubview(label)
 
@@ -26,9 +27,9 @@ final class CustomUISlider: UISlider {
     }()
 
     private var labelFrame: CGRect {
-        return CGRect(x: thumbRect.minX - thumbRect.width / 2,
+        return CGRect(x: thumbRect.midX - thumbRect.width * 2,
                       y: thumbRect.minY - thumbRect.height,
-                      width: thumbRect.width * 2,
+                      width: thumbRect.width * 4,
                       height: thumbRect.height)
     }
 
