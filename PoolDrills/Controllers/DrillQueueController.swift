@@ -8,34 +8,27 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-final class DrillQueueController: NSObject {
-
-    private let view: UICollectionView
+final class DrillQueueController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var datasource = [Drill]() {
         didSet {
-            view.reloadData()
-            view.layoutIfNeeded()
+            collectionView.reloadData()
+            collectionView.layoutIfNeeded()
         }
     }
 
     private var currentIndex = -1 {
         didSet {
-            currentCell = view.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillQueueViewCell
+            currentCell = collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillQueueViewCell
         }
     }
 
     private var currentCell: DrillQueueViewCell?
 
-    init(view: UICollectionView) {
-        self.view = view
-        super.init()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        self.view.delegate = self
-        self.view.dataSource = self
-        self.view.isUserInteractionEnabled = false
+        collectionView.isUserInteractionEnabled = false
 
         setupNotifications()
     }
@@ -43,8 +36,41 @@ final class DrillQueueController: NSObject {
     func next() {
         if currentIndex != datasource.indices.last {
             currentIndex += 1
-            view.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
         }
+    }
+
+    // MARK: - UICollectionViewDataSource
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return datasource.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable:next force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "drillQueueCell", for: indexPath) as! DrillQueueViewCell
+
+        let drill = datasource[indexPath.row]
+
+        cell.title.text = drill.title
+        cell.duration.text = drill.duration.toString()
+        cell.attempts.text = String(drill.attempts)
+
+        return cell
+    }
+
+    // MARK: - UICollectionViewDelegateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: cellWidth, bottom: 0, right: cellWidth)
     }
 
     // MARK: - Notifications
@@ -82,42 +108,6 @@ final class DrillQueueController: NSObject {
 }
 
 extension DrillQueueController {
-    fileprivate var cellHeight: CGFloat { view.frame.height - 20 }
-    fileprivate var cellWidth: CGFloat { view.frame.width / 2 }
-}
-
-extension DrillQueueController: UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // swiftlint:disable:next force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DrillQueueViewCell
-
-        let drill = datasource[indexPath.row]
-
-        cell.title.text = drill.title
-        cell.duration.text = drill.duration.toString()
-        cell.attempts.text = String(drill.attempts)
-
-        return cell
-    }
-}
-
-extension DrillQueueController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: cellWidth, bottom: 0, right: cellWidth)
-    }
-
+    private var cellHeight: CGFloat { collectionView.frame.height }
+    private var cellWidth: CGFloat { collectionView.frame.width }
 }
