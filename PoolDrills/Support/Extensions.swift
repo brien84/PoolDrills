@@ -29,3 +29,17 @@ extension UIColor {
         return UIColor(named: "lightElement")
     }
 }
+
+extension UIImage {
+    static var next64: UIImage! {
+        return UIImage(named: "next_64")
+    }
+
+    static var pause64: UIImage! {
+        return UIImage(named: "pause_64")
+    }
+
+    static var play64: UIImage! {
+        return UIImage(named: "play_64")
+    }
+}
