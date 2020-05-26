@@ -20,6 +20,7 @@
 		295AC81B246DCE9300A1805D /* DrillRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */; };
 		295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81C246DE37900A1805D /* ResultsViewController.swift */; };
 		295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81F247034FC00A1805D /* FetchedTableViewController.swift */; };
+		29874EE2247D97E300061787 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874EE1247D97E300061787 /* ActionButton.swift */; };
 		29888881242E9A8A00D11427 /* CreateDrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* CreateDrillViewController.swift */; };
 		29888883242FF18700D11427 /* FetchedRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */; };
 		298888852430DAB300D11427 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888842430DAB300D11427 /* CreateRoutineViewController.swift */; };
@@ -76,6 +77,7 @@
 		295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillRecorderTests.swift; sourceTree = "<group>"; };
 		295AC81C246DE37900A1805D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		295AC81F247034FC00A1805D /* FetchedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTableViewController.swift; sourceTree = "<group>"; };
+		29874EE1247D97E300061787 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		29888880242E9A8A00D11427 /* CreateDrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDrillViewController.swift; sourceTree = "<group>"; };
 		29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRoutinesViewController.swift; sourceTree = "<group>"; };
 		298888842430DAB300D11427 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		29933D84241438DB0013EB94 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */,
 				29888880242E9A8A00D11427 /* CreateDrillViewController.swift */,
 				298888842430DAB300D11427 /* CreateRoutineViewController.swift */,
 				29456BDD24718A4800E8E7D9 /* DrillQueueController.swift */,
@@ -215,7 +218,6 @@
 				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
 				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
 				29D660C42447861C00339A03 /* RunnerViewController.swift */,
-				29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				29D0DDDB24798EE90012882D /* Cells */,
+				29874EE1247D97E300061787 /* ActionButton.swift */,
 				29A303B9247C02400038E3D2 /* ConfirmationPopoverView.xib */,
 				29456BEC24770DCB00E8E7D9 /* CustomUISlider.swift */,
 				29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */,
@@ -435,6 +438,7 @@
 				29A303B8247BD3540038E3D2 /* ConfirmationPopoverViewController.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
 				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
+				29874EE2247D97E300061787 /* ActionButton.swift in Sources */,
 				29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
 				295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */,
