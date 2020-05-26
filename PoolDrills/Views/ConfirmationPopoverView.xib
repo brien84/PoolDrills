@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmationPopoverViewController" customModule="PoolDrills" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="omj-Hs-CQp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-kz-CFe">
+                    <rect key="frame" x="0.0" y="44" width="207" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="deny_32"/>
+                    <connections>
+                        <action selector="denyButtonDidTap:" destination="-1" eventType="touchUpInside" id="C4h-SR-rpH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trD-TH-ugq">
+                    <rect key="frame" x="207" y="44" width="207" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="confirm_32">
+                        <color key="titleColor" name="lightElement"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmButtonDidTap:" destination="-1" eventType="touchUpInside" id="KtL-WL-MYc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dfS-kz-CFe" firstAttribute="leading" secondItem="kSm-8B-9Uc" secondAttribute="leading" id="5q0-Of-AVk"/>
+                <constraint firstItem="trD-TH-ugq" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="Fpa-MH-Bpp"/>
+                <constraint firstItem="trD-TH-ugq" firstAttribute="leading" secondItem="kSm-8B-9Uc" secondAttribute="centerX" id="Ibk-Cq-wfT"/>
+                <constraint firstAttribute="centerX" secondItem="dfS-kz-CFe" secondAttribute="trailing" id="TT5-nJ-Iwt"/>
+                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="dfS-kz-CFe" secondAttribute="bottom" id="hDc-F8-Exa"/>
+                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="trD-TH-ugq" secondAttribute="bottom" id="ik7-aI-5ND"/>
+                <constraint firstItem="dfS-kz-CFe" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="k9p-eP-11e"/>
+                <constraint firstItem="trD-TH-ugq" firstAttribute="trailing" secondItem="kSm-8B-9Uc" secondAttribute="trailing" id="xvk-YK-jYw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="kSm-8B-9Uc"/>
+            <point key="canvasLocation" x="295.6521739130435" y="174.77678571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="confirm_32" width="32" height="32"/>
+        <image name="deny_32" width="32" height="32"/>
+        <namedColor name="lightElement">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

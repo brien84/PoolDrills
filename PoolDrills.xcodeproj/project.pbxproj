@@ -33,6 +33,8 @@
 		29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29933D5E241438420013EB94 /* LaunchScreen.storyboard */; };
 		29933D76241438430013EB94 /* PoolDrillsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D75241438430013EB94 /* PoolDrillsUITests.swift */; };
 		29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29933D87241439150013EB94 /* FetchedDrillsViewController.swift */; };
+		29A303B8247BD3540038E3D2 /* ConfirmationPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */; };
+		29A303BA247C02400038E3D2 /* ConfirmationPopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A303B9247C02400038E3D2 /* ConfirmationPopoverView.xib */; };
 		29B38E412448E03C005EEB1B /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E402448E03C005EEB1B /* RoutineCell.swift */; };
 		29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E42244B83AF005EEB1B /* DrillTracker.swift */; };
 		29B38E552465D4EF005EEB1B /* DurationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B38E542465D4EF005EEB1B /* DurationTracker.swift */; };
@@ -93,6 +95,8 @@
 		29933D75241438430013EB94 /* PoolDrillsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDrillsUITests.swift; sourceTree = "<group>"; };
 		29933D77241438430013EB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29933D87241439150013EB94 /* FetchedDrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDrillsViewController.swift; sourceTree = "<group>"; };
+		29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopoverViewController.swift; sourceTree = "<group>"; };
+		29A303B9247C02400038E3D2 /* ConfirmationPopoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationPopoverView.xib; sourceTree = "<group>"; };
 		29B38E402448E03C005EEB1B /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 		29B38E42244B83AF005EEB1B /* DrillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTracker.swift; sourceTree = "<group>"; };
 		29B38E542465D4EF005EEB1B /* DurationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTracker.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
 				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
 				29D660C42447861C00339A03 /* RunnerViewController.swift */,
+				29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				29D0DDDB24798EE90012882D /* Cells */,
+				29A303B9247C02400038E3D2 /* ConfirmationPopoverView.xib */,
 				29456BEC24770DCB00E8E7D9 /* CustomUISlider.swift */,
 				29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */,
 			);
@@ -368,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29933D60241438420013EB94 /* LaunchScreen.storyboard in Resources */,
+				29A303BA247C02400038E3D2 /* ConfirmationPopoverView.xib in Resources */,
 				29933D5D241438420013EB94 /* Assets.xcassets in Resources */,
 				29933D5B241438400013EB94 /* Main.storyboard in Resources */,
 			);
@@ -425,6 +432,7 @@
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
 				29456BED24770DCB00E8E7D9 /* CustomUISlider.swift in Sources */,
 				295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */,
+				29A303B8247BD3540038E3D2 /* ConfirmationPopoverViewController.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
 				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
 				29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */,
