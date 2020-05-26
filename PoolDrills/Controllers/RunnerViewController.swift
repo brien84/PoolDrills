@@ -36,14 +36,14 @@ final class RunnerViewController: UIViewController {
     @IBOutlet private weak var missCount: UILabel!
     @IBOutlet private weak var hitCount: UILabel!
 
-    @IBOutlet private weak var actionButton: UIButton!
+    @IBOutlet private weak var actionButton: ActionButton!
     @IBOutlet private weak var missButton: UIButton!
     @IBOutlet private weak var hitButton: UIButton!
     @IBOutlet private weak var completionButton: UIButton!
 
     @IBOutlet private weak var attemptsProgress: UIProgressView!
 
-    @IBAction private func actionButtonDidTap(_ sender: UIButton) {
+    @IBAction private func actionButtonDidTap(_ sender: ActionButton) {
         if shouldStartCountdown {
             startCountdown { [weak self] in
                 self?.drillTracker.toggle()
@@ -184,7 +184,7 @@ extension RunnerViewController: DrillTrackingDelegate {
         attemptsProgress.isHidden = drill.attempts > 0 ? false : true
 
         toggleButtons(enabled: false)
-        actionButton.setTitle("Start", for: .normal)
+        actionButton.set(image: .play)
 
         shouldStartCountdown = true
 
@@ -193,28 +193,28 @@ extension RunnerViewController: DrillTrackingDelegate {
 
     func drillTrackingDidStart(_ tracker: DrillTracking) {
         toggleButtons(enabled: true)
-        actionButton.setTitle("Pause", for: .normal)
+        actionButton.set(image: .pause)
 
         UIDevice.vibrate()
     }
 
     func drillTrackingDidPause(_ tracker: DrillTracking) {
         toggleButtons(enabled: false)
-        actionButton.setTitle("Resume", for: .normal)
+        actionButton.set(image: .play)
 
         shouldStartCountdown = true
     }
 
     func drillTrackingDidCompleteDrill(_ tracker: DrillTracking) {
         toggleButtons(enabled: false)
-        actionButton.setTitle("Next", for: .normal)
+        actionButton.set(image: .next)
 
         UIDevice.vibrate()
     }
 
     func drillTrackingDidFinish(_ tracker: DrillTracking, with records: [DrillRecord]) {
         toggleButtons(enabled: false)
-        actionButton.setTitle("Finished", for: .normal)
+        actionButton.set(image: .next)
 
         self.records = records
         performSegue(withIdentifier: "ResultsVC", sender: nil)
