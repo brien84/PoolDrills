@@ -19,7 +19,6 @@ final class DrillsSelectionViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.allowsMultipleSelectionDuringEditing = true
         isEditing = true
 
         setupDatasource()
@@ -34,6 +33,10 @@ final class DrillsSelectionViewController: UITableViewController {
 
         let drills = datasource.filter { selectedDrills.contains($0) }
         routine?.drills = NSOrderedSet(array: drills)
+    }
+
+    @IBAction private func doneButtonDidTap(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
 
     private func setupDatasource() {
@@ -51,17 +54,21 @@ final class DrillsSelectionViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         datasource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DrillsSelectionCell", for: indexPath)
+        // swiftlint:disable:next force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drillsSelectionCell", for: indexPath) as! DrillCell
 
         let drill = datasource[indexPath.row]
-        cell.textLabel?.text = drill.title
+
+        cell.title.text = drill.title
+        cell.attempts.text = String(drill.attempts)
+        cell.duration.text = String(Int(drill.duration) / 60)
 
         return cell
     }
@@ -76,7 +83,7 @@ final class DrillsSelectionViewController: UITableViewController {
         datasource.insert(drill, at: destinationIndexPath.row)
     }
 
-    // MARK: - Table view delegate
+    // MARK: - UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let drill = datasource[indexPath.row]
