@@ -62,7 +62,7 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
     // MARK: - UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return inset / 2
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -70,7 +70,7 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: cellWidth, bottom: 0, right: cellWidth)
+        return UIEdgeInsets(top: inset, left: cellWidth, bottom: inset, right: cellWidth)
     }
 
     // MARK: - Notifications
@@ -108,6 +108,7 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
 }
 
 extension DrillQueueController {
-    private var cellHeight: CGFloat { collectionView.frame.height }
-    private var cellWidth: CGFloat { collectionView.frame.width }
+    private var inset: CGFloat { collectionView.frame.width * 0.1 }
+    private var cellHeight: CGFloat { collectionView.frame.height - 2 * inset }
+    private var cellWidth: CGFloat { collectionView.frame.width - 2 * inset}
 }

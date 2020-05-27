@@ -20,42 +20,42 @@
                         <color key="backgroundColor" name="primaryBackground"/>
                         <color key="separatorColor" name="grayElement"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="1YW-zx-eqB" userLabel="Footer">
-                            <rect key="frame" x="0.0" y="159" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="200.33332824707031" width="414" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="0xu-7N-LMV" customClass="DrillCell" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="103"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="144.33332824707031"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0xu-7N-LMV" id="6dV-Km-hkd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="144.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DrillTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl7-Ck-t05">
-                                            <rect key="frame" x="20" y="20" width="297.66666666666669" height="63"/>
+                                            <rect key="frame" x="20" y="19.999999999999993" width="266.66666666666669" height="104.33333333333331"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attempts_16" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-qP-5yu">
-                                            <rect key="frame" x="325.66666666666669" y="20" width="32" height="21.333333333333329"/>
+                                            <rect key="frame" x="294.66666666666669" y="20" width="63" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dZ3-qP-5yu" secondAttribute="height" multiplier="3:2" id="DIx-29-QGW"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-7t-kKd" userLabel="AttemptsContainer">
-                                            <rect key="frame" x="365.66666666666669" y="20" width="28.333333333333314" height="21.333333333333329"/>
+                                            <rect key="frame" x="365.66666666666669" y="20" width="28.333333333333314" height="42"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldw-8A-k4n">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="21.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" name="lightElement"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1y-Kh-EhK" userLabel="placeholder">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="21.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -76,17 +76,17 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxF-se-tEY" userLabel="DurationContainer">
-                                            <rect key="frame" x="365.66666666666669" y="61.333333333333336" width="28.333333333333314" height="21.333333333333336"/>
+                                            <rect key="frame" x="365.66666666666669" y="82" width="28.333333333333314" height="42"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yym-fB-8v8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="21.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" name="lightElement"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-T4-iL3" userLabel="placeholder">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="21.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="42"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration_16" translatesAutoresizingMaskIntoConstraints="NO" id="qhc-EB-68E">
-                                            <rect key="frame" x="325.66666666666669" y="60.333333333333336" width="32" height="21.333333333333336"/>
+                                            <rect key="frame" x="294.66666666666669" y="81" width="63" height="42"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="qhc-EB-68E" secondAttribute="height" multiplier="3:2" id="J5b-KK-fmY"/>
@@ -210,10 +210,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attempts_32" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-yp-dhp">
-                                                    <rect key="frame" x="20" y="0.0" width="32" height="42"/>
+                                                    <rect key="frame" x="20" y="0.0" width="64" height="42"/>
                                                 </imageView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-PN-BAO" customClass="CustomUISlider" customModule="PoolDrills" customModuleProvider="target">
-                                                    <rect key="frame" x="58" y="20" width="338" height="5"/>
+                                                    <rect key="frame" x="90" y="20" width="306" height="5"/>
                                                     <color key="tintColor" name="lightElement"/>
                                                     <color key="minimumTrackTintColor" name="lightElement"/>
                                                     <color key="maximumTrackTintColor" name="grayElement"/>
@@ -248,10 +248,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration_32" translatesAutoresizingMaskIntoConstraints="NO" id="Yh1-S3-2Fj">
-                                                    <rect key="frame" x="20" y="0.0" width="32" height="40"/>
+                                                    <rect key="frame" x="20" y="0.0" width="64" height="40"/>
                                                 </imageView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-Md-rbg" customClass="CustomUISlider" customModule="PoolDrills" customModuleProvider="target">
-                                                    <rect key="frame" x="58" y="20" width="338" height="5"/>
+                                                    <rect key="frame" x="90" y="20" width="306" height="5"/>
                                                     <color key="tintColor" name="lightElement"/>
                                                     <color key="minimumTrackTintColor" name="lightElement"/>
                                                     <color key="maximumTrackTintColor" name="grayElement"/>
@@ -316,26 +316,26 @@
                         <color key="backgroundColor" name="primaryBackground"/>
                         <color key="separatorColor" name="grayElement"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="qc7-bG-72O" userLabel="Footer">
-                            <rect key="frame" x="0.0" y="128.33333587646484" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="160.33333587646484" width="414" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routineCell" id="GN1-PU-BU4" customClass="RoutineCell" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="72.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="104.33333587646484"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GN1-PU-BU4" id="QkL-ML-Ke9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="104.33333587646484"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoutineTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-05-kJw">
-                                            <rect key="frame" x="19.999999999999993" y="20.000000000000004" width="111.33333333333331" height="32.333333333333343"/>
+                                            <rect key="frame" x="19.999999999999993" y="20" width="111.33333333333331" height="64.333333333333329"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-T4-LYW">
-                                            <rect key="frame" x="362" y="20.000000000000004" width="32" height="32.333333333333343"/>
+                                            <rect key="frame" x="330" y="20" width="64" height="64.333333333333329"/>
                                             <color key="tintColor" name="grayElement"/>
                                             <state key="normal" image="play_32"/>
                                             <connections>
@@ -406,24 +406,24 @@
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-9R-6cl">
                                 <rect key="frame" x="0.0" y="171" width="414" height="207"/>
                                 <connections>
-                                    <segue destination="nrv-nG-vLj" kind="embed" identifier="loadDrillsQueue" id="7OU-K9-kHf"/>
+                                    <segue destination="A48-od-P9M" kind="embed" identifier="loadDrillsQueue" id="ihl-iE-tSP"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-Kh-zEW" customClass="ActionButton" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="175" y="346" width="64" height="64"/>
+                                <rect key="frame" x="143" y="314" width="128" height="128"/>
                                 <state key="normal" image="play_64"/>
                                 <connections>
                                     <action selector="actionButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="8be-sa-s4c"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11G-WV-3eg">
-                                <rect key="frame" x="0.0" y="410" width="414" height="27"/>
+                                <rect key="frame" x="0.0" y="442" width="414" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnr-sR-Gdy" userLabel="Attempts Container">
-                                <rect key="frame" x="0.0" y="437" width="414" height="124"/>
+                                <rect key="frame" x="0.0" y="469" width="414" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="060-br-vVo">
                                         <rect key="frame" x="8" y="8" width="30" height="72"/>
@@ -479,14 +479,14 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-lx-jVj">
-                                <rect key="frame" x="288.66666666666669" y="356" width="44" height="44"/>
+                                <rect key="frame" x="266.66666666666669" y="334" width="88" height="88"/>
                                 <state key="normal" image="confirm_44"/>
                                 <connections>
                                     <action selector="completionButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="oy3-z4-eRS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMB-gD-Aep">
-                                <rect key="frame" x="81.666666666666671" y="356" width="44" height="44"/>
+                                <rect key="frame" x="59.666666666666657" y="334" width="88" height="88"/>
                                 <state key="normal" image="deny_44"/>
                                 <connections>
                                     <action selector="exitButtonDidTap:" destination="23f-Mw-JpI" eventType="touchUpInside" id="eul-8o-MP7"/>
@@ -649,13 +649,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY6-rT-rZF">
-                                                    <rect key="frame" x="358" y="0.66666666666666785" width="12" height="43"/>
+                                                    <rect key="frame" x="342" y="0.66666666666666785" width="12" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" name="lightElement"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_16" translatesAutoresizingMaskIntoConstraints="NO" id="Vn0-dS-03v">
-                                                    <rect key="frame" x="378" y="0.0" width="16" height="43.666666666666664"/>
+                                                    <rect key="frame" x="362" y="0.0" width="32" height="43.666666666666664"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -806,77 +806,77 @@
             <point key="canvasLocation" x="2355.072463768116" y="518.97321428571422"/>
         </scene>
         <!--Drill Queue Controller-->
-        <scene sceneID="y64-Oe-JOH">
+        <scene sceneID="H3k-ou-MkM">
             <objects>
-                <viewController id="nrv-nG-vLj" customClass="DrillQueueController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="x7L-vz-8B2">
+                <collectionViewController id="A48-od-P9M" customClass="DrillQueueController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="QkD-ih-UKE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oXQ-AJ-5sK">
-                            <size key="itemSize" width="158" height="154"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v6h-P2-ptf">
+                            <size key="itemSize" width="300" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drillQueueCell" id="jAx-eT-ZTH" customClass="DrillQueueViewCell" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="26.666666666666668" width="158" height="154"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drillQueueCell" id="ztf-6l-8d2" customClass="DrillQueueViewCell" customModule="PoolDrills" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="3.6666666666666665" width="300" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4hQ-F7-INL">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="154"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pMK-3b-K9I">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJH-yf-MN5">
-                                            <rect key="frame" x="0.0" y="0.0" width="158" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Drill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rQ-ia-dLa">
+                                            <rect key="frame" x="20" y="49" width="260" height="26.333333333333329"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaQ-UU-24h">
-                                            <rect key="frame" x="0.0" y="21" width="158" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpb-xB-Hq3">
+                                            <rect key="frame" x="111.66666666666669" y="83.333333333333329" width="77" height="33.666666666666671"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-Te-GVX">
-                                            <rect key="frame" x="0.0" y="42" width="158" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-U7-YvZ">
+                                            <rect key="frame" x="20" y="124.99999999999999" width="260" height="26.333333333333329"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="secondaryBackground"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="IaQ-UU-24h" secondAttribute="trailing" id="KJf-5f-FKn"/>
-                                        <constraint firstItem="ylK-Te-GVX" firstAttribute="leading" secondItem="4hQ-F7-INL" secondAttribute="leading" id="VYg-Tu-ZKQ"/>
-                                        <constraint firstItem="IaQ-UU-24h" firstAttribute="leading" secondItem="4hQ-F7-INL" secondAttribute="leading" id="W9Y-Ny-8hB"/>
-                                        <constraint firstItem="IaQ-UU-24h" firstAttribute="top" secondItem="JJH-yf-MN5" secondAttribute="bottom" id="W9y-fT-zQW"/>
-                                        <constraint firstItem="JJH-yf-MN5" firstAttribute="top" secondItem="4hQ-F7-INL" secondAttribute="top" id="Wxe-f7-u6A"/>
-                                        <constraint firstItem="ylK-Te-GVX" firstAttribute="top" secondItem="IaQ-UU-24h" secondAttribute="bottom" id="aeo-2o-mlE"/>
-                                        <constraint firstAttribute="trailing" secondItem="JJH-yf-MN5" secondAttribute="trailing" id="gpE-D8-qib"/>
-                                        <constraint firstAttribute="trailing" secondItem="ylK-Te-GVX" secondAttribute="trailing" id="x34-S6-f7F"/>
-                                        <constraint firstItem="JJH-yf-MN5" firstAttribute="leading" secondItem="4hQ-F7-INL" secondAttribute="leading" id="yd4-vR-2WF"/>
+                                        <constraint firstAttribute="trailing" secondItem="7rQ-ia-dLa" secondAttribute="trailing" constant="20" symbolic="YES" id="5Zf-cl-zkD"/>
+                                        <constraint firstItem="7rQ-ia-dLa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pMK-3b-K9I" secondAttribute="top" id="5jm-2I-vor"/>
+                                        <constraint firstItem="jpb-xB-Hq3" firstAttribute="centerY" secondItem="pMK-3b-K9I" secondAttribute="centerY" id="HOa-1V-kbv"/>
+                                        <constraint firstItem="7rQ-ia-dLa" firstAttribute="leading" secondItem="pMK-3b-K9I" secondAttribute="leading" constant="20" symbolic="YES" id="LJD-iq-sRP"/>
+                                        <constraint firstItem="jpb-xB-Hq3" firstAttribute="centerX" secondItem="pMK-3b-K9I" secondAttribute="centerX" id="MO3-QG-flS"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B4W-U7-YvZ" secondAttribute="bottom" id="Uze-xF-EyB"/>
+                                        <constraint firstItem="B4W-U7-YvZ" firstAttribute="top" secondItem="jpb-xB-Hq3" secondAttribute="bottom" constant="8" symbolic="YES" id="Zef-IN-ffk"/>
+                                        <constraint firstItem="jpb-xB-Hq3" firstAttribute="top" secondItem="7rQ-ia-dLa" secondAttribute="bottom" constant="8" symbolic="YES" id="d8Z-o2-DNn"/>
+                                        <constraint firstItem="B4W-U7-YvZ" firstAttribute="leading" secondItem="pMK-3b-K9I" secondAttribute="leading" constant="20" symbolic="YES" id="vtz-ss-b1N"/>
+                                        <constraint firstAttribute="trailing" secondItem="B4W-U7-YvZ" secondAttribute="trailing" constant="20" symbolic="YES" id="yVB-Sa-5fB"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="customSize" width="158" height="154"/>
                                 <connections>
-                                    <outlet property="attempts" destination="ylK-Te-GVX" id="Vul-CY-dtQ"/>
-                                    <outlet property="duration" destination="IaQ-UU-24h" id="etK-mM-Xc1"/>
-                                    <outlet property="title" destination="JJH-yf-MN5" id="AZI-DF-b3j"/>
+                                    <outlet property="attempts" destination="B4W-U7-YvZ" id="yIY-5q-4Ud"/>
+                                    <outlet property="duration" destination="jpb-xB-Hq3" id="tfY-Fb-mRm"/>
+                                    <outlet property="title" destination="7rQ-ia-dLa" id="vLe-hg-iEm"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="nrv-nG-vLj" id="3qi-De-bHx"/>
-                            <outlet property="delegate" destination="nrv-nG-vLj" id="HF6-5v-lQi"/>
+                            <outlet property="dataSource" destination="A48-od-P9M" id="MEN-vv-UrP"/>
+                            <outlet property="delegate" destination="A48-od-P9M" id="pEb-wg-oFO"/>
                         </connections>
                     </collectionView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eBS-cE-hKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIg-Tz-L2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5853.6231884057979" y="-344.86607142857139"/>
+            <point key="canvasLocation" x="5856.521739130435" y="-704.12946428571422"/>
         </scene>
     </scenes>
     <resources>
