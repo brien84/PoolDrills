@@ -62,7 +62,7 @@ final class RunnerViewController: UIViewController {
         drillTracker.registerAttempt(as: true)
     }
 
-    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func exitButtonDidTap(_ sender: UIButton) {
         let alert = ConfirmationPopoverViewController(in: self, on: sender)
 
         alert.present {
