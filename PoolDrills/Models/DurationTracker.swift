@@ -65,7 +65,7 @@ final class DurationTracker: DurationTracking {
         let userInfo: [DurationTrackingKeys: TimeInterval] =
             [.totalDuration: totalDuration, .drillDuration: drillDuration]
 
-        NotificationCenter.default.post(name: .DurationTrackingDidUpdate, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: .durationTrackingDidUpdate, object: nil, userInfo: userInfo)
     }
 }
 
@@ -75,5 +75,5 @@ enum DurationTrackingKeys: String {
 }
 
 extension Notification.Name {
-    static let DurationTrackingDidUpdate = Notification.Name("DurationTrackingDidUpdateNotification")
+    static let durationTrackingDidUpdate = Notification.Name("durationTrackingDidUpdateNotification")
 }

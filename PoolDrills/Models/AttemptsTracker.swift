@@ -40,7 +40,7 @@ final class AttemptsTracker: AttemptsTracking {
         let userInfo: [AttemptsTrackingKeys: Int] =
             [.attemptsLimit: attemptsLimit, .hitCount: hitCount, .missCount: missCount]
 
-        NotificationCenter.default.post(name: .AttemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: .attemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
     }
 
 }
@@ -52,5 +52,5 @@ enum AttemptsTrackingKeys: String {
 }
 
 extension Notification.Name {
-    static let AttemptsTrackingDidUpdate = Notification.Name("AttemptsTrackingDidUpdateNotification")
+    static let attemptsTrackingDidUpdate = Notification.Name("attemptsTrackingDidUpdateNotification")
 }

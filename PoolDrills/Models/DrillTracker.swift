@@ -129,12 +129,12 @@ final class DrillTracker: DrillTracking {
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleDurationNotification(_:)),
-                                               name: .DurationTrackingDidUpdate,
+                                               name: .durationTrackingDidUpdate,
                                                object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleAttemptsNotification(_:)),
-                                               name: .AttemptsTrackingDidUpdate,
+                                               name: .attemptsTrackingDidUpdate,
                                                object: nil)
     }
 
