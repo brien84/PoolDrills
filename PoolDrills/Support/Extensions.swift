@@ -44,14 +44,14 @@ extension UIImage {
     }
 
     static var one64: UIImage! {
-        return UIImage(named: "1_64")
+        return UIImage(named: "one_64")
     }
 
     static var two64: UIImage! {
-        return UIImage(named: "2_64")
+        return UIImage(named: "two_64")
     }
 
     static var three64: UIImage! {
-        return UIImage(named: "3_64")
+        return UIImage(named: "three_64")
     }
 }
