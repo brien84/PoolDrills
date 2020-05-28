@@ -27,4 +27,23 @@ final class ActionButton: UIButton {
         }
     }
 
+    func countdown(completion: @escaping () -> Void) {
+        isUserInteractionEnabled = false
+
+        setImage(.three64, for: .normal)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.setImage(.two64, for: .normal)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            self?.setImage(.one64, for: .normal)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            self?.isUserInteractionEnabled = true
+            completion()
+        }
+    }
+
 }
