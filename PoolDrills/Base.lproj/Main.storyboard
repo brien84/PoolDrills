@@ -861,15 +861,16 @@
             </objects>
             <point key="canvasLocation" x="5856.521739130435" y="172.76785714285714"/>
         </scene>
-        <!--Item-->
+        <!--Routines-->
         <scene sceneID="SXD-TK-Xc2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cy3-mZ-2fC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VU4-o9-iLp"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Cy3-mZ-2fC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Routines" image="routines_32" id="VU4-o9-iLp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eb5-KH-V7u">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
                         <color key="barTintColor" name="primaryBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -881,11 +882,11 @@
             </objects>
             <point key="canvasLocation" x="3265.217391304348" y="172.76785714285714"/>
         </scene>
-        <!--Item-->
+        <!--Drills-->
         <scene sceneID="ctQ-ne-Rwu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sas-AL-1wa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BL5-FW-Vvx"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="sas-AL-1wa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Drills" image="drills_32" id="BL5-FW-Vvx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S2a-NX-vbZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -904,13 +905,20 @@
         <!--Tab Bar Controller-->
         <scene sceneID="qoz-x4-jvm">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dpx-97-dNd" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dpx-97-dNd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C78-Gc-1YT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
+                        <color key="tintColor" name="lightElement"/>
                         <color key="barTintColor" name="secondaryBackground"/>
+                        <color key="selectedImageTintColor" name="lightElement"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" name="grayElement"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Cy3-mZ-2fC" kind="relationship" relationship="viewControllers" id="kVL-xJ-e6T"/>
@@ -1001,10 +1009,12 @@
         <image name="confirm_44" width="44" height="44"/>
         <image name="deny_44" width="44" height="44"/>
         <image name="disclosure_16" width="16" height="16"/>
+        <image name="drills_32" width="32" height="32"/>
         <image name="duration_16" width="21.333333969116211" height="21.333333969116211"/>
         <image name="duration_32" width="32" height="32"/>
         <image name="play_32" width="32" height="32"/>
         <image name="play_64" width="64" height="64"/>
+        <image name="routines_32" width="32" height="32"/>
         <namedColor name="darkElement">
             <color red="0.13333333333333333" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
