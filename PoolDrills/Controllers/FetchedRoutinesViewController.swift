@@ -33,6 +33,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createRoutine" || segue.identifier == "editRoutine" {
             guard let vc = segue.destination as? RoutineSetupViewController else { return }
+            vc.hidesBottomBarWhenPushed = true
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
@@ -40,6 +41,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 
         if segue.identifier == "runRoutine" {
             guard let vc = segue.destination as? RunnerViewController else { return }
+            vc.hidesBottomBarWhenPushed = true
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
