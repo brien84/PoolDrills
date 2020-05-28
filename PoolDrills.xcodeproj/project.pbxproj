@@ -21,7 +21,8 @@
 		295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81C246DE37900A1805D /* ResultsViewController.swift */; };
 		295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AC81F247034FC00A1805D /* FetchedTableViewController.swift */; };
 		29874EE2247D97E300061787 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874EE1247D97E300061787 /* ActionButton.swift */; };
-		29888881242E9A8A00D11427 /* CreateDrillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* CreateDrillViewController.swift */; };
+		29874F2A247F9D4D00061787 /* SeparatorlessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29874F29247F9D4D00061787 /* SeparatorlessCell.swift */; };
+		29888881242E9A8A00D11427 /* DrillSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888880242E9A8A00D11427 /* DrillSetupViewController.swift */; };
 		29888883242FF18700D11427 /* FetchedRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */; };
 		298888852430DAB300D11427 /* CreateRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888842430DAB300D11427 /* CreateRoutineViewController.swift */; };
 		298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298888862431291F00D11427 /* DrillsSelectionViewController.swift */; };
@@ -78,7 +79,8 @@
 		295AC81C246DE37900A1805D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		295AC81F247034FC00A1805D /* FetchedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTableViewController.swift; sourceTree = "<group>"; };
 		29874EE1247D97E300061787 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		29888880242E9A8A00D11427 /* CreateDrillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDrillViewController.swift; sourceTree = "<group>"; };
+		29874F29247F9D4D00061787 /* SeparatorlessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorlessCell.swift; sourceTree = "<group>"; };
+		29888880242E9A8A00D11427 /* DrillSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSetupViewController.swift; sourceTree = "<group>"; };
 		29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRoutinesViewController.swift; sourceTree = "<group>"; };
 		298888842430DAB300D11427 /* CreateRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineViewController.swift; sourceTree = "<group>"; };
 		298888862431291F00D11427 /* DrillsSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsSelectionViewController.swift; sourceTree = "<group>"; };
@@ -209,9 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */,
-				29888880242E9A8A00D11427 /* CreateDrillViewController.swift */,
 				298888842430DAB300D11427 /* CreateRoutineViewController.swift */,
 				29456BDD24718A4800E8E7D9 /* DrillQueueController.swift */,
+				29888880242E9A8A00D11427 /* DrillSetupViewController.swift */,
 				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
 				29933D87241439150013EB94 /* FetchedDrillsViewController.swift */,
 				29888882242FF18700D11427 /* FetchedRoutinesViewController.swift */,
@@ -267,6 +269,7 @@
 				29D0DDD6247955AD0012882D /* DrillCell.swift */,
 				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 				29B38E402448E03C005EEB1B /* RoutineCell.swift */,
+				29874F29247F9D4D00061787 /* SeparatorlessCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -429,7 +432,8 @@
 				29456BE024731E5900E8E7D9 /* DrillQueueViewCell.swift in Sources */,
 				29456BE2247434DD00E8E7D9 /* GradientBackgroundView.swift in Sources */,
 				29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */,
-				29888881242E9A8A00D11427 /* CreateDrillViewController.swift in Sources */,
+				29888881242E9A8A00D11427 /* DrillSetupViewController.swift in Sources */,
+				29874F2A247F9D4D00061787 /* SeparatorlessCell.swift in Sources */,
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
