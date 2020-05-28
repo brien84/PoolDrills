@@ -45,10 +45,12 @@ final class RunnerViewController: UIViewController {
 
     @IBAction private func actionButtonDidTap(_ sender: ActionButton) {
         if shouldStartCountdown {
-            startCountdown { [weak self] in
+            shouldStartCountdown = false
+
+            actionButton.countdown { [weak self] in
                 self?.drillTracker.toggle()
-                self?.shouldStartCountdown = false
             }
+
         } else {
             drillTracker.toggle()
         }
@@ -102,26 +104,6 @@ final class RunnerViewController: UIViewController {
         missButton.isEnabled = isEnabled
         hitButton.isEnabled = isEnabled
         completionButton.isEnabled = isEnabled
-    }
-
-    private func startCountdown(completion: @escaping () -> Void) {
-        shouldStartCountdown = false
-        actionButton.isUserInteractionEnabled = false
-
-        actionButton.setTitle("3", for: .normal)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            self?.actionButton.setTitle("2", for: .normal)
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-            self?.actionButton.setTitle("1", for: .normal)
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
-            completion()
-            self?.actionButton.isUserInteractionEnabled = true
-        }
     }
 
     // MARK: - Notifications
