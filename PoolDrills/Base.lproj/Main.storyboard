@@ -576,10 +576,10 @@
             </objects>
             <point key="canvasLocation" x="6564" y="-532"/>
         </scene>
-        <!--Create Routine View Controller-->
+        <!--Routine Setup View Controller-->
         <scene sceneID="WWW-OO-fog">
             <objects>
-                <tableViewController id="t6m-P0-p3g" customClass="CreateRoutineViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="t6m-P0-p3g" customClass="RoutineSetupViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="p1V-fa-2Fy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

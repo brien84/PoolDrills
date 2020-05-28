@@ -1,5 +1,5 @@
 //
-//  CreateRoutineViewController.swift
+//  RoutineSetupViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-03-29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CreateRoutineViewController: UITableViewController {
+final class RoutineSetupViewController: UITableViewController {
 
     lazy var routine: Routine = {
         return Routine(context: coredata.managedContext)
