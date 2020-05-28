@@ -178,13 +178,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-x2-nmO">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-x2-nmO">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <color key="backgroundColor" name="lightElement"/>
                                                     <color key="tintColor" name="grayElement"/>
                                                     <color key="textColor" name="darkElement"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="titleFieldDidChange:" destination="34z-eE-IQd" eventType="editingChanged" id="gS6-cT-yJD"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -292,13 +295,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="TJq-QF-rEK">
                             <color key="tintColor" name="lightElement"/>
                             <connections>
-                                <action selector="saveButtonDidTap:" destination="34z-eE-IQd" id="fAm-Qa-e4m"/>
+                                <action selector="saveButtonDidTap:" destination="34z-eE-IQd" id="wLC-Wc-vFp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="attemptsSlider" destination="XIs-PN-BAO" id="Msv-et-dq1"/>
                         <outlet property="durationSlider" destination="uO2-Md-rbg" id="730-of-rdP"/>
+                        <outlet property="saveButton" destination="TJq-QF-rEK" id="Kn2-yO-68a"/>
                         <outlet property="titleField" destination="wpp-x2-nmO" id="tsH-EP-KbE"/>
                     </connections>
                 </tableViewController>
@@ -602,7 +606,10 @@
                                                     <color key="tintColor" name="grayElement"/>
                                                     <color key="textColor" name="darkElement"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="titleFieldDidChange:" destination="t6m-P0-p3g" eventType="editingChanged" id="eTU-fb-WLR"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -685,6 +692,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveButton" destination="xXN-Xk-PHw" id="bPB-8k-fBF"/>
                         <outlet property="selectedDrillsCount" destination="AY6-rT-rZF" id="FaP-FX-9P9"/>
                         <outlet property="titleField" destination="niP-he-ieW" id="SUg-Dg-U5M"/>
                     </connections>

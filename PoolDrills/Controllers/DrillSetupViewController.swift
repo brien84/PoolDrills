@@ -19,16 +19,33 @@ final class DrillSetupViewController: UITableViewController {
     @IBOutlet private weak var titleField: UITextField!
     @IBOutlet private weak var attemptsSlider: CustomUISlider!
     @IBOutlet private weak var durationSlider: CustomUISlider!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        attemptsSlider.font = titleField.font
-        durationSlider.font = titleField.font
+        titleField.delegate = self
 
-        titleField.text = drill.title
+        titleField.insertText(drill.title ?? "")
         attemptsSlider.value = Float(drill.attempts)
         durationSlider.value = Float(drill.duration / 60)
+
+        attemptsSlider.font = titleField.font
+        durationSlider.font = titleField.font
+    }
+
+    @IBAction private func titleFieldDidChange(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+
+        saveButton.isEnabled = text.isEmpty ? false : true
+    }
+
+    @IBAction private func attemptsSliderDidChangeValue(_ sender: CustomUISlider) {
+        sender.valueLabel.text = String(Int(sender.value))
+    }
+
+    @IBAction private func durationSliderDidChangeValue(_ sender: CustomUISlider) {
+        sender.valueLabel.text = String("\(Int(sender.value)) min")
     }
 
     @IBAction private func cancelButtonDidTap(_ sender: UIBarButtonItem) {
@@ -46,13 +63,16 @@ final class DrillSetupViewController: UITableViewController {
 
         navigationController?.popViewController(animated: true)
     }
+}
 
-    @IBAction private func attemptsSliderDidChangeValue(_ sender: CustomUISlider) {
-        sender.valueLabel.text = String(Int(sender.value))
+extension DrillSetupViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text else { return false }
+        guard let rangeOfTextToReplace = Range(range, in: textFieldText) else { return false }
+
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+
+        return count <= 19
     }
-
-    @IBAction private func durationSliderDidChangeValue(_ sender: CustomUISlider) {
-        sender.valueLabel.text = String("\(Int(sender.value)) min")
-    }
-
 }

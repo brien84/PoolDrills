@@ -18,6 +18,28 @@ final class RoutineSetupViewController: UITableViewController {
 
     @IBOutlet private weak var titleField: UITextField!
     @IBOutlet private weak var selectedDrillsCount: UILabel!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        titleField.delegate = self
+
+        titleField.insertText(routine.title ?? "")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard let drills = routine.drills else { return }
+        selectedDrillsCount.text = String(drills.count)
+    }
+
+    @IBAction private func titleFieldDidChange(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+
+        saveButton.isEnabled = text.isEmpty ? false : true
+    }
 
     @IBAction private func cancelButtonDidTap(_ sender: UIBarButtonItem) {
         coredata.managedContext.rollback()
@@ -30,19 +52,6 @@ final class RoutineSetupViewController: UITableViewController {
         coredata.saveContext()
 
         navigationController?.popViewController(animated: true)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        titleField.text = routine.title
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        guard let drills = routine.drills else { return }
-        selectedDrillsCount.text = String(drills.count)
     }
 
     // MARK: - UITableViewDelegate
@@ -62,5 +71,17 @@ final class RoutineSetupViewController: UITableViewController {
             guard let vc = segue.destination as? DrillsSelectionViewController else { return }
             vc.routine = routine
         }
+    }
+}
+
+extension RoutineSetupViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text else { return false }
+        guard let rangeOfTextToReplace = Range(range, in: textFieldText) else { return false }
+
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+
+        return count <= 19
     }
 }
