@@ -56,7 +56,7 @@ final class DrillSetupViewController: UITableViewController {
 
     @IBAction private func saveButtonDidTap(_ sender: UIBarButtonItem) {
         drill.title = titleField.text
-        drill.attempts = Int32(attemptsSlider.value)
+        drill.attempts = Int64(attemptsSlider.value)
         drill.duration = Double(durationSlider.value).rounded(.up) * 60
 
         coredata.saveContext()
