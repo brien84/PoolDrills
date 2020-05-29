@@ -19,20 +19,16 @@ final class RunnerViewController: UIViewController {
         return tracker
     }()
 
-    private var records = [DrillRecord]()
-
-    private var shouldStartCountdown = false
-
     private var queueController: DrillQueueController? {
         let controller = children.first { $0.isKind(of: DrillQueueController.self) }
 
         return controller as? DrillQueueController
     }
 
-    // TODO: RENAME TIME LABELS
-    @IBOutlet private weak var drillTitle: UILabel!
-    @IBOutlet private weak var totalTime: UILabel!
-    @IBOutlet private weak var drillTime: UILabel!
+    private var records = [DrillRecord]()
+    private var shouldStartCountdown = false
+
+    @IBOutlet private weak var totalDuration: UILabel!
     @IBOutlet private weak var missCount: UILabel!
     @IBOutlet private weak var hitCount: UILabel!
 
@@ -56,12 +52,12 @@ final class RunnerViewController: UIViewController {
         }
     }
 
-    @IBAction private func missButtonDidTap(_ sender: UIButton) {
-        drillTracker.registerAttempt(as: false)
-    }
+    @IBAction private func completionButtonDidTap(_ sender: UIButton) {
+        let alert = ConfirmationPopoverViewController(in: self, on: sender)
 
-    @IBAction private func hitButtonDidTap(_ sender: UIButton) {
-        drillTracker.registerAttempt(as: true)
+        alert.present {
+            if $0 { self.drillTracker.endDrill() }
+        }
     }
 
     @IBAction private func exitButtonDidTap(_ sender: UIButton) {
@@ -72,12 +68,12 @@ final class RunnerViewController: UIViewController {
         }
     }
 
-    @IBAction private func completionButtonDidTap(_ sender: UIButton) {
-        let alert = ConfirmationPopoverViewController(in: self, on: sender)
+    @IBAction private func missButtonDidTap(_ sender: UIButton) {
+        drillTracker.registerAttempt(as: false)
+    }
 
-        alert.present {
-            if $0 { self.drillTracker.endDrill() }
-        }
+    @IBAction private func hitButtonDidTap(_ sender: UIButton) {
+        drillTracker.registerAttempt(as: true)
     }
 
     override func viewDidLoad() {
@@ -123,8 +119,7 @@ final class RunnerViewController: UIViewController {
     @objc private func handleDurationNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
-        totalTime.text = info[.totalDuration]?.toString()
-        drillTime.text = info[.drillDuration]?.toString()
+        totalDuration.text = info[.totalDuration]?.toString()
     }
 
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
@@ -156,10 +151,6 @@ final class RunnerViewController: UIViewController {
 
 extension RunnerViewController: DrillTrackingDelegate {
     func drillTracking(_ tracker: DrillTracking, didLoad drill: Drill) {
-        drillTitle.text = drill.title
-
-        drillTime.text = drill.duration.toString()
-
         missCount.text = String(0)
         hitCount.text = String(0)
         attemptsProgress.progress = 0
