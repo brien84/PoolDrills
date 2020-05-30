@@ -11,6 +11,20 @@ import UIKit
 final class ResultsViewController: UITableViewController {
 
     var datasource = [DrillRecord]()
+    var routineTitle: String?
+    var routineDuration: String?
+
+    @IBOutlet private weak var routineTitleLabel: UILabel!
+    @IBOutlet private weak var routineDurationLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        routineTitleLabel.text = routineTitle
+        routineDurationLabel.text = routineDuration
+
+        resizeHeader()
+    }
 
     @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
@@ -24,12 +38,7 @@ final class ResultsViewController: UITableViewController {
         self.present(alert, animated: true)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
@@ -43,5 +52,17 @@ final class ResultsViewController: UITableViewController {
 
         return cell
     }
+}
 
+extension ResultsViewController {
+    private func resizeHeader() {
+        if let headerView = tableView.tableHeaderView {
+            let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+            var frame = headerView.frame
+            frame.size.height = height
+            headerView.frame = frame
+
+            tableView.tableHeaderView = headerView
+        }
+    }
 }

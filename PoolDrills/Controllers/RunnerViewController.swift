@@ -41,6 +41,35 @@ final class RunnerViewController: UIViewController {
 
     @IBOutlet private weak var attemptsProgress: UIProgressView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        routineTitle.text = routine?.title
+
+        if let drills = routine?.drills?.array as? [Drill] {
+            assert(!drills.isEmpty)
+            setupNotifications()
+            queueController?.datasource = drills
+            drillTracker.load(drills)
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        navigationController?.viewControllers.removeAll { $0.isKind(of: RunnerViewController.self) }
+    }
+
     @IBAction private func actionButtonDidTap(_ sender: ActionButton) {
         if shouldStartCountdown {
             shouldStartCountdown = false
@@ -76,35 +105,6 @@ final class RunnerViewController: UIViewController {
 
     @IBAction private func hitButtonDidTap(_ sender: UIButton) {
         drillTracker.registerAttempt(as: true)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        routineTitle.text = routine?.title
-
-        if let drills = routine?.drills?.array as? [Drill] {
-            assert(!drills.isEmpty)
-            setupNotifications()
-            queueController?.datasource = drills
-            drillTracker.load(drills)
-        }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-
-        navigationController?.viewControllers.removeAll { $0.isKind(of: RunnerViewController.self) }
     }
 
     private func toggleButtons(enabled isEnabled: Bool) {
@@ -151,11 +151,11 @@ final class RunnerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ResultsVC" {
-
+        if segue.identifier == "showResults" {
             guard let vc = segue.destination as? ResultsViewController else { return }
             vc.datasource = records
-
+            vc.routineTitle = routineTitle.text
+            vc.routineDuration = totalDuration.text
         }
     }
 }
@@ -201,7 +201,7 @@ extension RunnerViewController: DrillTrackingDelegate {
         actionButton.set(image: .next)
 
         self.records = records
-        performSegue(withIdentifier: "ResultsVC", sender: nil)
+        performSegue(withIdentifier: "showResults", sender: nil)
     }
 }
 
