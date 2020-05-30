@@ -28,6 +28,8 @@ final class RunnerViewController: UIViewController {
     private var records = [DrillRecord]()
     private var shouldStartCountdown = false
 
+    @IBOutlet private weak var routineTitle: UILabel!
+
     @IBOutlet private weak var totalDuration: UILabel!
     @IBOutlet private weak var missCount: UILabel!
     @IBOutlet private weak var hitCount: UILabel!
@@ -79,14 +81,13 @@ final class RunnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = routine?.title
+        routineTitle.text = routine?.title
 
-        if let drills = routine?.drills?.array as? [Drill], !drills.isEmpty {
+        if let drills = routine?.drills?.array as? [Drill] {
+            assert(!drills.isEmpty)
             setupNotifications()
             queueController?.datasource = drills
             drillTracker.load(drills)
-        } else {
-            // TODO: Display Error
         }
     }
 
@@ -103,7 +104,7 @@ final class RunnerViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        navigationController?.viewControllers.removeAll(where: { $0.isKind(of: RunnerViewController.self) })
+        navigationController?.viewControllers.removeAll { $0.isKind(of: RunnerViewController.self) }
     }
 
     private func toggleButtons(enabled isEnabled: Bool) {
