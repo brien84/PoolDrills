@@ -13,7 +13,6 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
     var datasource = [Drill]() {
         didSet {
             collectionView.reloadData()
-            collectionView.layoutIfNeeded()
         }
     }
 
@@ -24,20 +23,37 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
     }
 
     private var currentCell: DrillQueueViewCell?
+    private var viewDidAppear = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.isUserInteractionEnabled = false
-
         setupNotifications()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        collectionViewLayout.invalidateLayout()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        viewDidAppear = true
+        scrollToCurrentItem()
     }
 
     func next() {
         if currentIndex != datasource.indices.last {
             currentIndex += 1
-            collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+            scrollToCurrentItem()
         }
+    }
+
+    private func scrollToCurrentItem() {
+        guard currentIndex > -1, viewDidAppear else { return }
+        collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
 
     // MARK: - UICollectionViewDataSource
