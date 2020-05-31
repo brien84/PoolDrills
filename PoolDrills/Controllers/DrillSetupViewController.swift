@@ -48,6 +48,10 @@ final class DrillSetupViewController: UITableViewController {
         sender.valueLabel.text = String("\(Int(sender.value)) min")
     }
 
+    @IBAction private func deleteButtonDidTap(_ sender: UIButton) {
+        print("DELETE")
+    }
+
     @IBAction private func cancelButtonDidTap(_ sender: UIBarButtonItem) {
         coredata.managedContext.rollback()
 
@@ -62,6 +66,16 @@ final class DrillSetupViewController: UITableViewController {
         coredata.saveContext()
 
         navigationController?.popViewController(animated: true)
+    }
+
+    // MARK: - UITableViewDelegate
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
