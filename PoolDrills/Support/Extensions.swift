@@ -8,6 +8,25 @@
 
 import UIKit
 
+extension UIButton {
+    @IBInspectable
+    var adjustsFontForContentSizeCategory: Bool {
+        get {
+            return self.titleLabel?.adjustsFontForContentSizeCategory ?? false
+        }
+
+        set {
+            self.titleLabel?.adjustsFontForContentSizeCategory = newValue
+        }
+    }
+
+    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        self.setNeedsLayout()
+    }
+}
+
 extension UIColor {
     static var primaryBackground: UIColor! {
         return UIColor(named: "primaryBackground")
