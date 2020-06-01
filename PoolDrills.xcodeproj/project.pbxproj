@@ -45,6 +45,7 @@
 		29D0DDD7247955AD0012882D /* DrillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDD6247955AD0012882D /* DrillCell.swift */; };
 		29D0DDDA24798E3F0012882D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDD924798E3F0012882D /* Extensions.swift */; };
 		29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */; };
+		29D4D6DD248437680060B819 /* ResultsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4D6DC248437680060B819 /* ResultsViewCell.swift */; };
 		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		29D0DDD6247955AD0012882D /* DrillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillCell.swift; sourceTree = "<group>"; };
 		29D0DDD924798E3F0012882D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectedBackgroundCell.swift; sourceTree = "<group>"; };
+		29D4D6DC248437680060B819 /* ResultsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewCell.swift; sourceTree = "<group>"; };
 		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +275,7 @@
 				29456BDF24731E5900E8E7D9 /* DrillQueueViewCell.swift */,
 				29B38E402448E03C005EEB1B /* RoutineCell.swift */,
 				29874F29247F9D4D00061787 /* SeparatorlessCell.swift */,
+				29D4D6DC248437680060B819 /* ResultsViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				29888881242E9A8A00D11427 /* DrillSetupViewController.swift in Sources */,
 				29874F2A247F9D4D00061787 /* SeparatorlessCell.swift in Sources */,
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,
+				29D4D6DD248437680060B819 /* ResultsViewCell.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
 				29933D54241438400013EB94 /* AppDelegate.swift in Sources */,
 				29456BED24770DCB00E8E7D9 /* CustomUISlider.swift in Sources */,
