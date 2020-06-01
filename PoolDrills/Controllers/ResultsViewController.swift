@@ -26,7 +26,7 @@ final class ResultsViewController: UITableViewController {
         resizeHeader()
     }
 
-    @IBAction private func backButtonDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func doneButtonDidTap(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
@@ -45,10 +45,15 @@ final class ResultsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
+        // swiftlint:disable:next force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as! ResultsViewCell
 
         let record = datasource[indexPath.row]
-        cell.textLabel?.text = "\(String(describing: record.title)) \(record.recordedDuration) \(record.hitCount) \(record.missCount)"
+
+        cell.title.text = record.title
+        cell.duration.text = "10:00"
+        cell.hitCount.text = "100"
+        cell.hitCount.text = "100"
 
         return cell
     }
