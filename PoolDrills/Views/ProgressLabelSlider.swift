@@ -1,5 +1,5 @@
 //
-//  CustomUISlider.swift
+//  ProgressLabelSlider.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-05-21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CustomUISlider: UISlider {
+final class ProgressLabelSlider: UISlider {
 
     var font: UIFont? {
         didSet { valueLabel.font = font }
@@ -58,7 +58,7 @@ final class CustomUISlider: UISlider {
 
 }
 
-extension CustomUISlider {
+extension ProgressLabelSlider {
     private var trackRect: CGRect {
         return trackRect(forBounds: bounds)
     }

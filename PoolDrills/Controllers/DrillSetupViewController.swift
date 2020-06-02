@@ -17,8 +17,8 @@ final class DrillSetupViewController: UITableViewController {
     private let coredata = CoreDataStack()
 
     @IBOutlet private weak var titleField: UITextField!
-    @IBOutlet private weak var attemptsSlider: CustomUISlider!
-    @IBOutlet private weak var durationSlider: CustomUISlider!
+    @IBOutlet private weak var attemptsSlider: ProgressLabelSlider!
+    @IBOutlet private weak var durationSlider: ProgressLabelSlider!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
 
     override func viewDidLoad() {
@@ -40,11 +40,11 @@ final class DrillSetupViewController: UITableViewController {
         saveButton.isEnabled = text.isEmpty ? false : true
     }
 
-    @IBAction private func attemptsSliderDidChangeValue(_ sender: CustomUISlider) {
+    @IBAction private func attemptsSliderDidChangeValue(_ sender: ProgressLabelSlider) {
         sender.valueLabel.text = String(Int(sender.value))
     }
 
-    @IBAction private func durationSliderDidChangeValue(_ sender: CustomUISlider) {
+    @IBAction private func durationSliderDidChangeValue(_ sender: ProgressLabelSlider) {
         sender.valueLabel.text = String("\(Int(sender.value)) min")
     }
 
