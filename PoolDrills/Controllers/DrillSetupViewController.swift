@@ -48,10 +48,6 @@ final class DrillSetupViewController: UITableViewController {
         sender.valueLabel.text = String("\(Int(sender.value)) min")
     }
 
-    @IBAction private func deleteButtonDidTap(_ sender: UIButton) {
-        print("DELETE")
-    }
-
     @IBAction private func cancelButtonDidTap(_ sender: UIBarButtonItem) {
         coredata.managedContext.rollback()
 
@@ -66,6 +62,19 @@ final class DrillSetupViewController: UITableViewController {
         coredata.saveContext()
 
         navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func deleteButtonDidTap(_ sender: UIButton) {
+        let alert = ConfirmationPopoverViewController(in: self, on: sender)
+
+         alert.present { didConfirm in
+             if didConfirm {
+                 self.coredata.managedContext.delete(self.drill)
+                 self.coredata.saveContext()
+
+                 self.navigationController?.popViewController(animated: true)
+             }
+         }
     }
 
     // MARK: - UITableViewDelegate

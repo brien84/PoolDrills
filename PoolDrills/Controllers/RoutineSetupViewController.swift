@@ -54,6 +54,19 @@ final class RoutineSetupViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    @IBAction private func deleteButtonDidTap(_ sender: UIButton) {
+        let alert = ConfirmationPopoverViewController(in: self, on: sender)
+
+        alert.present { didConfirm in
+            if didConfirm {
+                self.coredata.managedContext.delete(self.routine)
+                self.coredata.saveContext()
+
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+
     // MARK: - UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
