@@ -16,20 +16,22 @@ final class ConfirmationPopoverViewController: UIViewController {
 
     private var confirmationHandler: ((Bool) -> Void)?
 
-    init(in viewController: UIViewController, on sourceView: UIView) {
-        self.presentingVC = viewController
+    private init(_ vc: UIViewController, _ sourceView: UIView?, _ barButtonItem: UIBarButtonItem?) {
+        self.presentingVC = vc
         self.sourceView = sourceView
+        self.barButtonItem = barButtonItem
+
         super.init(nibName: "ConfirmationPopoverView", bundle: nil)
 
         loadViewIfNeeded()
     }
 
-    init(in viewController: UIViewController, on barButtonItem: UIBarButtonItem) {
-        self.presentingVC = viewController
-        self.barButtonItem = barButtonItem
-        super.init(nibName: "ConfirmationPopoverView", bundle: nil)
+    convenience init(in viewController: UIViewController, on sourceView: UIView) {
+        self.init(viewController, sourceView, nil)
+    }
 
-        loadViewIfNeeded()
+    convenience init(in viewController: UIViewController, on barButtonItem: UIBarButtonItem) {
+        self.init(viewController, nil, barButtonItem)
     }
 
     required init?(coder: NSCoder) {
@@ -40,7 +42,7 @@ final class ConfirmationPopoverViewController: UIViewController {
         super.viewDidLoad()
 
         modalPresentationStyle = .popover
-        preferredContentSize = calculateSize()
+        preferredContentSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
     }
 
     func present(_ confirmationHandler: @escaping (Bool) -> Void) {
@@ -50,6 +52,7 @@ final class ConfirmationPopoverViewController: UIViewController {
         popover?.sourceView = sourceView
         popover?.sourceRect = sourceView?.bounds ?? CGRect()
         popover?.barButtonItem = barButtonItem
+        popover?.permittedArrowDirections = [.down, .up]
 
         presentingVC.present(self, animated: true)
 
@@ -64,24 +67,6 @@ final class ConfirmationPopoverViewController: UIViewController {
     @IBAction private func confirmButtonDidTap(_ sender: UIButton) {
         confirmationHandler?(true)
         self.dismiss(animated: true)
-    }
-}
-
-extension ConfirmationPopoverViewController {
-    private var presetingVCWidth: CGFloat {
-        return presentingVC.view.frame.width
-    }
-
-    private var presetingVCHeight: CGFloat {
-        return presentingVC.view.frame.height
-    }
-
-    private func calculateSize() -> CGSize {
-        if (presetingVCHeight / presetingVCWidth) > 1.5 {
-            return CGSize(width: presetingVCHeight / 6, height: presetingVCWidth / 6)
-        } else {
-            return CGSize(width: presetingVCHeight / 8, height: presetingVCWidth / 10)
-        }
     }
 }
 
