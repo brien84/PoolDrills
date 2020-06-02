@@ -18,11 +18,11 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
 
     private var currentIndex = -1 {
         didSet {
-            currentCell = collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillQueueViewCell
+            currentCell = collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillsQueueViewCell
         }
     }
 
-    private var currentCell: DrillQueueViewCell?
+    private var currentCell: DrillsQueueViewCell?
 
     private var viewDidAppear = false {
         didSet {
@@ -62,7 +62,7 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable:next force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "drillQueueCell", for: indexPath) as! DrillQueueViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "drillsQueueCell", for: indexPath) as! DrillsQueueViewCell
 
         let drill = datasource[indexPath.row]
 

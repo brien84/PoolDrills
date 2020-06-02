@@ -1,5 +1,5 @@
 //
-//  DrillQueueViewCell.swift
+//  DrillsQueueViewCell.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-05-18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DrillQueueViewCell: UICollectionViewCell {
+final class DrillsQueueViewCell: UICollectionViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var duration: UILabel!
