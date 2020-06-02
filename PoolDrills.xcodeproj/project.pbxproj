@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29456BDE24718A4800E8E7D9 /* DrillsQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDD24718A4800E8E7D9 /* DrillsQueueController.swift */; };
+		29456BDE24718A4800E8E7D9 /* DrillsQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDD24718A4800E8E7D9 /* DrillsQueueViewController.swift */; };
 		29456BE024731E5900E8E7D9 /* DrillsQueueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDF24731E5900E8E7D9 /* DrillsQueueViewCell.swift */; };
 		29456BE2247434DD00E8E7D9 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */; };
 		29456BED24770DCB00E8E7D9 /* CustomUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BEC24770DCB00E8E7D9 /* CustomUISlider.swift */; };
@@ -67,7 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29456BDD24718A4800E8E7D9 /* DrillsQueueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsQueueController.swift; sourceTree = "<group>"; };
+		29456BDD24718A4800E8E7D9 /* DrillsQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsQueueViewController.swift; sourceTree = "<group>"; };
 		29456BDF24731E5900E8E7D9 /* DrillsQueueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsQueueViewCell.swift; sourceTree = "<group>"; };
 		29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		29456BEC24770DCB00E8E7D9 /* CustomUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUISlider.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				29A303B7247BD3540038E3D2 /* ConfirmationPopoverViewController.swift */,
-				29456BDD24718A4800E8E7D9 /* DrillsQueueController.swift */,
+				29456BDD24718A4800E8E7D9 /* DrillsQueueViewController.swift */,
 				29888880242E9A8A00D11427 /* DrillSetupViewController.swift */,
 				298888862431291F00D11427 /* DrillsSelectionViewController.swift */,
 				29933D87241439150013EB94 /* FetchedDrillsViewController.swift */,
@@ -456,7 +456,7 @@
 				295AC820247034FC00A1805D /* FetchedTableViewController.swift in Sources */,
 				295AC819246DCC2000A1805D /* DrillRecorder.swift in Sources */,
 				29933D88241439150013EB94 /* FetchedDrillsViewController.swift in Sources */,
-				29456BDE24718A4800E8E7D9 /* DrillsQueueController.swift in Sources */,
+				29456BDE24718A4800E8E7D9 /* DrillsQueueViewController.swift in Sources */,
 				29D0DDDA24798E3F0012882D /* Extensions.swift in Sources */,
 				29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */,
 				29D0DDD7247955AD0012882D /* DrillCell.swift in Sources */,

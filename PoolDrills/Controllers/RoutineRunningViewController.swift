@@ -19,10 +19,10 @@ final class RoutineRunningViewController: UIViewController {
         return tracker
     }()
 
-    private var queueController: DrillsQueueController? {
-        let controller = children.first { $0.isKind(of: DrillsQueueController.self) }
+    private var queueController: DrillsQueueViewController? {
+        let controller = children.first { $0.isKind(of: DrillsQueueViewController.self) }
 
-        return controller as? DrillsQueueController
+        return controller as? DrillsQueueViewController
     }
 
     private var records = [DrillRecord]()
