@@ -19,35 +19,59 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-kz-CFe">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3x-DB-49u" userLabel="deny container">
                     <rect key="frame" x="0.0" y="44" width="207" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-kz-CFe" userLabel="deny">
+                            <rect key="frame" x="20" y="20" width="167" height="778"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="deny_32"/>
+                            <connections>
+                                <action selector="denyButtonDidTap:" destination="-1" eventType="touchUpInside" id="C4h-SR-rpH"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="deny_32"/>
-                    <connections>
-                        <action selector="denyButtonDidTap:" destination="-1" eventType="touchUpInside" id="C4h-SR-rpH"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trD-TH-ugq">
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="dfS-kz-CFe" secondAttribute="trailing" constant="20" symbolic="YES" id="cnr-Cs-Ggo"/>
+                        <constraint firstItem="dfS-kz-CFe" firstAttribute="top" secondItem="v3x-DB-49u" secondAttribute="top" constant="20" symbolic="YES" id="kRx-ok-d94"/>
+                        <constraint firstAttribute="bottom" secondItem="dfS-kz-CFe" secondAttribute="bottom" constant="20" symbolic="YES" id="lBo-Lz-qzO"/>
+                        <constraint firstItem="dfS-kz-CFe" firstAttribute="leading" secondItem="v3x-DB-49u" secondAttribute="leading" constant="20" symbolic="YES" id="q8L-Xd-GNG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgQ-Rq-80a" userLabel="confirm container">
                     <rect key="frame" x="207" y="44" width="207" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trD-TH-ugq" userLabel="confirm">
+                            <rect key="frame" x="20" y="20" width="167" height="778"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="confirm_32">
+                                <color key="titleColor" name="lightElement"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmButtonDidTap:" destination="-1" eventType="touchUpInside" id="KtL-WL-MYc"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="confirm_32">
-                        <color key="titleColor" name="lightElement"/>
-                    </state>
-                    <connections>
-                        <action selector="confirmButtonDidTap:" destination="-1" eventType="touchUpInside" id="KtL-WL-MYc"/>
-                    </connections>
-                </button>
+                    <constraints>
+                        <constraint firstItem="trD-TH-ugq" firstAttribute="leading" secondItem="bgQ-Rq-80a" secondAttribute="leading" constant="20" symbolic="YES" id="2XY-df-myV"/>
+                        <constraint firstAttribute="bottom" secondItem="trD-TH-ugq" secondAttribute="bottom" constant="20" symbolic="YES" id="81T-PP-oid"/>
+                        <constraint firstItem="trD-TH-ugq" firstAttribute="top" secondItem="bgQ-Rq-80a" secondAttribute="top" constant="20" symbolic="YES" id="PGF-Mx-ZAt"/>
+                        <constraint firstAttribute="trailing" secondItem="trD-TH-ugq" secondAttribute="trailing" constant="20" symbolic="YES" id="jJA-so-QG4"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dfS-kz-CFe" firstAttribute="leading" secondItem="kSm-8B-9Uc" secondAttribute="leading" id="5q0-Of-AVk"/>
-                <constraint firstItem="trD-TH-ugq" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="Fpa-MH-Bpp"/>
-                <constraint firstItem="trD-TH-ugq" firstAttribute="leading" secondItem="kSm-8B-9Uc" secondAttribute="centerX" id="Ibk-Cq-wfT"/>
-                <constraint firstAttribute="centerX" secondItem="dfS-kz-CFe" secondAttribute="trailing" id="TT5-nJ-Iwt"/>
-                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="dfS-kz-CFe" secondAttribute="bottom" id="hDc-F8-Exa"/>
-                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="trD-TH-ugq" secondAttribute="bottom" id="ik7-aI-5ND"/>
-                <constraint firstItem="dfS-kz-CFe" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="k9p-eP-11e"/>
-                <constraint firstItem="trD-TH-ugq" firstAttribute="trailing" secondItem="kSm-8B-9Uc" secondAttribute="trailing" id="xvk-YK-jYw"/>
+                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="v3x-DB-49u" secondAttribute="bottom" id="55a-YJ-IvY"/>
+                <constraint firstItem="kSm-8B-9Uc" firstAttribute="bottom" secondItem="bgQ-Rq-80a" secondAttribute="bottom" id="Ec5-E9-mYg"/>
+                <constraint firstItem="v3x-DB-49u" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="U3o-Lr-nCP"/>
+                <constraint firstItem="v3x-DB-49u" firstAttribute="leading" secondItem="kSm-8B-9Uc" secondAttribute="leading" id="fnb-Ay-Qno"/>
+                <constraint firstAttribute="centerX" secondItem="v3x-DB-49u" secondAttribute="trailing" id="hiH-ZR-eMG"/>
+                <constraint firstItem="bgQ-Rq-80a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mSn-2t-fI8"/>
+                <constraint firstItem="bgQ-Rq-80a" firstAttribute="top" secondItem="kSm-8B-9Uc" secondAttribute="top" id="zFe-nS-KqG"/>
+                <constraint firstItem="kSm-8B-9Uc" firstAttribute="trailing" secondItem="bgQ-Rq-80a" secondAttribute="trailing" id="zbG-mF-7bs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="kSm-8B-9Uc"/>
             <point key="canvasLocation" x="295.6521739130435" y="174.77678571428569"/>
