@@ -190,7 +190,6 @@
 		29933D69241438430013EB94 /* PoolDrillsTests */ = {
 			isa = PBXGroup;
 			children = (
-				29B38E49244E3106005EEB1B /* ControllerTests */,
 				29B38E48244E30F4005EEB1B /* ModelTests */,
 				29933D6C241438430013EB94 /* Info.plist */,
 				295AC80E246B132E00A1805D /* TestCoreDataHelper.swift */,
@@ -241,10 +240,10 @@
 		29B38E3F2448DFF9005EEB1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				29874EE1247D97E300061787 /* ActionButton.swift */,
 				29D0DDDB24798EE90012882D /* Cells */,
-				29456BEC24770DCB00E8E7D9 /* ProgressLabelSlider.swift */,
 				29361C332486EA96007465C9 /* Views */,
+				29874EE1247D97E300061787 /* ActionButton.swift */,
+				29456BEC24770DCB00E8E7D9 /* ProgressLabelSlider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,13 +257,6 @@
 				295AC81A246DCE9300A1805D /* DrillRecorderTests.swift */,
 			);
 			path = ModelTests;
-			sourceTree = "<group>";
-		};
-		29B38E49244E3106005EEB1B /* ControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ControllerTests;
 			sourceTree = "<group>";
 		};
 		29D0DDD824798E280012882D /* Support */ = {
