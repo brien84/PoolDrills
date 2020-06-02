@@ -19,10 +19,10 @@ final class RunnerViewController: UIViewController {
         return tracker
     }()
 
-    private var queueController: DrillQueueController? {
-        let controller = children.first { $0.isKind(of: DrillQueueController.self) }
+    private var queueController: DrillsQueueController? {
+        let controller = children.first { $0.isKind(of: DrillsQueueController.self) }
 
-        return controller as? DrillQueueController
+        return controller as? DrillsQueueController
     }
 
     private var records = [DrillRecord]()

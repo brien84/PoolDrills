@@ -1,5 +1,5 @@
 //
-//  DrillQueueController.swift
+//  DrillsQueueController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-05-17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DrillQueueController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class DrillsQueueController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var datasource = [Drill]() {
         didSet {
@@ -121,7 +121,7 @@ final class DrillQueueController: UICollectionViewController, UICollectionViewDe
 
 }
 
-extension DrillQueueController {
+extension DrillsQueueController {
     private var inset: CGFloat { collectionView.frame.width * 0.35 }
     private var itemSpacing: CGFloat { collectionView.frame.width * 0.05 }
     private var cellHeight: CGFloat { collectionView.frame.height }

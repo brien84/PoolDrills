@@ -1202,10 +1202,10 @@
             </objects>
             <point key="canvasLocation" x="2355.072463768116" y="518.97321428571422"/>
         </scene>
-        <!--Drill Queue Controller-->
+        <!--Drills Queue Controller-->
         <scene sceneID="H3k-ou-MkM">
             <objects>
-                <collectionViewController id="A48-od-P9M" customClass="DrillQueueController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="A48-od-P9M" customClass="DrillsQueueController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="QkD-ih-UKE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="186.33333333333334"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
