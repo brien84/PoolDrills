@@ -40,7 +40,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         }
 
         if segue.identifier == "runRoutine" {
-            guard let vc = segue.destination as? RunnerViewController else { return }
+            guard let vc = segue.destination as? RoutineRunningViewController else { return }
             vc.hidesBottomBarWhenPushed = true
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }

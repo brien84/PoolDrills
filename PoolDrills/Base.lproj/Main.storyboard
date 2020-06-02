@@ -404,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="4173.913043478261" y="172.76785714285714"/>
         </scene>
-        <!--Runner View Controller-->
+        <!--Routine Running View Controller-->
         <scene sceneID="ZKU-uC-CrE">
             <objects>
-                <viewController id="23f-Mw-JpI" customClass="RunnerViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="23f-Mw-JpI" customClass="RoutineRunningViewController" customModule="PoolDrills" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpm-zU-mOU" customClass="GradientBackgroundView" customModule="PoolDrills" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,5 +1,5 @@
 //
-//  RunnerViewController.swift
+//  RoutineRunningViewController.swift
 //  PoolDrills
 //
 //  Created by Marius on 2020-04-15.
@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-final class RunnerViewController: UIViewController {
+final class RoutineRunningViewController: UIViewController {
 
     var routine: Routine?
 
@@ -67,7 +67,7 @@ final class RunnerViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        navigationController?.viewControllers.removeAll { $0.isKind(of: RunnerViewController.self) }
+        navigationController?.viewControllers.removeAll { $0.isKind(of: RoutineRunningViewController.self) }
     }
 
     @IBAction private func actionButtonDidTap(_ sender: ActionButton) {
@@ -160,7 +160,7 @@ final class RunnerViewController: UIViewController {
     }
 }
 
-extension RunnerViewController: DrillTrackingDelegate {
+extension RoutineRunningViewController: DrillTrackingDelegate {
     func drillTracking(_ tracker: DrillTracking, didLoad drill: Drill) {
         missCount.text = String(0)
         hitCount.text = String(0)

@@ -46,7 +46,7 @@
 		29D0DDDA24798E3F0012882D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDD924798E3F0012882D /* Extensions.swift */; };
 		29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */; };
 		29D4D6DD248437680060B819 /* ResultsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4D6DC248437680060B819 /* ResultsViewCell.swift */; };
-		29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RunnerViewController.swift */; };
+		29D660C52447861C00339A03 /* RoutineRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D660C42447861C00339A03 /* RoutineRunningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 		29D0DDD924798E3F0012882D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29D0DDDC24798F470012882D /* CustomSelectedBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectedBackgroundCell.swift; sourceTree = "<group>"; };
 		29D4D6DC248437680060B819 /* ResultsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewCell.swift; sourceTree = "<group>"; };
-		29D660C42447861C00339A03 /* RunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerViewController.swift; sourceTree = "<group>"; };
+		29D660C42447861C00339A03 /* RoutineRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineRunningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 				295AC81F247034FC00A1805D /* FetchedTableViewController.swift */,
 				295AC81C246DE37900A1805D /* ResultsViewController.swift */,
 				298888842430DAB300D11427 /* RoutineSetupViewController.swift */,
-				29D660C42447861C00339A03 /* RunnerViewController.swift */,
+				29D660C42447861C00339A03 /* RoutineRunningViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				295AC81D246DE37900A1805D /* ResultsViewController.swift in Sources */,
 				29A303B8247BD3540038E3D2 /* ConfirmationPopoverViewController.swift in Sources */,
 				298888D22437D4A100D11427 /* CoreDataStack.swift in Sources */,
-				29D660C52447861C00339A03 /* RunnerViewController.swift in Sources */,
+				29D660C52447861C00339A03 /* RoutineRunningViewController.swift in Sources */,
 				29874EE2247D97E300061787 /* ActionButton.swift in Sources */,
 				29B38E43244B83AF005EEB1B /* DrillTracker.swift in Sources */,
 				29933D56241438400013EB94 /* SceneDelegate.swift in Sources */,
