@@ -35,11 +35,9 @@ final class RoutineRunningViewController: UIViewController {
     @IBOutlet private weak var hitCount: UILabel!
 
     @IBOutlet private weak var actionButton: ActionButton!
-    @IBOutlet private weak var missButton: UIButton!
-    @IBOutlet private weak var hitButton: UIButton!
-    @IBOutlet private weak var completionButton: UIButton!
-
     @IBOutlet private weak var attemptsProgress: UIProgressView!
+
+    @IBOutlet private var toggleableButtons: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,9 +106,7 @@ final class RoutineRunningViewController: UIViewController {
     }
 
     private func toggleButtons(enabled isEnabled: Bool) {
-        missButton.isEnabled = isEnabled
-        hitButton.isEnabled = isEnabled
-        completionButton.isEnabled = isEnabled
+        toggleableButtons.forEach { $0.isEnabled = isEnabled }
     }
 
     // MARK: - Notifications
