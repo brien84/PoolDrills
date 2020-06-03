@@ -8,15 +8,16 @@
 
 import UIKit
 
-protocol RoutineRunButtonDelegate: AnyObject {
+protocol RoutineCellRunButtonDelegate: AnyObject {
     func routineRunButtonDidTap(_ button: UIButton, inside cell: UITableViewCell)
 }
 
 final class RoutineCell: CustomSelectedBackgroundCell {
 
-    weak var delegate: RoutineRunButtonDelegate?
+    weak var delegate: RoutineCellRunButtonDelegate?
 
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var runButton: UIButton!
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -24,7 +25,7 @@ final class RoutineCell: CustomSelectedBackgroundCell {
         delegate = nil
     }
 
-    @IBAction private func runButtonTapped(_ sender: UIButton) {
+    @IBAction private func runButtonDidTap(_ sender: UIButton) {
         delegate?.routineRunButtonDidTap(sender, inside: self)
     }
 

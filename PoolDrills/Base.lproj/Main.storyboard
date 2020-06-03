@@ -360,7 +360,7 @@
                                             <color key="tintColor" name="grayElement"/>
                                             <state key="normal" image="play_32"/>
                                             <connections>
-                                                <action selector="runButtonTapped:" destination="GN1-PU-BU4" eventType="touchUpInside" id="cod-WB-ewZ"/>
+                                                <action selector="runButtonDidTap:" destination="GN1-PU-BU4" eventType="touchUpInside" id="rCZ-Kf-9hL"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -377,6 +377,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="runButton" destination="bU3-T4-LYW" id="Ntu-io-Uht"/>
                                     <outlet property="title" destination="Umv-05-kJw" id="CjJ-uo-Ibv"/>
                                     <segue destination="t6m-P0-p3g" kind="show" identifier="editRoutine" id="fS0-RY-Y93"/>
                                 </connections>
