@@ -21,7 +21,9 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineCell
 
         let routine = fetchedResultsController.object(at: indexPath)
+
         cell.title.text = routine.title
+        cell.runButton.isEnabled = routine.drills?.count ?? 0 > 0 ? true : false
 
         cell.delegate = self
 
@@ -50,7 +52,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
 
 }
 
-extension FetchedRoutinesViewController: RoutineRunButtonDelegate {
+extension FetchedRoutinesViewController: RoutineCellRunButtonDelegate {
     func routineRunButtonDidTap(_ button: UIButton, inside cell: UITableViewCell) {
         performSegue(withIdentifier: "runRoutine", sender: cell)
     }
