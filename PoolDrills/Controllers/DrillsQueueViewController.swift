@@ -16,13 +16,11 @@ final class DrillsQueueViewController: UICollectionViewController, UICollectionV
         }
     }
 
-    private var currentIndex = -1 {
-        didSet {
-            currentCell = collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillsQueueViewCell
-        }
-    }
+    private var currentIndex = -1
 
-    private var currentCell: DrillsQueueViewCell?
+    private var currentCell: DrillsQueueViewCell? {
+        return collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as? DrillsQueueViewCell
+    }
 
     private var viewDidAppear = false {
         didSet {
