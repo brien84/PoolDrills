@@ -16,6 +16,12 @@ class CustomSelectedBackgroundCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .secondaryBackground
         selectedBackgroundView = view
+
+        if #available(iOS 13.0, *) {
+            tintColor = .secondaryBackground
+        } else {
+            tintColor = .lightElement
+        }
     }
 
 }
