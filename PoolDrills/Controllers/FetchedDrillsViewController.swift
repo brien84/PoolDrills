@@ -24,7 +24,7 @@ final class FetchedDrillsViewController: FetchedTableViewController<Drill> {
 
         cell.title.text = drill.title
         cell.attempts.text = String(drill.attempts)
-        cell.duration.text = String(Int(drill.duration) / 60)
+        cell.duration.text = String(drill.minutes)
 
         return cell
     }
