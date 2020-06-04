@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29361C452488F887007465C9 /* Routine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29361C412488F887007465C9 /* Routine+CoreDataClass.swift */; };
+		29361C472488F887007465C9 /* Drill+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29361C432488F887007465C9 /* Drill+CoreDataClass.swift */; };
 		29456BDE24718A4800E8E7D9 /* DrillsQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDD24718A4800E8E7D9 /* DrillsQueueViewController.swift */; };
 		29456BE024731E5900E8E7D9 /* DrillsQueueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BDF24731E5900E8E7D9 /* DrillsQueueViewCell.swift */; };
 		29456BE2247434DD00E8E7D9 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */; };
@@ -67,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29361C412488F887007465C9 /* Routine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		29361C432488F887007465C9 /* Drill+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drill+CoreDataClass.swift"; sourceTree = "<group>"; };
 		29456BDD24718A4800E8E7D9 /* DrillsQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsQueueViewController.swift; sourceTree = "<group>"; };
 		29456BDF24731E5900E8E7D9 /* DrillsQueueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsQueueViewCell.swift; sourceTree = "<group>"; };
 		29456BE1247434DD00E8E7D9 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
@@ -150,6 +154,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		29361C492488F8AA007465C9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				298888D12437D4A100D11427 /* CoreDataStack.swift */,
+				29361C432488F887007465C9 /* Drill+CoreDataClass.swift */,
+				29361C412488F887007465C9 /* Routine+CoreDataClass.swift */,
+				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		29933D47241438400013EB94 = {
 			isa = PBXGroup;
 			children = (
@@ -209,13 +224,12 @@
 		29933D83241438D40013EB94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29361C492488F8AA007465C9 /* CoreData */,
 				29B38E562465D5BA005EEB1B /* AttemptsTracker.swift */,
-				298888D12437D4A100D11427 /* CoreDataStack.swift */,
 				295AC816246DACF600A1805D /* DrillRecord.swift */,
 				295AC818246DCC2000A1805D /* DrillRecorder.swift */,
 				29B38E42244B83AF005EEB1B /* DrillTracker.swift */,
 				29B38E542465D4EF005EEB1B /* DurationTracker.swift */,
-				298888D32438CD7B00D11427 /* PoolDrills.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +455,7 @@
 				29B38E572465D5BA005EEB1B /* AttemptsTracker.swift in Sources */,
 				29888881242E9A8A00D11427 /* DrillSetupViewController.swift in Sources */,
 				29874F2A247F9D4D00061787 /* SeparatorlessCell.swift in Sources */,
+				29361C452488F887007465C9 /* Routine+CoreDataClass.swift in Sources */,
 				295AC817246DACF600A1805D /* DrillRecord.swift in Sources */,
 				29D4D6DD248437680060B819 /* ResultsViewCell.swift in Sources */,
 				298888872431291F00D11427 /* DrillsSelectionViewController.swift in Sources */,
@@ -461,6 +476,7 @@
 				29D0DDDD24798F470012882D /* CustomSelectedBackgroundCell.swift in Sources */,
 				29D0DDD7247955AD0012882D /* DrillCell.swift in Sources */,
 				298888852430DAB300D11427 /* RoutineSetupViewController.swift in Sources */,
+				29361C472488F887007465C9 /* Drill+CoreDataClass.swift in Sources */,
 				29888883242FF18700D11427 /* FetchedRoutinesViewController.swift in Sources */,
 				298888D52438CD7B00D11427 /* PoolDrills.xcdatamodeld in Sources */,
 			);
