@@ -27,8 +27,9 @@ final class DrillSetupViewController: UITableViewController {
         titleField.delegate = self
 
         titleField.insertText(drill.title ?? "")
+
         attemptsSlider.value = Float(drill.attempts)
-        durationSlider.value = Float(drill.duration / 60)
+        durationSlider.value = Float(drill.minutes)
 
         attemptsSlider.font = titleField.font
         durationSlider.font = titleField.font
@@ -56,8 +57,8 @@ final class DrillSetupViewController: UITableViewController {
 
     @IBAction private func saveButtonDidTap(_ sender: UIBarButtonItem) {
         drill.title = titleField.text
-        drill.attempts = Int64(attemptsSlider.value)
-        drill.duration = Double(durationSlider.value).rounded(.up) * 60
+        drill.attempts = Int(attemptsSlider.value)
+        drill.minutes = Int(durationSlider.value)
 
         coredata.saveContext()
 
