@@ -27,7 +27,7 @@ class AttemptsTrackerTests: XCTestCase {
         let attemptsLimit = 16
         let drill = createDrill(attemptsLimit)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getAttemptsLimit(from: notification.userInfo) == attemptsLimit
         }
 
@@ -44,7 +44,7 @@ class AttemptsTrackerTests: XCTestCase {
         let drill = createDrill(0)
         sut?.load(drill)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getHitCount(from: notification.userInfo) > 0
         }
 
@@ -60,7 +60,7 @@ class AttemptsTrackerTests: XCTestCase {
         let drill = createDrill(0)
         sut?.load(drill)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getMissCount(from: notification.userInfo) > 0
         }
 
@@ -76,7 +76,7 @@ class AttemptsTrackerTests: XCTestCase {
         let drill = createDrill(0)
         sut?.load(drill)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getHitCount(from: notification.userInfo) == 2
         }
 
@@ -85,7 +85,7 @@ class AttemptsTrackerTests: XCTestCase {
 
         waitForExpectations(timeout: 3)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getHitCount(from: notification.userInfo) == 1
         }
 
@@ -102,7 +102,7 @@ class AttemptsTrackerTests: XCTestCase {
         let drill = createDrill(0)
         sut?.load(drill)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getMissCount(from: notification.userInfo) == 2
         }
 
@@ -111,7 +111,7 @@ class AttemptsTrackerTests: XCTestCase {
 
         waitForExpectations(timeout: 3)
 
-        expectation(forNotification: .AttemptsTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
             return self.getMissCount(from: notification.userInfo) == 1
         }
 

@@ -327,7 +327,7 @@ extension DrillTrackerTests {
             let userInfo: [AttemptsTrackingKeys: Int] =
                 [.attemptsLimit: isDrillCompleted ? 0 : 5, .hitCount: 0, .missCount: 0]
 
-            NotificationCenter.default.post(name: .AttemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
+            NotificationCenter.default.post(name: .attemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
 
     }
@@ -351,7 +351,7 @@ extension DrillTrackerTests {
             let userInfo: [DurationTrackingKeys: TimeInterval] =
                 [.totalDuration: 0, .drillDuration: isDrillCompleted ? 0 : 1]
 
-            NotificationCenter.default.post(name: .DurationTrackingDidUpdate, object: nil, userInfo: userInfo)
+            NotificationCenter.default.post(name: .durationTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
 
         func pause() {

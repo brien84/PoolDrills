@@ -27,7 +27,7 @@ class DurationTrackerTests: XCTestCase {
 
     func testStarting() {
         // given
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getTotalDuration(from: notification.userInfo) > 0
         }
 
@@ -42,7 +42,7 @@ class DurationTrackerTests: XCTestCase {
     /// so they are both executing updates, thus making the time go faster.
     func testCallingStartMultipleTimes() {
         // given
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getTotalDuration(from: notification.userInfo) > 4
         }.isInverted = true
 
@@ -59,7 +59,7 @@ class DurationTrackerTests: XCTestCase {
 
     func testPausing() {
         // given
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             if self.getTotalDuration(from: notification.userInfo) > 0 {
                 self.sut?.pause()
                 return true
@@ -68,7 +68,7 @@ class DurationTrackerTests: XCTestCase {
             return false
         }
 
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getTotalDuration(from: notification.userInfo) > 1
         }.isInverted = true
 
@@ -81,7 +81,7 @@ class DurationTrackerTests: XCTestCase {
 
     func testResuming() {
         // given
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             if self.getTotalDuration(from: notification.userInfo) > 0 {
                 self.sut?.pause()
                 return true
@@ -90,7 +90,7 @@ class DurationTrackerTests: XCTestCase {
             return false
         }
 
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getTotalDuration(from: notification.userInfo) > 1
         }.isInverted = true
 
@@ -102,7 +102,7 @@ class DurationTrackerTests: XCTestCase {
             self.sut?.start()
         }
 
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getTotalDuration(from: notification.userInfo) > 2
         }
 
@@ -115,7 +115,7 @@ class DurationTrackerTests: XCTestCase {
         let drill = createDrill(duration)
         sut?.load(drill)
 
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getDrillDuration(from: notification.userInfo) > duration
         }
 
@@ -132,7 +132,7 @@ class DurationTrackerTests: XCTestCase {
         let drill = createDrill(duration)
         sut?.load(drill)
 
-        expectation(forNotification: .DurationTrackingDidUpdate, object: nil) { notification in
+        expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
             return self.getDrillDuration(from: notification.userInfo) < duration
         }
 
