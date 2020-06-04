@@ -27,15 +27,7 @@ final class ResultsViewController: UITableViewController {
     }
 
     @IBAction private func doneButtonDidTap(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-
-        self.present(alert, animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     // MARK: - UITableViewDataSource
