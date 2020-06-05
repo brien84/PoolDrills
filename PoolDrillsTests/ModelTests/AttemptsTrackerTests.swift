@@ -132,7 +132,7 @@ extension AttemptsTrackerTests {
 
     private func getAttempts(from userInfo: [AnyHashable: Any]?) -> Int {
         guard let attempts = cast(userInfo)[.attempts]
-            else { XCTFail("'attemptsLimit' is nil."); return 0 }
+            else { XCTFail("'attempts' is nil."); return 0 }
 
         return attempts
     }
