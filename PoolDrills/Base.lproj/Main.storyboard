@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dpx-97-dNd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dpx-97-dNd">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -337,26 +337,26 @@
                         <color key="backgroundColor" name="primaryBackground"/>
                         <color key="separatorColor" name="grayElement"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="qc7-bG-72O" userLabel="Footer">
-                            <rect key="frame" x="0.0" y="123.33333587646484" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="123" width="414" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routineCell" id="GN1-PU-BU4" customClass="RoutineCell" customModule="PoolDrills" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="67.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GN1-PU-BU4" id="QkL-ML-Ke9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoutineTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-05-kJw">
-                                            <rect key="frame" x="20.000000000000007" y="20" width="111.66666666666669" height="27.333333333333329"/>
+                                            <rect key="frame" x="20.000000000000007" y="20" width="111.66666666666669" height="27"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" name="lightElement"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-T4-LYW">
-                                            <rect key="frame" x="362" y="0.0" width="32" height="67.333333333333329"/>
+                                            <rect key="frame" x="362" y="0.0" width="32" height="67"/>
                                             <color key="tintColor" name="grayElement"/>
                                             <state key="normal" image="play_32"/>
                                             <connections>
@@ -605,8 +605,8 @@
                         <outlet property="attemptsProgress" destination="r3d-ZB-0j5" id="vkK-cw-UGN"/>
                         <outlet property="hitCount" destination="Va4-6E-5vl" id="Aig-H5-doS"/>
                         <outlet property="missCount" destination="sJL-lO-auJ" id="whj-Eq-69p"/>
+                        <outlet property="routineTime" destination="mvp-lr-nCr" id="vLR-5r-IaU"/>
                         <outlet property="routineTitle" destination="01H-Ey-Xg0" id="Txf-Ze-4KX"/>
-                        <outlet property="totalDuration" destination="mvp-lr-nCr" id="5yA-Wy-hFa"/>
                         <outletCollection property="toggleableButtons" destination="mKR-lx-jVj" collectionClass="NSMutableArray" id="CGc-M8-Ijj"/>
                         <outletCollection property="toggleableButtons" destination="060-br-vVo" collectionClass="NSMutableArray" id="Ebc-fb-QR2"/>
                         <outletCollection property="toggleableButtons" destination="FCk-7f-qC7" collectionClass="NSMutableArray" id="A1V-dK-VRR"/>
@@ -1317,6 +1317,10 @@
             <point key="canvasLocation" x="5821.739130434783" y="-705.46875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cmE-ff-j3w"/>
+        <segue reference="agN-MF-Dpg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="attempts_20" width="20" height="20"/>
         <image name="attempts_32" width="32" height="32"/>
@@ -1341,9 +1345,6 @@
         <namedColor name="lightElement">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="lightElement">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="primaryBackground">
             <color red="0.11372549019607843" green="0.81960784313725488" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1354,8 +1355,4 @@
             <color red="0.062745098039215685" green="0.67450980392156867" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cmE-ff-j3w"/>
-        <segue reference="agN-MF-Dpg"/>
-    </inferredMetricsTieBreakers>
 </document>
