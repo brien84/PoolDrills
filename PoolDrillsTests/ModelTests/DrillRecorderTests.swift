@@ -27,13 +27,13 @@ class DrillRecorderTests: XCTestCase {
         let drill = createDrill()
 
         // when
-        sut?.createRecord(with: drill)
+        sut?.createRecord(of: drill)
 
         // then
         guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
         XCTAssertEqual(record.title, drill.title)
         XCTAssertEqual(record.attempts, Int(drill.attempts))
-        XCTAssertEqual(record.duration, drill.duration)
+        XCTAssertEqual(record.seconds, drill.seconds)
     }
 
     func testCreatingFiftyRecords() {
@@ -43,7 +43,7 @@ class DrillRecorderTests: XCTestCase {
 
         // when
         for _ in 1...50 {
-            sut?.createRecord(with: drill)
+            sut?.createRecord(of: drill)
         }
 
         // then
@@ -54,15 +54,15 @@ class DrillRecorderTests: XCTestCase {
     func testRecordingDuration() {
         // given
         let drill = createDrill()
-        let duration = 78.0
+        let seconds = 78.0
 
         // when
-        sut?.createRecord(with: drill)
-        sut?.recordDuration(duration)
+        sut?.createRecord(of: drill)
+        sut?.recordTime(seconds)
 
         // then
         guard let record = sut?.getRecords().first else { XCTFail("`getRecords()` returns nil."); return }
-        XCTAssertEqual(record.recordedDuration, duration)
+        XCTAssertEqual(record.recordedTime, seconds)
     }
 
     func testRecordingHitCount() {
@@ -71,7 +71,7 @@ class DrillRecorderTests: XCTestCase {
         let hitCount = 58
 
         // when
-        sut?.createRecord(with: drill)
+        sut?.createRecord(of: drill)
         sut?.recordHitCount(hitCount)
 
         // then
@@ -85,7 +85,7 @@ class DrillRecorderTests: XCTestCase {
         let missCount = 11
 
         // when
-        sut?.createRecord(with: drill)
+        sut?.createRecord(of: drill)
         sut?.recordMissCount(missCount)
 
         // then
@@ -96,9 +96,7 @@ class DrillRecorderTests: XCTestCase {
 }
 
 extension DrillRecorderTests {
-
-    private func createDrill(_ title: String = "", _ attempts: Int = 0, _ duration: TimeInterval = 0) -> Drill {
-        return TestCoreDataHelper.createDrill(title, attempts, duration)
+    private func createDrill(_ title: String = "", _ attempts: Int = 0, _ minutes: Int = 0) -> Drill {
+        return TestCoreDataHelper.createDrill(title, attempts, minutes)
     }
-
 }

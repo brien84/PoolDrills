@@ -16,14 +16,14 @@ final class DrillRecord {
     }
 
     var attempts: Int {
-        return Int(drill.attempts)
+        return drill.attempts
     }
 
-    var duration: Double {
-        return drill.duration
+    var seconds: TimeInterval {
+        return drill.seconds
     }
 
-    var recordedDuration: TimeInterval = 0
+    var recordedTime: TimeInterval = 0
     var hitCount = 0
     var missCount = 0
 

@@ -10,8 +10,8 @@ import Foundation
 
 protocol DrillRecording {
     func getRecords() -> [DrillRecord]
-    func createRecord(with drill: Drill)
-    func recordDuration(_ duration: TimeInterval)
+    func createRecord(of drill: Drill)
+    func recordTime(_ duration: TimeInterval)
     func recordHitCount(_ count: Int)
     func recordMissCount(_ count: Int)
 }
@@ -25,14 +25,14 @@ final class DrillRecorder: DrillRecording {
         return records
     }
 
-    func createRecord(with drill: Drill) {
+    func createRecord(of drill: Drill) {
         let record = DrillRecord(drill: drill)
         currentRecord = record
         records.append(record)
     }
 
-    func recordDuration(_ duration: TimeInterval) {
-        currentRecord?.recordedDuration = duration
+    func recordTime(_ seconds: TimeInterval) {
+        currentRecord?.recordedTime = seconds
     }
 
     func recordHitCount(_ count: Int) {
