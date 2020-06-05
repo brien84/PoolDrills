@@ -30,7 +30,7 @@ final class RoutineRunningViewController: UIViewController {
 
     @IBOutlet private weak var routineTitle: UILabel!
 
-    @IBOutlet private weak var totalDuration: UILabel!
+    @IBOutlet private weak var routineTime: UILabel!
     @IBOutlet private weak var missCount: UILabel!
     @IBOutlet private weak var hitCount: UILabel!
 
@@ -126,21 +126,21 @@ final class RoutineRunningViewController: UIViewController {
     @objc private func handleDurationNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
-        totalDuration.text = info[.totalDuration]?.toString()
+        routineTime.text = info[.routineTime]?.digitalFormat
     }
 
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
 
-        guard let attemptsLimit = info[.attemptsLimit] else { return }
+        guard let attempts = info[.attempts] else { return }
         guard let hitCount = info[.hitCount] else { return }
         guard let missCount = info[.missCount] else { return }
 
         self.hitCount.text = String(hitCount)
         self.missCount.text = String(missCount)
 
-        if attemptsLimit > 0 {
-            attemptsProgress.progress = Float(hitCount + missCount) / Float(attemptsLimit)
+        if attempts > 0 {
+            attemptsProgress.progress = Float(hitCount + missCount) / Float(attempts)
         }
     }
 
@@ -151,7 +151,7 @@ final class RoutineRunningViewController: UIViewController {
             guard let vc = segue.destination as? ResultsViewController else { return }
             vc.datasource = records
             vc.routineTitle = routineTitle.text
-            vc.routineDuration = totalDuration.text
+            vc.routineDuration = routineTime.text
         }
     }
 }
@@ -198,20 +198,6 @@ extension RoutineRunningViewController: DrillTrackingDelegate {
 
         self.records = records
         performSegue(withIdentifier: "showResults", sender: nil)
-    }
-}
-
-extension TimeInterval {
-    func toString() -> String {
-        let hours = Int(self) / 3600
-        let minutes = Int(self) / 60 % 60
-        let seconds = Int(self) % 60
-
-        if hours > 0 {
-            return String(format: "%02d:%02d:%02d", arguments: [hours, minutes, seconds])
-        } else {
-            return String(format: "%02d:%02d", arguments: [minutes, seconds])
-        }
     }
 }
 
