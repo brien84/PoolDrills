@@ -310,7 +310,6 @@ extension DrillTrackerTests {
     }
 
     final class MockAttemptsTracker: AttemptsTracking {
-
         var isDrillCompleted = false
 
         var didLoadDrill = false
@@ -325,17 +324,14 @@ extension DrillTrackerTests {
 
         func registerAttempt(as successful: Bool) {
             let userInfo: [AttemptsTrackingKeys: Int] =
-                [.attemptsLimit: isDrillCompleted ? 0 : 5, .hitCount: 0, .missCount: 0]
+                [.attempts: isDrillCompleted ? 0 : 5, .hitCount: 0, .missCount: 0]
 
             NotificationCenter.default.post(name: .attemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
-
     }
 
     final class MockDurationTracker: DurationTracking {
-
         var isDrillCompleted = false
-
         var didLoadDrill = false
         var didPause = false
 
@@ -349,7 +345,7 @@ extension DrillTrackerTests {
 
         func start() {
             let userInfo: [DurationTrackingKeys: TimeInterval] =
-                [.totalDuration: 0, .drillDuration: isDrillCompleted ? 0 : 1]
+                [.routineTime: 0, .drillTime: isDrillCompleted ? 0 : 1]
 
             NotificationCenter.default.post(name: .durationTrackingDidUpdate, object: nil, userInfo: userInfo)
         }
@@ -357,11 +353,9 @@ extension DrillTrackerTests {
         func pause() {
             didPause = true
         }
-
     }
 
     final class MockDrillRecorder: DrillRecording {
-
         var didCreateRecord = false
         var didRecordDuration = false
         var didRecordHitCount = false
@@ -371,11 +365,11 @@ extension DrillTrackerTests {
             return []
         }
 
-        func createRecord(with drill: Drill) {
+        func createRecord(of drill: Drill) {
             didCreateRecord = true
         }
 
-        func recordDuration(_ duration: TimeInterval) {
+        func recordTime(_ seconds: TimeInterval) {
             didRecordDuration = true
         }
 
@@ -386,11 +380,9 @@ extension DrillTrackerTests {
         func recordMissCount(_ count: Int) {
             didRecordMissCount = true
         }
-
     }
 
     final class TestDelegate: DrillTrackingDelegate {
-
         var didLoadDrill = false
         var loadedDrill: Drill?
         var didStartDrill = false
@@ -420,7 +412,6 @@ extension DrillTrackerTests {
             didFinishDrills = true
             self.records = records
         }
-
     }
 
 }

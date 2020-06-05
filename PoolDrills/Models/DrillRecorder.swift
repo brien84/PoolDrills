@@ -11,7 +11,7 @@ import Foundation
 protocol DrillRecording {
     func getRecords() -> [DrillRecord]
     func createRecord(of drill: Drill)
-    func recordTime(_ duration: TimeInterval)
+    func recordTime(_ seconds: TimeInterval)
     func recordHitCount(_ count: Int)
     func recordMissCount(_ count: Int)
 }

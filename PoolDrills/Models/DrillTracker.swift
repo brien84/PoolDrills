@@ -102,7 +102,7 @@ final class DrillTracker: DrillTracking {
     private func load(_ drill: Drill) {
         durationTracker.load(drill)
         attemptsTracker.load(drill)
-        drillRecorder.createRecord(with: drill)
+        drillRecorder.createRecord(of: drill)
 
         state = .ready
     }
@@ -141,11 +141,11 @@ final class DrillTracker: DrillTracking {
     @objc private func handleDurationNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
-        guard let drillDuration = info[.drillDuration] else { return }
+        guard let drillTime = info[.drillTime] else { return }
 
-        drillRecorder.recordDuration(drillDuration)
+        drillRecorder.recordTime(drillTime)
 
-        if drillDuration == 0 {
+        if drillTime == 0 {
             state = .idle
         }
     }
@@ -153,14 +153,14 @@ final class DrillTracker: DrillTracking {
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
 
-        guard let attemptsLimit = info[.attemptsLimit] else { return }
+        guard let attempts = info[.attempts] else { return }
         guard let hitCount = info[.hitCount] else { return }
         guard let missCount = info[.missCount] else { return }
 
         drillRecorder.recordHitCount(hitCount)
         drillRecorder.recordMissCount(missCount)
 
-        if hitCount + missCount == attemptsLimit {
+        if hitCount + missCount == attempts {
             state = .idle
         }
     }
