@@ -22,13 +22,13 @@ class AttemptsTrackerTests: XCTestCase {
         TestCoreDataHelper.resetContext()
     }
 
-    func testLoadingDrillSetCorrectAttemptsLimit() {
+    func testLoadingDrillSetsCorrectAttemptsCount() {
         // given
-        let attemptsLimit = 16
-        let drill = createDrill(attemptsLimit)
+        let attempts = Int.random(in: 0...100)
+        let drill = createDrill(attempts)
 
         expectation(forNotification: .attemptsTrackingDidUpdate, object: nil) { notification in
-            return self.getAttemptsLimit(from: notification.userInfo) == attemptsLimit
+            return self.getAttempts(from: notification.userInfo) == attempts
         }
 
         // when
@@ -126,29 +126,35 @@ class AttemptsTrackerTests: XCTestCase {
 }
 
 extension AttemptsTrackerTests {
-
     private func createDrill(_ attempts: Int) -> Drill {
         return TestCoreDataHelper.createDrill("", attempts, 0)
     }
 
-    private func getAttemptsLimit(from userInfo: [AnyHashable: Any]?) -> Int {
-        guard let attemptsLimit = cast(userInfo)[.attemptsLimit] else { XCTFail("'attemptsLimit' is nil."); return 0 }
-        return attemptsLimit
+    private func getAttempts(from userInfo: [AnyHashable: Any]?) -> Int {
+        guard let attempts = cast(userInfo)[.attempts]
+            else { XCTFail("'attemptsLimit' is nil."); return 0 }
+
+        return attempts
     }
 
     private func getHitCount(from userInfo: [AnyHashable: Any]?) -> Int {
-        guard let hitCount = cast(userInfo)[.hitCount] else { XCTFail("'hitCount' is nil."); return 0 }
+        guard let hitCount = cast(userInfo)[.hitCount]
+            else { XCTFail("'hitCount' is nil."); return 0 }
+
         return hitCount
     }
 
     private func getMissCount(from userInfo: [AnyHashable: Any]?) -> Int {
-        guard let getMissCount = cast(userInfo)[.missCount] else { XCTFail("'missCount' is nil."); return 0 }
-        return getMissCount
+        guard let missCount = cast(userInfo)[.missCount]
+            else { XCTFail("'missCount' is nil."); return 0 }
+
+        return missCount
     }
 
     private func cast(_ userInfo: [AnyHashable: Any]?) -> [AttemptsTrackingKeys: Int] {
-        guard let info = userInfo as? [AttemptsTrackingKeys: Int] else { XCTFail("'userInfo' is nil."); return [:] }
+        guard let info = userInfo as? [AttemptsTrackingKeys: Int]
+            else { XCTFail("'userInfo' is nil."); return [:] }
+
         return info
     }
-
 }

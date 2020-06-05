@@ -15,15 +15,14 @@ protocol AttemptsTracking {
 
 final class AttemptsTracker: AttemptsTracking {
 
-    private var attemptsLimit = 0
+    private var attempts = 0
     private var hitCount = 0
     private var missCount = 0
 
     func load(_ drill: Drill) {
+        attempts = drill.attempts
         hitCount = 0
         missCount = 0
-
-        attemptsLimit = drill.attempts > 0 ? Int(drill.attempts) : 0
     }
 
     func registerAttempt(as successful: Bool) {
@@ -38,15 +37,14 @@ final class AttemptsTracker: AttemptsTracking {
 
     private func postNotification() {
         let userInfo: [AttemptsTrackingKeys: Int] =
-            [.attemptsLimit: attemptsLimit, .hitCount: hitCount, .missCount: missCount]
+            [.attempts: attempts, .hitCount: hitCount, .missCount: missCount]
 
         NotificationCenter.default.post(name: .attemptsTrackingDidUpdate, object: nil, userInfo: userInfo)
     }
-
 }
 
 enum AttemptsTrackingKeys: String {
-    case attemptsLimit
+    case attempts
     case hitCount
     case missCount
 }
