@@ -14,7 +14,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         return [NSSortDescriptor(key: "title", ascending: true)]
     }
 
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
@@ -23,7 +23,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         let routine = fetchedResultsController.object(at: indexPath)
 
         cell.title.text = routine.title
-        cell.runButton.isEnabled = routine.drills?.count ?? 0 > 0 ? true : false
+        cell.runButton.isEnabled = routine.containsDrills
 
         cell.delegate = self
 
@@ -36,6 +36,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         if segue.identifier == "createRoutine" || segue.identifier == "editRoutine" {
             guard let vc = segue.destination as? RoutineSetupViewController else { return }
             vc.hidesBottomBarWhenPushed = true
+
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
@@ -44,6 +45,7 @@ final class FetchedRoutinesViewController: FetchedTableViewController<Routine> {
         if segue.identifier == "runRoutine" {
             guard let vc = segue.destination as? RoutineRunningViewController else { return }
             vc.hidesBottomBarWhenPushed = true
+
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
             vc.routine = fetchedResultsController.object(at: indexPath)
