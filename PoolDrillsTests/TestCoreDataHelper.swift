@@ -11,13 +11,13 @@ import Foundation
 
 struct TestCoreDataHelper {
 
-    static func createDrill(_ title: String, _ attempts: Int, _ duration: Double) -> Drill {
+    static func createDrill(_ title: String, _ attempts: Int, _ minutes: Int) -> Drill {
         let coredata = CoreDataStack()
 
         let drill = Drill(context: coredata.managedContext)
         drill.title = title
-        drill.attempts = Int32(attempts)
-        drill.duration = duration
+        drill.attempts = attempts
+        drill.minutes = minutes
 
         return drill
     }
