@@ -65,7 +65,7 @@ final class DrillsQueueViewController: UICollectionViewController, UICollectionV
         let drill = datasource[indexPath.row]
 
         cell.title.text = drill.title
-        cell.duration.text = drill.duration.toString()
+        cell.duration.text = drill.seconds.digitalFormat
         cell.attempts.text = String(drill.attempts)
 
         return cell
@@ -102,18 +102,18 @@ final class DrillsQueueViewController: UICollectionViewController, UICollectionV
     @objc private func handleDurationNotification(_ notification: NSNotification) {
         guard let info = notification.userInfo as? [DurationTrackingKeys: TimeInterval] else { return }
 
-        currentCell?.duration.text = info[.drillDuration]?.toString()
+        currentCell?.duration.text = info[.drillTime]?.digitalFormat
     }
 
     @objc private func handleAttemptsNotification(_ notification: NSNotification) {
         guard datasource[currentIndex].attempts > 0 else { return }
         guard let info = notification.userInfo as? [AttemptsTrackingKeys: Int] else { return }
 
-        guard let attemptsLimit = info[.attemptsLimit] else { return }
+        guard let attempts = info[.attempts] else { return }
         guard let hitCount = info[.hitCount] else { return }
         guard let missCount = info[.missCount] else { return }
 
-        let attemptsLeft = attemptsLimit - hitCount - missCount
+        let attemptsLeft = attempts - hitCount - missCount
         currentCell?.attempts.text = String(attemptsLeft)
     }
 
