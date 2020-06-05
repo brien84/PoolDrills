@@ -8,9 +8,23 @@
 
 import UIKit
 
+extension TimeInterval {
+    var digitalFormat: String {
+        let hours = Int(self) / 3600
+        let minutes = Int(self) / 60 % 60
+        let seconds = Int(self) % 60
+
+        if hours > 0 {
+            return String(format: "%02d:%02d:%02d", arguments: [hours, minutes, seconds])
+        } else {
+            return String(format: "%02d:%02d", arguments: [minutes, seconds])
+        }
+    }
+}
+
 extension UIButton {
     @IBInspectable
-    var adjustsFontForContentSizeCategory: Bool {
+    public var adjustsFontForContentSizeCategory: Bool {
         get {
             return self.titleLabel?.adjustsFontForContentSizeCategory ?? false
         }
