@@ -12,4 +12,8 @@ import Foundation
 
 public class Routine: NSManagedObject {
 
+    var containsDrills: Bool {
+        return (drills?.count ?? 0) > 0
+    }
+
 }
