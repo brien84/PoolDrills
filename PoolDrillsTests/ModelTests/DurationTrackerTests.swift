@@ -28,7 +28,7 @@ class DurationTrackerTests: XCTestCase {
     func testStarting() {
         // given
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getTotalDuration(from: notification.userInfo) > 0
+            return self.getRoutineTime(from: notification.userInfo) > 0
         }
 
         // when
@@ -43,7 +43,7 @@ class DurationTrackerTests: XCTestCase {
     func testCallingStartMultipleTimes() {
         // given
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getTotalDuration(from: notification.userInfo) > 4
+            return self.getRoutineTime(from: notification.userInfo) > 4
         }.isInverted = true
 
         // when
@@ -60,7 +60,7 @@ class DurationTrackerTests: XCTestCase {
     func testPausing() {
         // given
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            if self.getTotalDuration(from: notification.userInfo) > 0 {
+            if self.getRoutineTime(from: notification.userInfo) > 0 {
                 self.sut?.pause()
                 return true
             }
@@ -69,7 +69,7 @@ class DurationTrackerTests: XCTestCase {
         }
 
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getTotalDuration(from: notification.userInfo) > 1
+            return self.getRoutineTime(from: notification.userInfo) > 1
         }.isInverted = true
 
         // when
@@ -82,7 +82,7 @@ class DurationTrackerTests: XCTestCase {
     func testResuming() {
         // given
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            if self.getTotalDuration(from: notification.userInfo) > 0 {
+            if self.getRoutineTime(from: notification.userInfo) > 0 {
                 self.sut?.pause()
                 return true
             }
@@ -91,7 +91,7 @@ class DurationTrackerTests: XCTestCase {
         }
 
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getTotalDuration(from: notification.userInfo) > 1
+            return self.getRoutineTime(from: notification.userInfo) > 1
         }.isInverted = true
 
         // when
@@ -103,20 +103,20 @@ class DurationTrackerTests: XCTestCase {
         }
 
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getTotalDuration(from: notification.userInfo) > 2
+            return self.getRoutineTime(from: notification.userInfo) > 2
         }
 
         waitForExpectations(timeout: 3)
     }
 
-    func testDrillDurationIsCountedUpwardsWhenEqualsToZero() {
+    func testDrillTimeIsCountedUpwardsWhenMinutesEqualsToZero() {
         // given
-        let duration = 0.0
-        let drill = createDrill(duration)
+        let minutes = 0
+        let drill = createDrill(minutes)
         sut?.load(drill)
 
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getDrillDuration(from: notification.userInfo) > duration
+            return self.getDrillTime(from: notification.userInfo) > drill.seconds
         }
 
         // when
@@ -126,14 +126,14 @@ class DurationTrackerTests: XCTestCase {
         waitForExpectations(timeout: 3)
     }
 
-    func testDrillDurationIsCountedDownWhenIsGreaterThanZero() {
+    func testDrillTimeIsCountedDownWhenMinutesIsGreaterThanZero() {
         // given
-        let duration = 1.0
-        let drill = createDrill(duration)
+        let minutes = 1
+        let drill = createDrill(minutes)
         sut?.load(drill)
 
         expectation(forNotification: .durationTrackingDidUpdate, object: nil) { notification in
-            return self.getDrillDuration(from: notification.userInfo) < duration
+            return self.getDrillTime(from: notification.userInfo) < drill.seconds
         }
 
         // when
@@ -146,24 +146,28 @@ class DurationTrackerTests: XCTestCase {
 }
 
 extension DurationTrackerTests {
-
-    private func createDrill(_ duration: Double) -> Drill {
-        return TestCoreDataHelper.createDrill("", 0, duration)
+    private func createDrill(_ minutes: Int) -> Drill {
+        return TestCoreDataHelper.createDrill("", 0, minutes)
     }
 
-    private func getTotalDuration(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
-        guard let totalDuration = cast(userInfo)[.totalDuration] else { XCTFail("'totalDuration' is nil."); return 0 }
-        return totalDuration
+    private func getRoutineTime(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
+        guard let routineTime = cast(userInfo)[.routineTime]
+            else { XCTFail("'routineTime' is nil."); return 0 }
+
+        return routineTime
     }
 
-    private func getDrillDuration(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
-        guard let drillDuration = cast(userInfo)[.drillDuration] else { XCTFail("'drillDuration' is nil."); return 0 }
-        return drillDuration
+    private func getDrillTime(from userInfo: [AnyHashable: Any]?) -> TimeInterval {
+        guard let drillTime = cast(userInfo)[.drillTime]
+            else { XCTFail("'drillTime' is nil."); return 0 }
+
+        return drillTime
     }
 
     private func cast(_ userInfo: [AnyHashable: Any]?) -> [DurationTrackingKeys: TimeInterval] {
-        guard let info = userInfo as? [DurationTrackingKeys: TimeInterval] else { XCTFail("'userInfo' is nil."); return [:] }
+        guard let info = userInfo as? [DurationTrackingKeys: TimeInterval]
+            else { XCTFail("'userInfo' is nil."); return [:] }
+
         return info
     }
-
 }

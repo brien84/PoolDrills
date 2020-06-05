@@ -18,8 +18,8 @@ final class DurationTracker: DurationTracking {
 
     private var timer: Timer?
 
-    private var totalDuration: TimeInterval = 0
-    private var drillDuration: TimeInterval = 0
+    private var routineTime: TimeInterval = 0
+    private var drillTime: TimeInterval = 0
     private var isCountdown = false
 
     deinit {
@@ -27,13 +27,8 @@ final class DurationTracker: DurationTracking {
     }
 
     func load(_ drill: Drill) {
-        if drill.duration > 0 {
-            drillDuration = drill.duration
-            isCountdown = true
-        } else {
-            drillDuration = 0
-            isCountdown = false
-        }
+        drillTime = drill.seconds
+        isCountdown = drill.seconds > 0 ? true : false
     }
 
     func start() {
@@ -49,8 +44,8 @@ final class DurationTracker: DurationTracking {
 
     private func createTimer() -> Timer {
         let timer = Timer(timeInterval: 1.0, repeats: true) { [unowned self] _ in
-            self.totalDuration += 1
-            self.drillDuration += self.isCountdown ? -1 : 1
+            self.routineTime += 1
+            self.drillTime += self.isCountdown ? -1 : 1
 
             self.postNotification()
         }
@@ -63,15 +58,15 @@ final class DurationTracker: DurationTracking {
 
     private func postNotification() {
         let userInfo: [DurationTrackingKeys: TimeInterval] =
-            [.totalDuration: totalDuration, .drillDuration: drillDuration]
+            [.routineTime: routineTime, .drillTime: drillTime]
 
         NotificationCenter.default.post(name: .durationTrackingDidUpdate, object: nil, userInfo: userInfo)
     }
 }
 
 enum DurationTrackingKeys: String {
-    case totalDuration
-    case drillDuration
+    case routineTime
+    case drillTime
 }
 
 extension Notification.Name {
